@@ -1,0 +1,112 @@
+<div class="header-style-3">
+	<div class="yt-header-top">
+		<div class="container">
+			<div class="row">
+				<div class="info-header-wrapper col-md-5 col-sm-6">
+					<?php echo $this->getChildHtml('info-header'); ?>
+				</div>
+				<div class="col-md-7 col-sm-6 col-xs-12 toplinks-setting">
+					<div class="customer-action">
+                        <?php if(!$this->helper('customer')->isLoggedIn()):?>
+                            <ul class="cus-link">
+                                <li class="li-link"><a title="<?php echo $this->__('Register')?>" href="<?php echo $this->getUrl('customer/account/create')?>"><?php echo $this->__('Register')?></a></li>
+                                <li class="li-link login-li">
+                                    <a data-toggle="modal" data-target="#modal-login" title="<?php echo $this->__('Login')?>"><?php echo $this->__('Login')?></a>
+                                    <?php echo $this->getChildHtml('customer_form_mini_login'); ?>
+                                </li>
+                            </ul>
+                        <?php endif;?>
+                        <?php if($this->helper('customer')->isLoggedIn()):?>
+                            <ul class="cus-link">
+                                <li class="li-link">
+                                    <a href="<?php echo $this->getUrl('customer/account/logout')?>" title="<?php echo $this->__('Logout');?>"><?php echo $this->__('Logout');?></a>
+                                </li>
+                            </ul>
+                        <?php endif;?>
+					</div>
+					<div class="setting-page">
+						<div class="btn-setting">
+							<a href="javascript:void(0)"><?php echo $this->__('Settings')?></a>
+						</div>
+						<div class="dropdown-block dropdown-setting">
+                            <?php echo $this->getChildHtml('currency'); ?>
+							<?php echo $this->getChildHtml('store_language') ?>
+						</div>
+					</div>
+					<div class="links-top">
+						<div class="account-link">
+							<a title="<?php echo $this->__('My Account')?>" href="<?php echo $this->getUrl('customer/account')?>"><?php echo $this->__('My Account')?></a>
+						</div>
+						<div class="dropdown-block dropdown-link-account">
+							<?php echo $this->getChildHtml('topLinks');?>
+							<?php echo $this->getChildHtml('account_links'); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="yt-header-content">
+		<div class="container">
+			<div class="row">
+				<div class="logo-w col-lg-4 col-md-4 col-sm-4">
+					<a title="<?php echo $this->getLogoAlt() ?>" href="<?php echo $this->getUrl('') ?>">
+						<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+					</a>
+				</div>
+				
+				<div class="cart-social col-lg-8 col-md-8">
+					<div class="header-cart">
+						<?php echo $this->getChildHtml('mini-cartpro') ?>
+					</div>
+					
+					<?php echo $this->getChildHtml('social_info_header') ?>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="yt-header-under">
+		<div class="container">
+			<div class="row yt-header-under-wrap">
+				<div class="yt-main-menu col-md-3">
+					<div id="yt-responsivemenu" class="yt-responsivemenu">
+						<?php echo $this->getChildHtml('mobiMenu'); ?>
+					</div>
+					<div class="btn-vertical-menu">
+						<a title="<?php echo $this->__('Show Categories')?>" href="javascript:void(0)"><?php echo $this->__('ALL CATEGORIES')?></a>
+					</div>
+					<script>
+						jQuery(document).ready(function ($) {
+							$('.btn-vertical-menu > a').click(function() {
+								$('.yt-menu.header-css-style-3').slideToggle(200);
+								$(this).toggleClass('active_btn');
+							});
+						});
+					</script>
+					<div class="yt-menu header-css-style-3">
+						<?php if( $var_yttheme->getParam('menustyle') == 'mega' ){
+							echo $this->getChildHtml('megaMenu');
+						} else {
+							echo $this->getChildHtml('topMenu');
+						} ?>
+					</div>
+				</div>
+				<div class="col-lg-9 col-md-9">
+					<div class="right-nav">
+						<div class="row">
+							<?php echo $this->getChildHtml('offer-header');?>
+							<div class="col-lg-4 col-md-4">
+								<div class="search-header search-default">
+									<?php echo $this->getChildHtml('topSearch');?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

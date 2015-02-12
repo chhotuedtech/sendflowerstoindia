@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<milan_cfg translate="title" module="milan">
+											<title>SM milan Section</title>
+											<sort_order>150</sort_order>
+										</milan_cfg>
+									</children>
+								</config>
+							</children>
+						</system>						
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<menu>
+			<milan translate="title" module="milan">
+				<title>SM Milan Setting</title>
+				<sort_order>100</sort_order>
+				<depends>
+					<module>Sm_Milan</module>
+				</depends>
+				<children>
+					<milan translate="title" module="milan">
+						<title>SM Milan Setting</title>
+						<action>adminhtml/system_config/edit/section/milan_cfg</action>
+						<sort_order>0</sort_order>
+					</milan>
+					<dynamicslideshow translate="title" module="milan">
+						<title>Sm Dynamic SlideShow</title>
+						<sort_order>1</sort_order>
+						<children>
+							<sliders translate="title">
+								<title>Manage Sliders</title>
+								<action>dynamicslideshow/adminhtml_DynamicSlideshow</action>
+							</sliders>
+						</children>
+					</dynamicslideshow>	
+					
+							
+					<cartpro translate="title" module="milan">
+						<title>SM Cart Pro</title>
+						<action>adminhtml/system_config/edit/section/cartpro_cfg</action>
+						<sort_order>3</sort_order>
+					</cartpro>					
+			
+
+					<megamenu translate="title">
+						<title>SM Mega Menu</title>
+						<children>
+							<menugroup translate="title" module="milan">
+								<title>Menu Manager</title>
+								<action>megamenu/adminhtml_menugroup/</action>
+								<sort_order>1</sort_order>
+							</menugroup>	
+							<menuitems translate="title" module="milan">
+								<title>Menu Items Manager</title>
+								<action>megamenu/adminhtml_menuitems/</action>
+								<sort_order>2</sort_order>
+							</menuitems>
+							<configurtion translate="title" module="milan">
+								<title>Configuration</title>
+								<action>adminhtml/system_config/edit/section/megamenu_cfg</action>
+								<sort_order>3</sort_order>
+							</configurtion>
+						</children>
+					</megamenu>
+					
+					<deal_cfg translate="title" module="milan">
+						<title>SM Deals</title>
+						<sort_order>4</sort_order>
+						<children>
+							<Configuration translate="title" module="milan">
+								<title>Configuration</title>
+								<action>adminhtml/system_config/edit/section/deal_cfg</action>
+								<sort_order>1</sort_order>
+							</Configuration>
+						</children>
+					</deal_cfg>
+					
+					<facebook_cfg translate="title" module="milan">
+						<title>SM Facebook</title>
+						<action>adminhtml/system_config/edit/section/facebook_cfg</action>
+						<sort_order>5</sort_order>
+					</facebook_cfg>					
+
+						
+					<quickview translate="title" module="milan">
+						<title>SM Quickview</title>
+						<action>adminhtml/system_config/edit/section/quickview</action>
+						<sort_order>7</sort_order>
+					</quickview>
+					
+					<sm_shopby translate="title" module="milan">
+						<title>SM Shopby</title>
+						<action>adminhtml/system_config/edit/section/sm_shopby</action>
+						<sort_order>8</sort_order>
+					</sm_shopby>
+					
+					<listingtabs_cfg translate="title" module="milan">
+						<title>SM Listingtabs</title>
+						<action>adminhtml/system_config/edit/section/listingtabs_cfg</action>
+						<sort_order>9</sort_order>
+					</listingtabs_cfg>
+					
+					<twitterslider_cfg translate="title" module="milan">
+						<title>SM Twitterslider</title>
+						<action>adminhtml/system_config/edit/section/twitterslider_cfg</action>
+						<sort_order>10</sort_order>
+					</twitterslider_cfg>
+
+				</children>
+			</milan>
+		</menu>		
+	</config>

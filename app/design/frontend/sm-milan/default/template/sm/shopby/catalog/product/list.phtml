@@ -1,0 +1,568 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Shop By - Version 1.0
+ # Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+
+<?php
+$_productCollection = $this->getLoadedProductCollection();
+$_helper = $this->helper('catalog/output');
+?>
+<?php if (!$_productCollection->count()): ?>
+    <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+    <?php if (!$this->getRequest()->isAjax()): ?>
+        <div id="ajax-errors" style="display: none;">
+            <ul class="messages">
+                <li class="error-msg">
+                    <ul>
+                        <li><span><?php echo $this->__('An error occurred, please try again later.'); ?></span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="loading" style="display: none; margin-bottom: 10px; text-align: center;">
+            <img class="v-middle" alt="" src="<?php echo $this->getSkinUrl('images/loading-qv.gif'); ?>">
+        </div>
+
+
+
+        <?php
+        function getBestsellingProducts()
+        {
+//get current category id
+            $catID = Mage::getModel('catalog/layer')->getCurrentCategory()->getId();
+            $productCount = 5;
+// store ID
+            $storeId = Mage::app()->getStore()->getId();
+            $category = Mage::getModel('catalog/category')->load($catID);
+
+            $best_products = Mage::getModel('catalog/category')->load($catID)->getProductCollection()
+                ->addAttributeToSelect('*')
+                ->addAttributeToSelect('category_id')
+                ->setStoreId($storeId)
+                ->addStoreFilter($storeId)
+                ->addMinimalPrice()
+                ->addFinalPrice()
+                ->addTaxPercents()
+                ->addTierPriceData()
+                ->addUrlRewrite()
+                ->setOrder('ordered_qty', 'desc')
+                ->setPageSize($productCount);
+
+            Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($best_products);
+            Mage::getSingleton('catalog/product_visibility')->addVisibleInCatalogFilterToCollection($best_products);
+
+            return $best_products;
+        }
+
+        $best_products = getBestsellingProducts();
+        ?>
+        <?php if ($best_products->getSize() > 0): ?>
+            <div class="page-title">
+                <h1><?php echo $this->__('Recommended For You'); ?></h1>
+            </div>
+			<div class="mutil-col-slider products-slider products-slider-bestsale">
+				<div class="customNavigation">
+					<a class="btn-nav btn-next next-recomend" title="Next">Next</a>
+					<a class="btn-nav btn-prev prev-recomend" title="Previous">Previous</a>
+				</div>
+				
+				<div class="overflow-slider">
+					<div class="margin-slider">
+						<div class="container-slider-best mutil-col">
+					
+							<?php
+							$i=0;
+							foreach ($best_products->getItems() as $_product):
+								$i++;
+								$id_product = Mage::getModel('catalog/product')->load($_product->getId());
+
+								$now = date("Y-m-d H:m:s");
+								$newsFrom = $_product->getNewsFromDate(); //substr($_product->getData('news_from_date'),0,10);
+								$newsTo = $_product->getNewsToDate(); //substr($_product->getData('news_to_date'),0,10);
+
+								$specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
+								$price = Mage::getModel('catalog/product')->load($_product->getId())->getPrice();
+								$saleoff = round(($price - $specialprice) / $price * 100);?>
+
+								<div class="item respl-item">
+									<div class="item-inner">
+										<div class="w-image-box">
+											<div class="item-image">
+												<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+													<?php if($_product->getThumbnail() != $_product->getSmallImage()) { ?> 
+													   <img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+													   <img class="thumnail-image image-hover" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(370,370) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" />
+													<?php } else { ?>
+														<img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+													<?php } ?>															
+												</a>
+											</div>
+
+											<?php if ($newsFrom != "" && $now >= $newsFrom && ($now <= $newsTo || $newsTo == "")) { ?>
+												<div class="new-item">
+													<span class="txt-label"><?php echo $this->__('New') ?></span>
+												</div>
+											<?php } ?>
+
+											<?php if ($specialprice) { ?>
+												<div class="sale-item">
+													<span class="txt-label"><?php echo $this->__('Save') ?>
+														<?php
+															$saleof= abs(($specialprice/($_product->getPrice()))*100-100);
+															print_r(floor($saleof));
+														?>%
+													</span>
+												</div>
+											<?php } ?>
+										</div>
+
+										<div class="item-info">
+											<div class="item-title">
+												<a href="<?php echo $_product->getProductUrl() ?>"
+												   title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+											</div>
+
+											<div class="item-review">
+												<?php echo $this->getReviewsSummaryHtml($_product, "short", true); ?>
+											</div>
+
+											<div class="item-price">
+												<?php echo $this->getPriceHtml($_product, true) ?>
+											</div>
+
+											<div class="action-button">
+												<div class="btn-top">
+														<?php if ($_product->isSaleable()): ?>
+															<button type="button" title="<?php echo $this->__('Add to Cart') ?>"
+																	class="item-addcart btn-cart"
+																	onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+																<span><span><?php echo $this->__('Add to Cart') ?></span></span>
+															</button>
+														<?php else: ?>
+															<p class="availability out-of-stock">
+																<span><?php echo $this->__('Out of stock') ?></span></p>
+														<?php endif; ?>
+												</div>
+												<div class="btn-bottom">
+													<?php if ($this->helper('wishlist')->isAllow()) : ?>
+														<a title="<?php echo $this->__('Add to Wishlist') ?>"
+														   href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>"
+														   class="btn-button item-wishlist"><span><?php echo $this->__('Add to Wishlist') ?></span></a>
+													<?php endif; ?>
+													<?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+														<a title="<?php echo $this->__('Add to Compare') ?>"
+														   href="<?php echo $_compareUrl ?>"
+														   class="btn-button item-compare"><span><?php echo $this->__('Add to Compare') ?></span></a>
+													<?php endif; ?>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+								<?php if($i==12) break;?>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<script>
+				jQuery(document).ready(function($){
+					var owl = $(".container-slider-best");
+					owl.owlCarousel({
+						itemsCustom : [
+						[0, 1],
+						[480, 2],
+						[768, 2],
+						[992, 3],
+						[1200, 3]
+						],
+						//navigation : true, // Show next and prev buttons
+						autoPlay:true,
+						pagination:false,
+						stopOnHover:true 
+					});
+					
+					$(".mutil-col-slider .next-recomend").click(function(){
+					owl.trigger('owl.next');
+					})
+					$(".mutil-col-slider .prev-recomend").click(function(){
+					owl.trigger('owl.prev');
+					}) 
+				}); 
+			</script>
+        <?php
+        endif;
+        ?>
+
+		
+		<div class="page-title title-rewite">
+			<h1 style="display:inline-block;">title</h1>
+			<div class="des-title">
+			</div>
+		</div>
+		
+		<script>
+			jQuery(document).ready(function($){
+				var str_title = $(".title-r > h1").text();
+				var str_des = $(".title-r .category-description").html();
+				//alert(str_title);
+				$(".title-rewite h1").html(str_title);
+				$(".des-title").html(str_des);
+			});
+		</script>
+
+        <div id="catalog-listing">
+    <?php endif; ?>
+    <div class="category-products">
+        <?php echo $this->getToolbarHtml() ?>
+        <?php // List mode ?>
+        <?php if ($this->getMode() != 'grid'): ?>
+            <?php $_iterator = 0; ?>
+            <ol class="products-list" id="products-list">
+                <?php foreach ($_productCollection as $_product):
+                    $id_product = Mage::getModel('catalog/product')->load($_product->getId());
+
+                    $now = date("Y-m-d");
+                    $newsFrom = substr($_product->getData('news_from_date'), 0, 10);
+                    $newsTo = substr($_product->getData('news_to_date'), 0, 10);
+
+                    $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
+                    //echo $specialprice . '-hau<br/>';
+                    $price = Mage::getModel('catalog/product')->load($_product->getId())->getPrice();
+                    if ($specialprice == '') {
+                        $store_id = Mage::app()->getStore()->getStoreId();
+                        $discounted_price = Mage::getResourceModel('catalogrule/rule')->getRulePrice(
+                            Mage::app()->getLocale()->storeTimeStamp($store_id),
+                            Mage::app()->getStore($store_id)->getWebsiteId(),
+                            Mage::getSingleton('customer/session')->getCustomerGroupId(),
+                            $_product->getId());
+                        $specialprice = $discounted_price;
+
+                    }
+
+                    ?>
+                    <li class="item respl-item<?php if (++$_iterator == sizeof($_productCollection)): ?> last<?php endif; ?>">
+                        <?php // Product Image ?>
+						<div class="item-inner">
+							<div class="w-image-box">
+								<div class="item-image">
+									<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+										<?php if($_product->getThumbnail() != $_product->getSmallImage()) { ?> 
+										   <img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+										   <img class="thumnail-image image-hover" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(370,370) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" />
+										<?php } else { ?>
+											<img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+										<?php } ?>											
+								</div>
+								
+								<?php if ($newsFrom != "" && $now >= $newsFrom && ($now <= $newsTo || $newsTo == "")) { ?>
+                                    <div class="new-item">
+                                        <span class="txt-label"><?php echo $this->__('New') ?></span>
+                                    </div>
+                                <?php } ?>
+
+                                <?php if ($specialprice) { ?>
+                                    <div class="sale-item">
+                                        <span class="txt-label"><?php echo $this->__('Save') ?>
+											<?php
+												$saleof= abs(($specialprice/($_product->getPrice()))*100-100);
+												print_r(floor($saleof));
+											?>%
+										</span>
+                                    </div>
+                                <?php } ?>
+								
+							</div>
+							<?php // Product description ?>
+							<div class="product-shop item-info">
+								<div class="f-fix">
+									<?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+									<div class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"
+																 title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
+									</div>
+
+									<div class="item-review">
+										<?php echo $this->getReviewsSummaryHtml($_product, "short", true); ?>
+									</div>
+									
+									<div class="item-price">
+										<?php echo $this->getPriceHtml($_product, true) ?>
+									</div>
+									<div class="desc std">
+										<?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+									</div>
+									
+									<div class="list-action">
+										<?php if($_product->isSaleable()): ?>
+											<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn-listing btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+												<span><?php echo $this->__('Add to Cart') ?></span>
+											</button>
+										<?php else: ?>
+											<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+										<?php endif; ?>
+										<?php if ($this->helper('wishlist')->isAllow()) : ?>
+											<a title="<?php echo $this->__('Add to Wishlist') ?>" href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="btn-listing item-wishlist">
+												<span><?php echo $this->__('Add to Wishlist') ?></span>
+											</a>
+										<?php endif; ?>
+										<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+											<a title="<?php echo $this->__('Add to Compare') ?>" href="<?php echo $_compareUrl ?>" class="btn-listing item-compare">
+												<span><?php echo $this->__('Add to Compare') ?></span>
+											</a>
+										<?php endif; ?>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+            <script type="text/javascript">decorateList('products-list', 'none-recursive')</script>
+
+        <?php else: ?>
+
+        <?php // Grid Mode ?>
+
+        <?php $_collectionSize = $_productCollection->count() ?>
+        <?php $_columnCount = $this->getColumnCount(); ?>
+            <div class="products-grid row">
+                <?php $i = 0;
+                foreach ($_productCollection as $_product):
+                    $id_product = Mage::getModel('catalog/product')->load($_product->getId());
+
+                    $now = date("Y-m-d");
+                    $newsFrom = substr($_product->getData('news_from_date'), 0, 10);
+                    $newsTo = substr($_product->getData('news_to_date'), 0, 10);
+
+                    $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
+                    //echo $specialprice . '-hau<br/>';
+                    $price = Mage::getModel('catalog/product')->load($_product->getId())->getPrice();
+                    if ($specialprice == '') {
+                        $store_id = Mage::app()->getStore()->getStoreId();
+                        $discounted_price = Mage::getResourceModel('catalogrule/rule')->getRulePrice(
+                            Mage::app()->getLocale()->storeTimeStamp($store_id),
+                            Mage::app()->getStore($store_id)->getWebsiteId(),
+                            Mage::getSingleton('customer/session')->getCustomerGroupId(),
+                            $_product->getId());
+                        $specialprice = $discounted_price;
+
+                    }
+                    ?>
+                    <?php if ($i++ % $_columnCount == 0): ?>
+
+                <?php endif ?>
+                    <div class="item col-lg-4 col-md-4 col-sm-6 respl-item">
+                        <div class="item-inner">
+                            <div class="w-image-box">
+                                <div class="item-image">
+                                    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+										<?php if($_product->getThumbnail() != $_product->getSmallImage()) { ?> 
+										   <img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+										   <img class="thumnail-image image-hover" src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->resize(370,370) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'thumbnail'), null, true) ?>" />
+										<?php } else { ?>
+											<img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+										<?php } ?>											
+                                </div>
+
+                                <?php if ($newsFrom != "" && $now >= $newsFrom && ($now <= $newsTo || $newsTo == "")) { ?>
+                                    <div class="new-item">
+                                        <span class="txt-label"><?php echo $this->__('New') ?></span>
+                                    </div>
+                                <?php } ?>
+
+                                <?php if ($specialprice) { ?>
+                                    <div class="sale-item">
+                                        <span class="txt-label"><?php echo $this->__('Save') ?>
+											<?php
+												$saleof= abs(($specialprice/($_product->getPrice()))*100-100);
+												print_r(floor($saleof));
+											?>%
+										</span>
+                                    </div>
+                                <?php } ?>
+
+                            </div>
+
+                            <div class="item-info">
+                                <div class="item-title">
+                                    <a href="<?php echo $_product->getProductUrl() ?>"
+                                       title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a>
+                                </div>
+
+                                <div class="item-review">
+                                    <?php echo $this->getReviewsSummaryHtml($_product, "short", true); ?>
+                                </div>
+
+                                <div class="item-price">
+                                    <?php echo $this->getPriceHtml($_product, true) ?>
+                                </div>
+
+                                <div class="action-button">
+                                    <div class="btn-top">
+                                        <?php if ($_product->isSaleable()): ?>
+                                            <button type="button" title="<?php echo $this->__('Add to Cart') ?>"
+                                                    class="item-addcart btn-cart"
+                                                    onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
+                                                <span><span><?php echo $this->__('Add to Cart') ?></span></span>
+                                            </button>
+                                        <?php else: ?>
+                                            <p class="availability out-of-stock">
+                                                <span><?php echo $this->__('Out of stock') ?></span></p>
+                                        <?php endif; ?>
+                                    </div>
+
+                                    <div class="btn-bottom">
+                                        <a style="display:none;" href="<?php echo $_product->getProductUrl() ?>"></a>
+                                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                            <a title="<?php echo $this->__('Add to Wishlist') ?>"
+                                               href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>"
+                                               class="btn-button item-wishlist"><span><?php echo $this->__('Add to Wishlist') ?></span></a>
+                                        <?php endif; ?>
+                                        <?php if ($_compareUrl = $this->getAddToCompareUrl($_product)): ?>
+                                            <a title="<?php echo $this->__('Add to Compare') ?>"
+                                               href="<?php echo $_compareUrl ?>"
+                                               class="btn-button item-compare"><span><?php echo $this->__('Add to Compare') ?></span></a>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php if ($i % $_columnCount == 0 || $i == $_collectionSize): ?>
+
+                <?php endif ?>
+                <?php endforeach ?>
+            </div>
+            <script
+                type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd', 'even', 'first', 'last'])</script>
+        <?php endif; ?>
+
+        <div class="toolbar-bottom">
+            <?php echo $this->getToolbarHtml() ?>
+        </div>
+        <?php echo $this->getChildHtml('static-image-list') ?>
+    </div>
+    <?php if (!$this->getRequest()->isAjax()): ?>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php if ($this->helper('sm_shopby')->isAjaxEnabled() && !$this->getRequest()->isAjax()): ?>
+    <script type="text/javascript">
+        //<![CDATA[
+        function pushState(data, link, replace) {
+            var History = window.History;
+            if (!History.enabled) {
+                return false;
+            }
+
+            if (replace) {
+                History.replaceState(data, document.title, link);
+            } else {
+                History.pushState(data, document.title, link);
+            }
+        }
+
+        function handleEvent(el, event) {
+            var url, fullUrl;
+            if (typeof el === 'string') {
+                url = el;
+            } else if (el.tagName.toLowerCase() === 'a') {
+                url = $(el).readAttribute('href');
+            } else if (el.tagName.toLowerCase() === 'select') {
+                url = $(el).getValue();
+            }
+
+            <?php // Add this to query string for full page caching systems ?>
+            if (url.indexOf('?') != -1) {
+                fullUrl = url + '&isLayerAjax=1';
+            } else {
+                fullUrl = url + '?isLayerAjax=1';
+            }
+
+            $('loading').show();
+            $('ajax-errors').hide();
+
+            pushState(null, url, false);
+
+            new Ajax.Request(fullUrl, {
+                method: 'get',
+                onSuccess: function (transport) {
+                    if (transport.responseJSON) {
+                        $('catalog-listing').update(transport.responseJSON.listing);
+                        $('layered-navigation').update(transport.responseJSON.layer);
+                        pushState({
+                            listing: transport.responseJSON.listing,
+                            layer: transport.responseJSON.layer
+                        }, url, true);
+                        ajaxListener();
+                    } else {
+                        $('ajax-errors').show();
+                    }
+                    $('loading').hide();
+                }
+            });
+
+            if (event) {
+                event.preventDefault();
+            }
+        }
+        function ajaxListener() {
+            var els;
+            els = $$('div.pager a').concat(
+                $$('div.sorter a'),
+                $$('div.pager select'),
+                $$('div.sorter select'),
+                $$('div.block-layered-nav a')
+            );
+            els.each(function (el) {
+                if (el.tagName.toLowerCase() === 'a') {
+                    $(el).observe('click', function (event) {
+                        handleEvent(this, event);
+                    });
+                } else if (el.tagName.toLowerCase() === 'select') {
+                    $(el).setAttribute('onchange', '');
+                    $(el).observe('change', function (event) {
+                        handleEvent(this, event);
+                    });
+                }
+            });
+        }
+        document.observe("dom:loaded", function () {
+            ajaxListener();
+
+            (function (History) {
+                if (!History.enabled) {
+                    return false;
+                }
+
+                pushState({
+                    listing: $('catalog-listing').innerHTML,
+                    layer: $('layered-navigation').innerHTML
+                }, document.location.href, true);
+
+                // Bind to StateChange Event
+                History.Adapter.bind(window, 'popstate', function (event) {
+                    if (event.type == 'popstate') {
+                        var State = History.getState();
+                        $('catalog-listing').update(State.data.listing);
+                        $('layered-navigation').update(State.data.layer);
+                        ajaxListener();
+                    }
+                });
+            })(window.History);
+        });
+        //]]>
+    </script>
+<?php endif; ?>

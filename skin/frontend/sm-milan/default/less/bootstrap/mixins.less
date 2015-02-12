@@ -1,0 +1,25 @@
+.transform_scale(@scale:1){
+  transform:scale(@scale);
+  -moz-transform:scale(@scale);
+  -webkit-transform:scale(@scale);
+  -ms-transform:scale(@scale);
+}
+
+.transition_all(@transition:.3s){
+  transition:@transition;
+  -moz-transition:@transition;
+  -webkit-transition:@transition;
+}
+
+.transform_origin(@var1:top,@var2:center){
+  transform-origin: @var1 @var2;
+  -moz-transform-origin: @var1 @var2;
+  -webkit-transform-origin: @var1 @var2;
+  -ms-transform-origin: @var1 @var2;
+}
+
+.border_radius(@radius:3px){
+  border-radius:@radius;
+  -moz-border-radius:@radius;
+  -webkit-border-radius:@radius;
+}

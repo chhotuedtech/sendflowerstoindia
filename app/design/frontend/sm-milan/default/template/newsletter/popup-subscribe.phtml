@@ -1,0 +1,103 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<script type="text/javascript">
+
+	jQuery(document).ready(function() {
+
+		var check_cookie = jQuery.cookie('location_popup');
+		if(check_cookie == null || check_cookie == 'shown') {
+			 popupNewsletter();
+		 }
+		jQuery('#location-popup .subscribe-bottom input').on('click', function(){
+			if(jQuery(this).parent().find('input:checked').length){        
+				var check_cookie = jQuery.cookie('location_popup');
+			   if(check_cookie == null || check_cookie == 'shown') {
+					jQuery.cookie('location_popup','dontshowitagain');            
+				}
+				else
+				{
+					jQuery.cookie('location_popup','shown');
+					popupNewsletter();
+				}
+			} else {
+				jQuery.cookie('location_popup','shown');
+			}
+		}); 
+	});
+
+	function popupNewsletter() {
+		jQuery.fancybox({
+            'padding': '0px',
+            'autoScale': true,
+            'transitionIn': 'elastic',
+            'transitionOut': 'elastic',/*The transition type. Can be set to 'elastic', 'fade' or 'none'*/
+            'type': 'inline',
+            'href': '#location-popup',
+            'onComplete': function() {
+                  jQuery.cookie('location_popup', 'shown');
+            }
+			
+		});
+		jQuery('#location-popup').trigger('click');
+		jQuery('#location-popup').parents('#fancybox-wrap').addClass('popup-fancy');
+	};
+	 
+</script>
+<center style="display:none;">
+<div class="pop-block-subscribe" id="location-popup">
+
+	<div class="block-content">
+		<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail-pop">
+			<div class="form-subscribe-header">
+				<h2><?php echo $this->__('Don\'t Miss Out !')?></h2>
+				<p><?php echo $this->__('Stay stylishly up-to-date with the latest news,  hottest trends and new arrivals direct to your inbox.')?></p>
+			</div>
+
+			<div class="input-box">
+				<input type="text" name="email" id="newsletter" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email" />
+				
+			</div>
+			
+			<div class="action">
+				<button type="submit" title="<?php echo $this->__('Subscribe') ?>"
+					class="button">
+					<span><span><?php echo $this->__('Subscribe') ?> </span> </span>
+				</button>
+			</div>
+
+		</form>
+		<script type="text/javascript">
+		//<![CDATA[
+			var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail-pop');
+		//]]>
+		</script>
+	</div>
+	<div class="subscribe-bottom">
+		<input id="dont-show-again" type="checkbox" name="dontshowitagain" value="dontshowitagain" /><label for="dont-show-again"><?php echo $this->__('Don\'t show this popup again')?></label>
+	</div>
+</div>
+</center>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+    <dynamicslideshow type="dynamicslideshow/sliders_preview" translate="name description">
+        <name>Sm Dynamic SlideShow</name>
+        <description>Adds a slider to block / page</description>
+        <parameters>
+            <id translate="label">
+                <label>Slider ID</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>select</type>
+                <source_model>dynamicslideshow/source_sliders</source_model>
+            </id>
+        </parameters>
+    </dynamicslideshow>
+</widgets>

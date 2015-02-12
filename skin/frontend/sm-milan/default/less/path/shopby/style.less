@@ -1,0 +1,400 @@
+.price_filter{
+  height: 24px;
+  margin: 10px 0;
+  overflow:hidden;
+  background-repeat:repeat-x;
+  background-position:left center;
+  position:relative;
+
+  &:before,
+  &:after{
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:100%;
+    background:#fff;
+    position:absolute;
+    top:0px;
+    z-index: 1;
+  }
+
+  &:before{
+    left:0px;
+  }
+  &:after{
+    right:0px;
+  }
+}
+.Material ol,
+.Color ol{
+  display:inline-block;
+  width: 100%;
+
+  li{
+    display:inline-block;
+    float:left;
+    width:50%;
+  }
+}
+#narrow-by-list ol li a{
+  background:url("../../../images/check-shopby.png") no-repeat left 2px;
+}
+#narrow-by-list .check-shopby{
+  display:none;
+}
+.block-layered-nav #narrow-by-list ol li:before{
+  background:url("../../../images/check-shopby.png") no-repeat left 0px;
+  width:16px;
+  height:16px;
+  position:absolute;
+  top:6px;
+  left:0px;
+  content:"";
+}
+#narrow-by-list ol li a.checked{
+  position:relative;
+}
+
+#narrow-by-list ol li a:before{
+  display:inline-block;
+  content:"";
+  width:16px;
+  height:16px;
+  background:none;
+  position:absolute;
+  left:0px;
+  top:6px;
+}
+
+.block-layered-nav .filter-wrapp {
+  padding: 11px 10px 7px;
+
+  .wrap-price-shopby{
+
+    .price-input{
+      display:inline-block;
+    }
+
+    .btn-shopby-wrapper{
+      display:inline-block;
+      float:right;
+
+      .btn-shopby{
+        height:30px;
+        border-radius:15px;
+        line-height:30px;
+        padding:0 15px;
+        font-size:116.67%;
+        color:#fff;
+        font-weight:bold;
+      }
+
+    }
+  }
+
+  &:first-child{
+    padding-top:0px;
+  }
+
+  .txt-price-shopby{
+    height:30px;
+    line-height: 30px;
+    border:1px solid #e0e0e0;
+    border-radius:15px;
+    width:80px;
+    padding:0;
+    text-align:center;
+    font-size:116.67%;
+    color:#666;
+  }
+}
+
+.block-layered-nav .filter-wrapp dt {
+  font-size: 133.33%;
+  text-transform: uppercase;
+  position:relative;
+  margin-bottom: 15px;
+  margin-right:-18px;
+  background:url(../../../images/bg-title-shopby.png) repeat-x 5px center;
+
+  span{
+    display:inline-block;
+    background-color:#fff;
+    padding-right:3px;
+  }
+
+  &:before{
+    content:"";
+    display:inline-block;
+    width:11px;
+    height:11px;
+    position:absolute;
+    top:6px;
+    left:-18px;
+  }
+}
+
+.layer-noshopby #narrow-by-list > div:first-child {
+  padding-top: 5px;
+}
+
+.block-layered-nav #narrow-by-list ol li {
+  padding: 5px 0px;
+  position: relative;
+}
+
+.block-layered-nav #narrow-by-list ol li a {
+  padding:2px 0 2px 25px;
+}
+
+.price_filter .price-from ,
+.price_filter .price-to {
+  height: 24px;
+  width: 24px;
+  cursor: e-resize;
+  display: block;
+  margin-top: 0px;
+  background: url(../../../images/price-button.png) no-repeat top left;
+  position:relative;
+  z-index:2;
+}
+.price_filter .price-to {
+  cursor: w-resize;
+  margin-top: -24px;
+}
+#price-filter-max-display{
+  float: right;
+}
+
+.price_filter .price-from:before,
+.price_filter .price-to:before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  position: absolute;
+  top: 8px;
+  width: 1000px;
+  background:#ababab;
+}
+
+.price_filter .price-from:before {
+  left: -1000px;
+}
+.price_filter .price-to:before {
+  right: -1000px;
+}
+.sp-right{
+  float:right;
+}
+#loading{
+  background:rgba(0,0,0,0.5);
+  position:fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  z-index:9999;
+}
+
+#loading img{
+  position:fixed;
+  top:50%;
+  left:50%;
+  margin-left:-17px;
+  z-index:99999;
+  padding:5px;
+  background-color:black;
+  border-radius:4px;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+
+.block-layered-nav .currently{
+  padding:20px 0px 0px 0px;
+
+  .block-subtitle{
+    padding:0 0 5px 9px;
+    text-transform:uppercase;
+    font-weight:bold;
+  }
+
+  ol li{
+    padding:5px 18px;
+    margin:0 -8px;
+    border-bottom:1px solid #e5e5e5;
+
+    &:first-child{
+      border-top:1px solid #e5e5e5;
+    }
+
+    .btn-remove{
+      display:inline-block;
+      width:13px;
+      height:13px;
+      background:url(../../../images/remove_btn.png) no-repeat top left;
+      position:relative;
+      top:2px;
+      left:2px;
+      border-radius: 50%;
+
+      &:hover{
+        box-shadow: 0 0 2px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0 0 2px rgba(0,0,0,0.3);
+      }
+    }
+  }
+}
+.filter-wrapp dd{
+  max-height:275px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+.cms-index-index .filter-wrapp dd{
+    max-height: inherit;
+}
+.clear-fillter{
+  float:right;
+  position: relative;
+  top:-15px;
+  right:9px;
+}
+/*style shopby color*/
+.block-layered-nav #narrow-by-list ol li{
+  position: relative;
+}
+.block-layered-nav #narrow-by-list ol li.Black a:before,
+.block-layered-nav #narrow-by-list ol li.Blue a:before,
+.block-layered-nav #narrow-by-list ol li.Brown a:before,
+.block-layered-nav #narrow-by-list ol li.Charcoal a:before,
+.block-layered-nav #narrow-by-list ol li.Cyan a:before,
+.block-layered-nav #narrow-by-list ol li.Green a:before,
+.block-layered-nav #narrow-by-list ol li.Gray a:before,
+.block-layered-nav #narrow-by-list ol li.Indigo a:before,
+.block-layered-nav #narrow-by-list ol li.Ivory a:before,
+.block-layered-nav #narrow-by-list ol li.Khaki a:before,
+.block-layered-nav #narrow-by-list ol li.Orange a:before,
+.block-layered-nav #narrow-by-list ol li.Pink a:before,
+.block-layered-nav #narrow-by-list ol li.Red a:before,
+.block-layered-nav #narrow-by-list ol li.Royal_Blue a:before,
+.block-layered-nav #narrow-by-list ol li.Silver a:before,
+.block-layered-nav #narrow-by-list ol li.Taupe a:before,
+.block-layered-nav #narrow-by-list ol li.White a:before,
+.block-layered-nav #narrow-by-list ol li.Yellow a:before,
+.block-layered-nav #narrow-by-list ol li.Magenta a:before{
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  content: "";
+  border-radius: 3px;
+}
+.block-layered-nav #narrow-by-list ol li.Black a:before{
+  background: #000000;
+}
+.block-layered-nav #narrow-by-list ol li.Blue a:before{
+  background: #0000FF;
+}
+.block-layered-nav #narrow-by-list ol li.Brown a:before{
+  background: #A52A2A;
+}
+.block-layered-nav #narrow-by-list ol li.Charcoal a:before{
+  background: #222222;
+}
+.block-layered-nav #narrow-by-list ol li.Cyan a:before{
+  background: #45c0d6;
+}
+.block-layered-nav #narrow-by-list ol li.Green a:before{
+  background: #008000;
+}
+.block-layered-nav #narrow-by-list ol li.Gray a:before{
+  background: #808080;
+}
+.block-layered-nav #narrow-by-list ol li.Indigo a:before{
+  background: #460082;
+}
+.block-layered-nav #narrow-by-list ol li.Ivory a:before{
+  background: #FFFFF0;
+}
+.block-layered-nav #narrow-by-list ol li.Khaki a:before{
+  background: #F0E68C;
+}
+.block-layered-nav #narrow-by-list ol li.Orange a:before{
+  background: #FFA500;
+}
+.block-layered-nav #narrow-by-list ol li.Pink a:before{
+  background: #FFC0CB;
+}
+.block-layered-nav #narrow-by-list ol li.Red a:before{
+  background: #ff0000;
+}
+.block-layered-nav #narrow-by-list ol li.Royal_Blue a:before{
+  background: #4169E1;
+}
+.block-layered-nav #narrow-by-list ol li.Silver a:before{
+  background: #C0C0C0;
+}
+.block-layered-nav #narrow-by-list ol li.Taupe a:before{
+  background: #8b8589;
+}
+.block-layered-nav #narrow-by-list ol li.White a:before{
+  background: #ffffff;
+}
+.block-layered-nav #narrow-by-list ol li.Yellow a:before{
+  background: #ece12d;
+}
+.block-layered-nav #narrow-by-list ol li.Magenta a:before{
+  background: #FF00FF;
+}
+
+
+
+.block-layered-nav #narrow-by-list ol li.Black .checked:before,
+.block-layered-nav #narrow-by-list ol li.Blue .checked:before,
+.block-layered-nav #narrow-by-list ol li.Brown .checked:before,
+.block-layered-nav #narrow-by-list ol li.Charcoal .checked:before,
+.block-layered-nav #narrow-by-list ol li.Cyan .checked:before,
+.block-layered-nav #narrow-by-list ol li.Green .checked:before ,
+.block-layered-nav #narrow-by-list ol li.Indigo .checked:before,
+.block-layered-nav #narrow-by-list ol li.Ivory .checked:before,
+.block-layered-nav #narrow-by-list ol li.Khaki .checked:before,
+.block-layered-nav #narrow-by-list ol li.Orange .checked:before,
+.block-layered-nav #narrow-by-list ol li.Pink .checked:before,
+.block-layered-nav #narrow-by-list ol li.Red .checked:before,
+.block-layered-nav #narrow-by-list ol li.Royal_Blue .checked:before,
+.block-layered-nav #narrow-by-list ol li.Silver .checked:before,
+.block-layered-nav #narrow-by-list ol li.Taupe .checked:before,
+.block-layered-nav #narrow-by-list ol li.White .checked:before,
+.block-layered-nav #narrow-by-list ol li.Yellow .checked:before,
+.block-layered-nav #narrow-by-list ol li.Gray .checked:before,
+.block-layered-nav #narrow-by-list ol li.Magenta .checked:before{
+  top:2px;
+}
+
+.block-layered-nav .filter-wrapp.Material ol li a:before{
+    background-color:transparent!important;
+}
+/* STYLE SCROLL */
+.nicescroll-rails{
+  width:14px!important;
+  border-radius:7px;
+}
+
+#narrow-by-list ol li a.checked:after{
+  content:"";
+  width:16px;
+  height:16px;
+  display:inline-block;
+  background:url("../../../images/check-shopby.png") no-repeat 0 -84px;
+  position:absolute;
+  left:0px;
+  top:1px;
+}
+
+.block-layered-nav .filter-wrapp.Price{
+  dd{
+    max-height:inherit!important;
+    overflow: visible!important;
+  }
+}

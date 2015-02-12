@@ -1,0 +1,187 @@
+<?php
+/*------------------------------------------------------------------------
+ # Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+global $var_yttheme;  
+// Include cpanel
+if( $var_yttheme->getParam('showCpanel') ) { ?>
+<div id="cpanel_wrapper" style="direction: ltr">
+	<div class="cpanel-head">
+		<span>Theme setting</span>
+		<div class="action cpanel-reset">
+			<a class="btn btn-info reset" href="#" onclick="javascript: onCPResetDefault(TMPL_COOKIE);">Reset</a>
+		</div>		
+	</div>
+
+	<div class="accordion" id="ytcpanel_accordion">
+		<!--Theme-->
+        <div class="accordion-group cpanel-theme-color">
+            <div id="yt_cpanelaccordionfirst" class="accordion-heading">
+                <a class="accordion-toggle"  data-parent="#ytcpanel_accordion" href="#ytitem_1">
+					Theme Color
+				</a>
+            </div>
+        	<div id="ytitem_1" class="accordion-theme">
+                <div class="accordion-inner clearfix">
+					<div class="color-theme">
+						<a href="<?php echo $this->getUrl('?___store=english&amp;___from_store=italia')?>" title="Blue" class="theme-color blue<?php echo ($var_yttheme->getParam('theme_color')=='blue')?' active':'';?>">Blue</a>
+						<a href="<?php echo $this->getUrl('?___store=jamaica&amp;___from_store=english')?>" title="Green" class="theme-color green<?php echo ($var_yttheme->getParam('theme_color')=='green')?' active':'';?>">Green</a>
+						<a href="<?php echo $this->getUrl('?___store=cameroon&amp;___from_store=english')?>" title="Cyan" class="theme-color cyan<?php echo ($var_yttheme->getParam('theme_color')=='cyan')?' active':'';?>">Cyan</a>
+						<a href="<?php echo $this->getUrl('?___store=hungary&amp;___from_store=english')?>" title="Red" class="theme-color red<?php echo ($var_yttheme->getParam('theme_color')=='red')?' active':'';?>">Red</a>
+						<a href="<?php echo $this->getUrl('?___store=sweden&amp;___from_store=english')?>" title="Orange" class="theme-color orange<?php echo ($var_yttheme->getParam('theme_color')=='orange')?' active':'';?>">Orange</a>
+						<a href="<?php echo $this->getUrl('?___store=vietnam&amp;___from_store=english')?>" title="Avocado" class="theme-color avocado<?php echo ($var_yttheme->getParam('theme_color')=='avocado')?' active':'';?>">Avocado</a>
+					</div>
+				</div>
+			</div>
+        </div>
+	
+		<!-- Menu -->
+		<div class="accordion-group cpanel-menu">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-parent="#ytcpanel_accordion" href="#ytitem_6">
+				Menu style </a>
+			</div>
+			<div id="ytitem_6" class="accordion-menu">
+				<div class="accordion-inner clearfix">
+					<!-- Styles -->
+					<div class="cp-item footer-background-color">
+						<!--span>Styles</span-->
+						<div class="inner">
+							<select onchange="javascript: onCPApply();" name="ytcpanel_menustyle" class="cp_select">
+								<option value="mega" <?php echo ($var_yttheme->getParam('menustyle')=='mega')?' selected="selected"':'';?>>Mega</option>
+								<option value="css" <?php echo ($var_yttheme->getParam('menustyle')=='css')?' selected="selected"':'';?>>Css</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="cpanel_btn" class="normal">
+		<i class="icon-hand-left"></i>
+	</div>
+</div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.theme-color').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+		});
+	});
+	// <![CDATA[
+	/*
+    jQuery(document).ready(function($){
+      
+		function templateZen(array){
+			if(array['0']){
+				$('.body-background-color input.miniColors').attr('value', array['0']);
+				$('.body-background-color a.miniColors-trigger').css('background-color', array['0']);
+				$('input.ytcpanel_bgcolor').attr('value', array['0']);
+			}
+			if(array['1']){
+				$('.link-color input.miniColors').attr('value', array['1']);
+				$('.link-color a.miniColors-trigger').css('background-color', array['1']);
+				$('input.ytcpanel_linkcolor').attr('value', array['1']);
+			}
+			if(array['2']){
+				$('.text-color input.miniColors').attr('value', array['2']);
+				$('.text-color a.miniColors-trigger').css('background-color', array['2']);
+				$('input.ytcpanel_textcolor').attr('value', array['2']);
+			}			
+		}
+		
+		var array 					= Array('bgcolor','linkcolor','textcolor');
+		var array_grapefruit 		= Array('#FFFFFF','#666666','#666666');
+		var array_green				= Array('#FFFFFF','#666666','#666666');
+		var array_blue 				= Array('#FFFFFF','#666666','#666666');
+		var array_orange   			= Array('#FFFFFF','#666666','#666666');
+		var array_lavender   		= Array('#FFFFFF','#666666','#666666');
+		var array_yellow  		 	= Array('#FFFFFF','#666666','#666666');
+		var array_pinkrose  	 	= Array('#FFFFFF','#666666','#666666');
+		var array_deepgrass  	 	= Array('#FFFFFF','#666666','#666666');
+		var array_green_yellow   	= Array('#FFFFFF','#666666','#666666');
+		var array_lavender_pink   	= Array('#FFFFFF','#666666','#666666');
+		var array_green_cyan	   	= Array('#FFFFFF','#666666','#666666');
+		var array_cyan_red		   	= Array('#FFFFFF','#666666','#666666');
+
+		$('.theme-color.lavender').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_lavender);
+			onCPApply();
+		});
+		$('.theme-color.grapefruit').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_grapefruit);
+			onCPApply();
+		});
+		$('.theme-color.blue').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_blue);
+			onCPApply();
+		});
+		$('.theme-color.green').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_green);
+			onCPApply();
+		});
+		$('.theme-color.orange').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_orange);
+			onCPApply();
+		});
+		$('.theme-color.yellow').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_yellow);
+			onCPApply();
+		});
+		$('.theme-color.pinkrose').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_pinkrose);
+			onCPApply();
+		});
+		$('.theme-color.deepgrass').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_deepgrass);
+			onCPApply();
+		});	
+		$('.theme-color.green_yellow').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_green_yellow);
+			onCPApply();
+		});
+		$('.theme-color.lavender_pink').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_lavender_pink);
+			onCPApply();
+		});	
+		$('.theme-color.green_cyan').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_green_cyan);
+			onCPApply();
+		});	
+		$('.theme-color.cyan_red').click(function(){
+			$($(this).parent().find('.active')).removeClass('active'); $(this).addClass('active');
+			createCookie(TMPL_NAME+'_'+'theme_color', $(this).html().toLowerCase(), 365);
+			templateZen(array_cyan_red);
+			onCPApply();
+		});	
+    });
+	*/
+	// ]]>
+    </script>
+<?php } ?>

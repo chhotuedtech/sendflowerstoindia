@@ -1,0 +1,26 @@
+<?php 
+global $var_yttheme;
+?>
+<div class="socials-wrap">
+	<ul>
+		<?php if( $var_yttheme->getParam('show_facebook') == 1 ){ ?>
+			<li><a class="show_facebook" title="<?php echo $var_yttheme->getParam('facebook_name');?>" href="<?php echo $var_yttheme->getParam('facebook_url');?>" target="_blank" data-icon="f"><?php echo $var_yttheme->getParam('facebook_name');?></a></li>
+		<?php }?>
+		<?php if( $var_yttheme->getParam('show_twitter') == 1 ){ ?>
+			<li><a class="show_twitter" title="<?php echo $var_yttheme->getParam('twitter_name');?>" href="<?php echo $var_yttheme->getParam('twitter_url');?>" target="_blank" data-icon="l"><?php echo $var_yttheme->getParam('twitter_name');?></a></li>
+		<?php }?>
+		<?php if( $var_yttheme->getParam('show_google') == 1 ){ ?>
+			<li><a class="show_google" title="<?php echo $var_yttheme->getParam('google_name');?>" href="<?php echo $var_yttheme->getParam('google_url');?>" target="_blank" data-icon="g"><?php echo $var_yttheme->getParam('google_name');?></a></li>
+		<?php }?>
+		
+		<?php if( $var_yttheme->getParam('show_pinterest') == 1 ){ ?>
+			<li><a class="show_pinterest" title="<?php echo $var_yttheme->getParam('pinterest_name');?>" href="<?php echo $var_yttheme->getParam('pinterest_url');?>" target="_blank" data-icon="&"><?php echo $var_yttheme->getParam('pinterest_name');?></a></li>
+		<?php }?>	
+		
+		<?php if( $var_yttheme->getParam('show_linkedin') == 1 ){ ?>
+			<li><a class="show_linkedin" title="<?php echo $var_yttheme->getParam('linkedin_name');?>" href="<?php echo $var_yttheme->getParam('linkedin_url');?>" target="_blank" data-icon="i"><?php echo $var_yttheme->getParam('linkedin_name');?></a></li>
+		<?php }?>
+
+	</ul>
+</div>    
+			

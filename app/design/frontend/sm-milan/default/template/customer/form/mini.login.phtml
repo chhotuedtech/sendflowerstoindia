@@ -1,0 +1,61 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog block-popup-login">
+		<a href="javascript:void(0)" title="<?php echo $this->__('Close');?>" class="close close-login" data-dismiss="modal"><?php echo $this->__('Close');?></a>
+		<div class="tt_popup_login"><?php echo $this->__('Sign in Or Register');?></div>
+		<form action="<?php echo $this->getPostActionUrl() ?>" method="post">
+			<?php echo $this->getBlockHtml('formkey'); ?>
+			<div class="block-content">
+				<div class="col-reg registered-account">
+					<input title="<?php echo $this->__('Email Address')?>" type="text" autocomplete="off" name="login[username]" id="mini-login" class="input-text" placeholder="<?php echo $this->__('Email Address');?>" />
+					<input title="<?php echo $this->__('Password')?>" type="password" name="login[password]" id="mini-password" class="input-text" value="........." />
+					<div class="ft-link-p">
+						<a title="<?php echo $this->__('Forgot your password?')?>" href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot your password?') ?></a>	
+					</div>
+					<div class="actions">
+						<div class="submit-login">
+							<input title="<?php echo $this->__('Login')?>" type="submit" class="button btn-submit-login" name="submit" value="<?php echo $this->__('LOGIN') ?>" />
+						</div>	
+					</div>
+					
+				</div>
+				<div class="col-reg login-customer">
+					<h2><?php echo $this->__('NEW HERE?');?></h2>
+					<p class="note-reg"><?php echo $this->__('Registration is free and easy!');?></p>
+					<ul class="list-log">
+						<li><?php echo $this->__('Faster checkout');?></li>
+						<li><?php echo $this->__('Save multiple shipping addresses');?></li>
+						<li><?php echo $this->__('View and track orders and more');?></li>
+					</ul>
+					<a class="btn-reg-popup" title="<?php echo $this->__('Register')?>" href="<?php echo $this->getUrl('customer/account/create')?>"><?php echo $this->__('Create an account');?></a>
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</form>
+	</div>
+</div>

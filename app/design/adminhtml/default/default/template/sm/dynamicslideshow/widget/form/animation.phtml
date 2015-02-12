@@ -1,0 +1,28 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+<tr>
+    <td class="" style="" colspan="2">
+        <div>
+            <div id="layer_animation_preview" class="layer_animation_preview_wrapper">
+                <div id="animation_preview" class="animation_preview_target">
+                    <?php echo Mage::helper('dynamicslideshow')->__('LAYER SAMPLE')?>
+                </div>
+                <div id="animation_control">
+                    <span class="ico on" title="<?php echo Mage::helper('dynamicslideshow')->__('Toogle autorun')?>" onclick="return DnmSl.toggleAutotun()"></span>
+                </div>
+            </div>
+            <?php if ($note = $this->getElement()->getNote()):?>
+            <p class="note" id="note_delay" style="">
+                <span><?php echo $note?></span>
+            </p>
+            <?php endif?>
+        </div>
+    </td>
+</tr>

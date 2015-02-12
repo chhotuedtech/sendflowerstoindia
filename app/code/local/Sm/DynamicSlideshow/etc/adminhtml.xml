@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- <menu>
+        <dynamicslideshow>
+            <title>Sm Dynamic SlideShow</title>
+            <sort_order>80</sort_order>
+            <children>
+                <sliders translate="title">
+                    <title>Manage Sliders</title>
+                    <action>dynamicslideshow/adminhtml_dynamicslideshow</action>
+                </sliders>
+            </children>
+        </dynamicslideshow>
+    </menu> -->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <dynamicslideshow>
+                        <title>Sm Dynamic Slideshow Module</title>
+                        <sort_order>200</sort_order>
+                        <children>
+                            <sliders translate="title">
+                                <title>Manage Sliders</title>
+                                <action>dynamicslideshow/adminhtml_DynamicSlideshow</action>
+                            </sliders>
+                        </children>
+                    </dynamicslideshow>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

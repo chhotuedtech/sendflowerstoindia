@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+	<default>
+		<reference name="head">
+			<!--action method="addItem">
+				<type>skin_css</type>
+				<name>sm/facebook/css/facebook.css</name>
+			</action-->
+		</reference>
+	</default>
+	<facebook_index_index>
+		<reference name="content">
+			<block type="facebook/list" name="facebook.list.default" template="sm/facebook/default.phtml">
+			</block>
+		</reference>
+	</facebook_index_index>
+</layout>

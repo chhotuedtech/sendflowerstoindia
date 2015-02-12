@@ -1,0 +1,32 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+<tr>
+    <td style="" colspan="2">
+        <div class="smdnsl-layer-btn clearfix">
+            <?php echo $this->getChildHtml('addLayerBtn') ?>
+            <?php echo $this->getChildHtml('addLayerImageBtn') ?>
+            <?php echo $this->getChildHtml('addLayerVideoBtn') ?>
+            <?php echo $this->getChildHtml('dupLayerBtn') ?>
+            <?php echo $this->getChildHtml('editLayerBtn') ?>
+            <input type="hidden" id="addLayerImageUrl" value="<?php echo $this->getAddLayerImageUrl()?>"/>
+            <input type="hidden" id="addLayerVideoUrl" value="<?php echo $this->getAddLayerVideoUrl()?>"/>
+            <div class="right">
+                <?php echo $this->getChildHtml('deleteLayerBtn') ?>
+                <?php echo $this->getChildHtml('deleteAllLayersBtn') ?>
+            </div>
+        </div>
+        <div id="divLayers" class="slide_layers" style="<?php echo $this->getDivLayersStyle() ?>"></div>
+        <div class="clearfix"></div>
+        <div id="timeline">
+            <span class="min">ms</span>
+            <span class="max">ms</span>
+        </div>
+    </td>
+</tr>

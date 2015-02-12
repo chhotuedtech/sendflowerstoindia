@@ -1,0 +1,209 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+
+<?php
+$_product = $this->getProduct();
+$_helper = $this->helper('catalog/output');
+global $var_yttheme;
+if ($_product->getImage() != 'no_selection' && $_product->getImage()){
+    $now = date("Y-m-d");
+    $newsFrom= substr($_product->getData('news_from_date'),0,10);
+    $newsTo=  substr($_product->getData('news_to_date'),0,10);
+    $specialprice = Mage::getModel('catalog/product')->load($_product->getId())->getSpecialPrice();
+    
+?>
+
+<?php if( count($this->getGalleryImages()) >= 1){?>   
+<div class="more-views slide-gallery">
+    <div class="wrap-jCarouselLite">
+
+        <div class="jCarouselLite">
+            <ul>
+                <?php foreach ($this->getGalleryImages() as $_image): ?>
+                <?php if($_image->getFile() == $_product->getImage()):?>
+                <li>
+                    <a onclick="$$('.cloud-zoom-gallery').each(function(e,i){e.removeClassName('actived');});this.addClassName('actived')"
+                        class="cloud-zoom-gallery actived"rel="useZoom: 'yt_cloudzoom', smallImage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(470, 470); ?>'"
+                        href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>"
+                        title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"> 
+                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(85,85); ?>"
+                            alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"
+                            title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" width="85" height="85" />
+                    </a>
+                </li>
+                <?php 
+                endif;
+                endforeach; 
+                ?>
+                <?php foreach ($this->getGalleryImages() as $_image):
+                if($_image->getFile() != $_product->getImage()):    ?>
+                <li>
+                    <a onclick="$$('.cloud-zoom-gallery').each(function(e,i){e.removeClassName('actived');});this.addClassName('actived')"
+                        class="cloud-zoom-gallery" rel="useZoom: 'yt_cloudzoom', smallImage: '<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(470,470); ?>'"
+                        href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile()); ?>"
+                        title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"> 
+                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(85,85); ?>"
+                            alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>"
+                            title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" width="85" height="85" />
+                    </a>
+                </li>
+                <?php 
+                endif;
+                endforeach; 
+                ?>
+            </ul>
+
+        </div>
+    </div>
+    <?php if( count($this->getGalleryImages()) >= 3 ){?>   
+    <span class="btn_thumb prev">prev</span> 
+     <span class="btn_thumb next">next</span>
+    <?php }?>
+</div>
+ <?php }?>
+
+<div class="yt-detail-image">
+    <div class="product-image-zoom">
+        <?php $_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(470,470).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';?>
+        <a id="yt_cloudzoom" class="cloud-zoom" rel="zoomWidth:250, zoomHeight:250, adjustX: 20, adjustY: -3" title="<?php echo $this->htmlEscape($this->getImageLabel()); ?>" href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>">
+            <?php
+            echo $_helper->productAttribute($_product, $_img, 'image');
+            ?>
+        </a>
+        <div class="popup-btn  hidden-phone">
+            <a id="yt_popup" class="fancybox-button" data-fancybox-group="button" href="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail'); ?>">
+                Zoom
+            </a>
+            <?php foreach ($this->getGalleryImages() as $_image){ ?>    
+                <a style="display:none;" class="fancybox-button fancybox-image-hidden " data-fancybox-group="button" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())?>">
+                </a>
+            <?php }?>           
+        </div>
+    </div>
+</div>
+
+<?php  } else {
+    $_img = '<img width="460" height="345" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(470,470).'" alt="'.$this->htmlEscape($_product->getImageLabel()).'" />';
+?>
+<a href="#" class=""> 
+<?php
+    echo $_helper->productAttribute($_product, $_img, 'image');
+    if ( $now>=$newsFrom && $now<=$newsTo ){
+        echo "<span class='new-product'>new</span>";
+    }
+    if ( $specialprice ){
+        echo "<span class='sale-product'>sale off</span>";
+    }
+    
+?>
+</a>
+<?php } ?>
+
+<script type="text/javascript">
+    function init(){
+      
+        device = jQuery.fn.detectDevice(); 
+        number_visible = 5 ;
+        
+        jQuery(".jCarouselLite").jCarouselLite({
+            btnNext: ".more-views .next",
+            btnPrev: ".more-views .prev",
+            visible: number_visible,
+            start: 0,
+            circular: true,
+            speed: 300,
+            vertical: true,
+        });                 
+    }
+    init();  
+</script>
+
+<script type="text/javascript">
+   
+    jQuery(document).ready(function($){
+        
+            $('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();  
+            
+            $('.fancybox-image-hidden').each(function(){
+                attr = $(this).attr('href');
+                href_current = $('a#yt_popup').attr('href');
+                if( attr == href_current ){
+                    $(this).removeClass("fancybox-button");
+                }
+            });
+            
+            $('a.cloud-zoom-gallery').bind('click', function(){
+                $('a#yt_popup').attr('href', $(this).attr('href'));
+                $('.fancybox-image-hidden').addClass("fancybox-button");
+                $('.fancybox-image-hidden').each(function(){
+                    attr = $(this).attr('href');
+                    href_current = $('a#yt_popup').attr('href');
+                    if( attr == href_current ){                 
+                        $(this).removeClass("fancybox-button");
+                    }
+                });
+            });         
+            
+            $(".fancybox-button").fancybox({
+                prevEffect      : 'none',
+                nextEffect      : 'none',
+                closeBtn        : true,
+                closeClick : true,
+                nextClick  : true,
+                mouseWheel : false, 
+                helpers     : {
+                    title   : true,
+                    buttons : {}
+                },
+                afterLoad : function() {
+                    this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+                }          
+            });
+            
+        
+                
+        $('.jCarouselLite ul li a').each(function(){
+            if($(this).hasClass('actived')){
+                $(this).parent().addClass('selected');  
+            }               
+        });
+                    
+        $('.jCarouselLite ul li a').click(function(){
+            $this = $(this);
+            $('.jCarouselLite ul li a').parent().removeClass('selected');
+            if($this.hasClass('actived')){              
+                $this.parent().addClass('selected');
+            }
+        });
+    });
+</script>

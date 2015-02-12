@@ -1,0 +1,308 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */ 
+ 
+ 
+include (dirname(dirname(__FILE__)).'/sm/yt_prepar.php');
+global $var_yttheme;
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<?php if( $var_yttheme->getParam('device_responsive') == 1 ){?>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<?php }?>
+
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+<script type="text/javascript">
+//<![CDATA[
+	var SKIN_URL = '<?php echo $var_yttheme->skinurl();?>';
+	var TMPL_NAME = '<?php echo $var_yttheme->template;?>';
+	var TMPL_COOKIE = <?php echo json_encode($paramscookie); ?>;
+//]]>
+</script>
+
+<link rel="stylesheet" href="<?php echo $this->getSkinUrl('css/theme-'.$var_yttheme->getParam('theme_color').'.css') ?>" type="text/css" />
+
+<?php if( $var_yttheme->getParam('direction') == 2) { ?>
+	<link rel="stylesheet" href="<?php echo $this->getSkinUrl('css/bootstrap/bootstrap-rtl.css'); ?>" type="text/css" />
+<?php } ?>
+
+<?php 
+$rich_snippet     = Mage::getStoreConfig('milan_cfg/rich_snippets_setting/use_rich_snippet');
+$google_plus_href = Mage::getStoreConfig('milan_cfg/rich_snippets_setting/google_plus_href');
+if ( $rich_snippet == 1 && $google_plus_href !="" ){?>
+<link rel="author" href="<?php echo $google_plus_href;?>" />
+<?php }?>
+
+<?php 
+if( isset($_SERVER['HTTPS'] )  && $_SERVER['HTTPS'] != 'off' ) {
+    $http = 'https';
+} else {
+    $http = 'http';
+}
+$googleWebFont = $var_yttheme->getParam('googleWebFont');
+$googleWebFontTargets = $var_yttheme->getParam('googleWebFontTargets');
+if ( $googleWebFont != "" && $googleWebFont != "" ) {
+	$googleWebFontFamily = str_replace(" ","+",$googleWebFont);
+	$googleWebFontFamily = strpos($googleWebFontFamily, ':')?substr($googleWebFontFamily, 0, strpos($googleWebFontFamily, ':')):$googleWebFontFamily;
+}
+?>
+<link rel="stylesheet" type="text/css" href="<?php echo $http;?>://fonts.googleapis.com/css?family=<?php echo $googleWebFontFamily; ?>" media="all" />
+<style type="text/css">
+<?php
+// Body Font size
+echo 'body{	
+		font-size:'.$var_yttheme->getParam('fontsize').';	
+	}';	
+if( trim($var_yttheme->getParam('font_name'))!='' )
+	echo '
+		body{
+			font-family:'.$var_yttheme->getParam('font_name').';	
+		}';
+if( trim($googleWebFontTargets)!="" )
+	echo $googleWebFontTargets.'{
+			font-family:'.$googleWebFont.', serif !important
+		}';
+	echo '
+		body.'.$var_yttheme->template.'{	
+			color:#'.$var_yttheme->getParam('textcolor').' ;			
+		}
+		body.'.$var_yttheme->template.'{	
+			background-color:#'.$var_yttheme->getParam('bgcolor').' ;
+		}
+		a,
+		.store-info .list-info .item-info .info-content > h2{	
+			color:#'.$var_yttheme->getParam('linkcolor').' ;	
+		}
+		#yt_left .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > div div.sm_megamenu_title a:before, 
+		#yt_right .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > div div.sm_megamenu_title a:before{
+			background-color:#'.$var_yttheme->getParam('linkcolor').' ;	
+		}
+		a:hover{	
+			color:#'.$var_yttheme->getParam('linkcolorhover').' ;	
+		}
+		#yt_left .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > div div.sm_megamenu_title a:hover:before, 
+		#yt_right .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > div div.sm_megamenu_title a:hover:before{
+			background-color:#'.$var_yttheme->getParam('linkcolorhover').' ;
+		}
+		#yt_wrapper .page-title:before{
+			background-color:#'.$var_yttheme->getParam('textcolor').' ;
+		}		
+		';
+if ( $var_yttheme->getParam('usebgimage') == 1 && $var_yttheme->getParam('usecustomizeimage') == 1 && $var_yttheme->getParam('bgcustomizeimage') !="" ){
+	$media_base = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+	echo '
+		body.'.$var_yttheme->template.'{	
+			background-attachment: fixed;
+			background-image: url('.$media_base.'pattern/'.$var_yttheme->getParam('bgcustomizeimage').');
+			background-repeat:'.$var_yttheme->getParam('bgimagerepeat').' ;	
+			background-position:'.$var_yttheme->getParam('bgimageposition').' ;				
+		}		
+		';
+}		
+if ( $var_yttheme->getParam('usebgimage') == 1 ){
+	echo '
+		.pattern1,
+		.pattern2,
+		.pattern3,
+		.pattern4,
+		.pattern5,
+		.pattern6,
+		.pattern7,
+		.pattern8{	
+			background-repeat:'.$var_yttheme->getParam('bgimagerepeat').' ;	
+			background-position:'.$var_yttheme->getParam('bgimageposition').' ;			
+		}		
+		';
+}
+//detail config
+if ( $var_yttheme->getParam('show_imagezoom') == 0 ){
+	echo '
+		.cloud-zoom-big {
+			display: none !important;
+		}
+		.cloud-zoom-lens {
+			cursor: pointer;	
+		}
+		';	
+}
+if ( $var_yttheme->getParam('zoom_mode') == 2 ){
+	echo '
+		.cloud-zoom-lens{	
+			border: 1px solid #ccc;
+			background: #fff;			
+		}
+		.cloud-zoom-big {
+			overflow: hidden;
+			border: 2px solid #ccc;
+			top: 0 !important;
+		}		
+		';	
+}else{
+	echo '
+		.cloud-zoom-big {
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+		';	
+}
+//Advanved config
+if ( $var_yttheme->getParam('show_addtocart') == 0 ){
+	echo '
+		.item-addcart,
+		.product-addcart,
+		.header-cart,
+		.wrap-qty,
+		.add-to-cart{
+			display: none;
+		}
+		';
+}
+if ( $var_yttheme->getParam('show_wishlist') == 0 ){
+	echo '
+		.item-wishlist,
+		.product-wishlist,
+		.add-to-links .wishlist{
+			display: none;
+		}
+		';
+}
+if ( $var_yttheme->getParam('show_compare') == 0 ){
+	echo '
+		.item-compare,
+		.product-compare,
+		.add-to-links .compare{
+			display: none;
+		}
+		';
+}
+if ( $var_yttheme->getParam('custom_css') != '' ){
+	echo $var_yttheme->getParam('custom_css');
+}
+?>
+</style>
+
+<script type="text/javascript">
+//<![CDATA[
+	jQuery(document).ready(function($){  
+	
+		// show-hidden login form 
+		$(".header-login .login-quick").hide();
+		$('.header-login a.login').click(function(){
+			$this = $(this);
+			$this.toggleClass("actived");
+			$(".login-quick").slideToggle("fast");
+			$('.mini-cartpro .block-content').css({'display': 'none'});
+		});
+		
+		//show-hidden account user
+		$(".header-user .links").hide();
+		$('.header-user span.icon-user').click(function(){
+			$this = $(this);
+			$this.toggleClass("actived");
+			$(".header-user .links").slideToggle("fast");
+		});
+		
+		//style for select option, radio...
+		$("#chk_remember").uniform();
+		$("#dont-show-again").uniform();
+		$("#poll-answers .radio").uniform();
+		$("#product-options-wrapper select").uniform();
+		$("#toolbar-limit select").uniform();
+		$(".toolbar .select-inner select").uniform();
+		
+		//change select,option -> ul,li	
+		$("select").jqTransform();
+		$(".block-currency").jqTransform();
+		$(".language-switcher").jqTransform();	
+		$(".language-switcher .jqTransformSelectWrapper").each(function(){
+			arr_bg = new Array();
+			arr_tit = new Array(); i=0;
+			$(this).find('select option').each(function(){
+				arr_bg[i] = $(this).css('background-image'); 
+				arr_tit[i] = $(this).attr('title');
+				i++;
+			})
+			j=0;
+			$(this).find('ul li').each(function(){
+				if(arr_bg[j]!="none"){
+					$(this).find('a').css('background-image', arr_bg[j]);
+				}
+				$(this).find('a').attr('title', arr_tit[j]);
+				j++;
+			});
+		});
+		$('.language-switcher .jqTransformSelectWrapper ul li a.selected,.language-switcher .jqTransformSelectWrapper div span').css('background-image', $('#select-language option[selected="selected"]').css('background-image'));
+		$('.language-switcher .jqTransformSelectWrapper div span').attr('title', $('#select-language option[selected="selected"]').attr('title'));	
+		
+		<?php if( $var_yttheme->getParam('menuontop') == 1 ){ ?>		
+			$window = $(window);
+			//menu_offset_top = $jsmart('.yt-header-under').offset().top;	
+			menu_offset_top = 165;
+			function processScroll() {
+				var scrollTop = $window.scrollTop();
+				if ( scrollTop >= menu_offset_top) {
+					$('.yt-header-under').addClass('menu-on-top');
+				} else if (scrollTop <= menu_offset_top) {
+					$('.yt-header-under').removeClass('menu-on-top');
+				}
+			}
+
+			if( $('.yt-header-under') ){
+				// fix sub nav on scroll
+				processScroll();
+				$window.scroll(function(){
+					processScroll();
+				});
+			}				
+		<?php }?>
+		//custom js (theme config) 
+		<?php if ( $var_yttheme->getParam('custom_js') != '' ){
+			echo $var_yttheme->getParam('custom_js');
+		}?>		
+	});
+//]]>	
+</script>
+
+

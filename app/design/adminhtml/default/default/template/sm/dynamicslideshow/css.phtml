@@ -1,0 +1,25 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+<div style="text-align: right;margin-bottom: 10px">
+    <?php echo $this->getChildHtml('reset')?>
+    <?php echo $this->getChildHtml('save')?>
+    <span style="display: none" id="cssSaving">
+    <img style="vertical-align: middle" src="
+        <?php echo $this->getSkinUrl()?>images/rule-ajax-loader.gif"/>
+    </span>
+</div>
+<div>
+    <textarea id="css_editor" style="width: 100%;padding: 0" rows="35">
+    <?php echo $this->getCssContent()?>
+    </textarea>
+</div>
+<script type="text/javascript">
+    cssEditor = CodeMirror.fromTextArea(document.getElementById('css_editor'));
+</script>

@@ -1,0 +1,62 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+
+<tr>
+    <td class="label"><?php echo $this->getElement()->getLabel() ?></td>
+    <td class="grid" >
+        <table cellspacing="0" style="width:285px;" class="data border" id="<?php echo $this->getElement()->getHtmlId() ?>">
+            <colgroup>
+                <col/>
+                <col width="1"/>
+            </colgroup>
+            <thead>
+                <tr class="headings">
+                    <th><?php echo Mage::helper('dynamicslideshow')->__('Link')?></th>
+                    <th><?php echo Mage::helper('dynamicslideshow')->__('Action')?></th>
+                </tr>
+            </thead>
+            <tbody id="<?php echo $this->getElement()->getHtmlId() ?>_container"></tbody>
+            <tfoot>
+                <td colspan="2" class="a-right"><?php echo $this->getAddButtonHtml() ?></td>
+            </tfoot>
+        </table>
+        <?php if ($note = $this->getElement()->getNote()):?>
+        <p class="note" id="note_delay">
+            <span><?php echo $note?></span>
+        </p>
+        <?php endif?>
+    </td>
+</tr>
+
+<script type="text/javascript">
+    var _font = '<tr id="font-{{id}}">'+
+        '<td><input type="text" class="input-text" style="width:98%;" value="{{link}}" name="google_font[]"/>'+
+        '<td><?php echo $this->getDeleteButtonHtml()?></td>'+
+        '</tr>';
+    var dnSl = {
+        template: new Template(_font, new RegExp('(^|.|\\r|\\n)({{\\s*(\\w+)\\s*}})', "")),
+        itemsCount: 0,
+        container: $('<?php echo $this->getElement()->getHtmlId() ?>_container'),
+        add: function(link){
+            var data = {
+                link: link || '',
+                id: ++this.itemsCount
+            };
+            this.container.insert({bottom :this.template.evaluate(data)});
+        },
+        remove: function(id){
+            var tr = this.container.down('tr#font-' + id);
+            if (tr) tr.remove();
+        }
+    };
+    <?php foreach ($this->getFonts() as $font):?>
+    dnSl.add(<?php echo json_encode($font) ?>);
+    <?php endforeach ?>
+</script>

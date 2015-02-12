@@ -1,0 +1,47 @@
+<?php
+/**
+ * Redirect view file
+ *
+ * @category    View
+ * @package     Junaidbhura_Ccavenue
+ * @author      Junaid Bhura <info@junaidbhura.com>
+ */
+?>
+
+<?php
+// Get CC Avenue Details
+$ccavenue = Mage::registry( 'ccavenue' );
+?>
+
+<p>Redirecting... If you have been here for a while, please <a href="javascript:document.ccavenueform.submit();">click here</a>.</p>
+<p>Make sure you don't press the 'Back' button in your browser till your order is complete.</p>
+
+<form name="ccavenueform" method="post" action="<?php echo $ccavenue['action']; ?>">
+	<input type="hidden" name="Merchant_Id" value="<?php echo $ccavenue['merchant_id']; ?>">
+	<input type="hidden" name="Amount" value="<?php echo $ccavenue['amount']; ?>">
+	<input type="hidden" name="Order_Id" value="<?php echo $ccavenue['order_id']; ?>">
+	<input type="hidden" name="Redirect_Url" value="<?php echo $ccavenue['redirect_url']; ?>">
+	<input type="hidden" name="Checksum" value="<?php echo $ccavenue['checksum']; ?>">
+	<input type="hidden" name="billing_cust_name" value="<?php echo $ccavenue['billing_cust_name']; ?>"> 
+	<input type="hidden" name="billing_cust_address" value="<?php echo $ccavenue['billing_cust_address']; ?>"> 
+	<input type="hidden" name="billing_cust_country" value="<?php echo $ccavenue['billing_cust_country']; ?>"> 
+	<input type="hidden" name="billing_cust_state" value="<?php echo $ccavenue['billing_cust_state']; ?>"> 
+	<input type="hidden" name="billing_zip" value="<?php echo $ccavenue['billing_zip']; ?>"> 
+	<input type="hidden" name="billing_cust_tel" value="<?php echo $ccavenue['billing_cust_tel']; ?>"> 
+	<input type="hidden" name="billing_cust_email" value="<?php echo $ccavenue['billing_cust_email']; ?>"> 
+	<input type="hidden" name="delivery_cust_name" value="<?php echo $ccavenue['delivery_cust_name']; ?>"> 
+	<input type="hidden" name="delivery_cust_address" value="<?php echo $ccavenue['delivery_cust_address']; ?>"> 
+	<input type="hidden" name="delivery_cust_country" value="<?php echo $ccavenue['delivery_cust_country']; ?>"> 
+	<input type="hidden" name="delivery_cust_state" value="<?php echo $ccavenue['delivery_cust_state']; ?>"> 
+	<input type="hidden" name="delivery_cust_tel" value="<?php echo $ccavenue['delivery_cust_tel']; ?>"> 
+	<input type="hidden" name="billing_cust_notes" value="<?php echo $ccavenue['billing_cust_notes']; ?>"> 
+	<input type="hidden" name="Merchant_Param" value="<?php echo $ccavenue['merchant_param']; ?>"> 
+	<input type="hidden" name="billing_cust_city" value="<?php echo $ccavenue['billing_city']; ?>"> 
+	<input type="hidden" name="billing_zip_code" value="<?php echo $ccavenue['billing_zip']; ?>"> 
+	<input type="hidden" name="delivery_cust_city" value="<?php echo $ccavenue['delivery_city']; ?>"> 
+	<input type="hidden" name="delivery_zip_code" value="<?php echo $ccavenue['delivery_zip']; ?>"> 
+</form>
+
+<script type="text/javascript">
+document.ccavenueform.submit();
+</script>

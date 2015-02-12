@@ -1,0 +1,54 @@
+<?php
+$_product    = $this->getProduct();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+ <?php 
+	$jsonString = $this->getJsonConfig();
+	 $array = Mage::helper('core')->jsonDecode($jsonString); 
+	 $arr_product = array();	
+	 foreach( $array['attributes'] as $item){
+		for($i=0; $i<count($item['options']); $i++){
+		
+			$__product = Mage::getModel('catalog/product')->load($item['options'][$i]['products'][0]);			
+			$max_sale_qty = $__product->getStockItem()->getMaxSaleQty();
+			$min_sale_qty = $__product->getStockItem()->getMinSaleQty();
+			$qtyStock   = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($__product)->getQty();
+			$manage_stock = (int)Mage::getModel('cataloginventory/stock_item')->loadByProduct($__product)->getManageStock();
+
+	 ?>
+	 <input type="hidden" id="minQty_<?php echo $item['options'][$i]['id']; ?>" name="minQty" value="<?php echo $min_sale_qty ?>"/>
+	 <input type="hidden" id="maxQty_<?php echo $item['options'][$i]['id']; ?>" name="maxQty" value="<?php echo $max_sale_qty ?>"/>
+	 <input type="hidden" id="qty_stock_<?php echo $item['options'][$i]['id']; ?>" name="qty_stock" value="<?php echo $qtyStock; ?>"/>
+	 <input type="hidden" id="manage_stock_<?php echo $item['options'][$i]['id']; ?>" name="managestock" value="<?php echo $manage_stock; ?>"/>
+	 <?php }
+	 }
+	 ?>
+	  
+<?php if ($_product->isSaleable() && count($_attributes)):?>
+    <dl>
+    <?php foreach($_attributes as $_attribute): ?>
+		<div class="w-option">
+        <dt><label class="required"><em>*</em><?php echo $_attribute->getLabel() ?></label></dt>
+        <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
+            <div class="input-box">
+                <select  name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="configurable-product required-entry super-attribute-select">
+                    <option><?php echo $this->__('Choose an Option...') ?></option>
+                  </select>
+              </div>
+        </dd>
+		</div>
+    <?php endforeach; ?>
+    </dl>
+    <script type="text/javascript">
+        var spConfig = new Product.Config(<?php echo $this->getJsonConfig() ?>);
+    </script>
+<?php endif;?>
+
+<script>
+	jQuery(document).ready(function($){	
+		$(".configurable-product").change(function(){
+			$('#product-options-wrapper .validation-advice').hide();
+		});
+	});
+
+</script>

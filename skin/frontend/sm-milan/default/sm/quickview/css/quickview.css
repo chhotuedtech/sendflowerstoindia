@@ -1,0 +1,35 @@
+
+
+.sm_quickview_handler:hover,
+.sm_quickview_handler:focus
+{
+    color: #FFFFFF;
+	text-decoration:none;	
+	cursor:pointer;
+}
+
+.sm_quickview_handler:focus{
+	outline:none outline;
+}
+
+.fancybox-lock .zoomContainer{
+	-webkit-transform:none!important;
+}
+
+.fancybox-lock .zoomContainer .zoomLens,
+.fancybox-lock .zoomContainer .zoomWindow {
+	z-index:8021!important;
+}
+
+.quickview-main .product-image-thumbs li:first-child{
+	margin-left:0;
+}
+
+
+.quickview-main .product-collateral{
+	display:none;
+}
+
+.products-list li.item .f-fix .sm_quickview_handler{
+	float:left;
+}

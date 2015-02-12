@@ -1,0 +1,196 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php if($this->getItems()->getSize()): 
+global $show_rich_snippet;
+$show_rich_snippet = 0;
+?>
+<div class="block block-related">
+    <div class="block-content related">
+		<div class="customNavigation nav-related">
+			<a class="btn-nav btn-next next-related" title="Next">Next</a>
+			<a class="btn-nav btn-prev prev-related" title="Previous">Previous</a>
+		</div>
+		<script>
+			jQuery(document).ready(function($) {
+				var owl_re = $(".block-related");
+
+				$(".next-related").click(function(){
+					owl_re.trigger('owl.next');
+				});
+				$(".prev-related").click(function(){
+					owl_re.trigger('owl.prev');
+				});
+			});
+		</script>
+		<div class="overflow-owl-slider">
+			<div class="wrapper-owl-slider">
+				<div class="block-related slider-re-up-owl">
+				<?php foreach($this->getItems() as $_item): 
+					$id_product = Mage::getModel('catalog/product')->load($_item->getId());
+					//$count_input_qty++;
+					$now = date("Y-m-d");
+					$newsFrom= substr($_item->getData('news_from_date'),0,10);
+					$newsTo=  substr($_item->getData('news_to_date'),0,10);
+					
+					$specialprice = Mage::getModel('catalog/product')->load($_item->getId())->getSpecialPrice();
+					//echo $specialprice . '-hau<br/>';
+					$price = Mage::getModel('catalog/product')->load($_item->getId())->getPrice();
+					if ($specialprice == '' ) {
+						$store_id = Mage::app()->getStore()->getStoreId();
+						$discounted_price = Mage::getResourceModel('catalogrule/rule')->getRulePrice( 
+										Mage::app()->getLocale()->storeTimeStamp($store_id), 
+										Mage::app()->getStore($store_id)->getWebsiteId(), 
+										Mage::getSingleton('customer/session')->getCustomerGroupId(), 
+										$_item->getId());
+						$specialprice = $discounted_price;
+						
+					}
+				?>
+					<div class="item respl-item">
+						<div class="item-inner">
+							<div class="w-image-box">
+								<div class="item-image">
+									<a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image">
+										<?php if($_item->getThumbnail() != $_item->getSmallImage()) { ?> 
+										   <img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" />
+										   <img class="thumnail-image image-hover" src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(370,370) ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_item, 'thumbnail'), null, true) ?>" />
+										<?php } else { ?>
+											<img class="small-image" src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(370,370); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_item, 'small_image'), null, true) ?>" />
+										<?php } ?>									
+									
+									</a>
+								</div>
+								
+								<?php if ($newsFrom !="" && $now>=$newsFrom && ($now<=$newsTo || $newsTo=="")){?>
+									<div class="new-item">
+											<?php echo $this->__('New'); ?>
+									</div>
+								<?php }?>
+												
+								<?php if ( $specialprice ){ ?>
+									<div class="sale-item">
+										<?php echo $this->__('Save'); ?>
+										<?php
+											$saleof= abs(($specialprice/($_item->getPrice()))*100-100);
+											print_r(floor($saleof));
+										?>%
+									</div>
+								<?php }?>
+	
+							</div>
+							
+							<div class="item-info">
+
+								<div class="item-title">
+									<a title="<?php echo $this->escapeHtml($_item->getName()) ?>" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a>
+								</div>
+								
+								<div class="item-review">
+									<?php  echo $this->getReviewsSummaryHtml($_item, "short", true); ?>
+								</div>
+
+								<div class="item-price">
+									<?php echo $this->getPriceHtml($_item, true, '-related') ?>
+								</div>
+								
+								<div class="action-button">
+									<div class="btn-top">
+										<?php if($_item->isSaleable()): ?>
+											<button class="item-addcart btn-cart" title="<?php echo $this->__('Add to Cart') ?>" href="javascript:void(0);" onclick="setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')">
+												<span><span><?php echo $this->__('Add to Cart') ?></span></span>
+											</button>
+											<?php else: ?>
+											<p class="availability out-of-stock">
+												<span><?php echo $this->__('Out of stock') ?> </span>
+											</p>
+										<?php endif; ?>	
+									</div>
+									
+									<div class="btn-bottom">
+										<a style="display:none" title="<?php echo $this->escapeHtml($_item->getName()) ?>" href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a>
+										<?php if ( $this->helper('wishlist')->isAllow() ) : ?>
+											<a class="btn-button item-wishlist" href="<?php echo $this->helper('wishlist')->getAddUrl($_item) ?>" title="<?php echo $this->__('Add to Wishlist') ?>">
+												<span><?php echo $this->__('Add to Wishlist') ?></span>
+											</a>
+										<?php endif; ?>
+											
+										<?php if( $_compareUrl=$this->getAddToCompareUrl($_item) ): ?>
+											<a class="btn-button item-compare" href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare'); ?>">
+												<span><?php echo $this->__('Add to Compare') ?></span>
+											</a>
+										<?php endif;?>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				<?php endforeach ?>
+				</div>
+			</div>
+		</div>
+        <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.related-checkbox').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct)
+    });
+
+    var relatedProductsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (relatedProductsCheckFlag == false) {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            relatedProductsCheckFlag = true;
+            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+        } else {
+            $$('.related-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            relatedProductsCheckFlag = false;
+            txt.innerHTML="<?php echo $this->__('select all') ?>";
+        }
+        addRelatedToProduct();
+    }
+
+    function addRelatedToProduct(){
+        var checkboxes = $$('.related-checkbox');
+        var values = [];
+        for(var i=0;i<checkboxes.length;i++){
+            if(checkboxes[i].checked) values.push(checkboxes[i].value);
+        }
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+</div>
+<?php endif ?>

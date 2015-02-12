@@ -1,0 +1,79 @@
+<?php $posts = $this->getPosts(); 
+$count_item = 6;
+?>
+
+<?php
+	
+?>
+<div class="col-lg-4 col-md-4 col-sm-6 from_the_blog">
+	<div class="bottom-title">
+		<h2 class="bt-title"><?php echo $this->__('FROM THE BLOG')?></h2>
+	</div>
+	<div class="des-home-block with-bg">
+		<p class="des-ct"><?php echo $this->__('Ut dignissim aliquet nibh tristique')?></p>
+		
+	</div>
+	<div class="row">
+		<div class="slider-blog">
+		<?php $i=0; $count = 0; $nb_rows = 2;foreach ($posts as $post): $count ++;?>
+		<?php if ($count % $nb_rows == 1 || $nb_rows == 1) { ?>
+		<div class="item">
+		<?php } ?>
+			<div class="item-blog col-lg-6 col-md-6 col-xs-6">
+				<?php
+					$pattern = "/<img .+\/>/";
+					$subject = $post->getPostContent();
+					$result = preg_match( $pattern, $subject , $matches , PREG_OFFSET_CAPTURE );
+					$matched =$matches[0];
+					$first_img=$matched[0];
+				?>
+				<div class="img-blog">
+					<a class="img-link" title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getAddress(); ?>" ><?php echo($first_img);?></a>
+				</div>
+				<div class="blog-info">
+					<div class="postTitle">
+						<h2><a title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getAddress(); ?>" ><?php echo $post->getTitle(); ?></a></h2>
+					</div>
+					
+					<p class="date-blog"><?php echo $post->getCreatedTime(); ?></p>
+					
+					<div class="postContent">
+						<?php $text = str_replace($first_img, '', $post->getPostContent()); 
+							$html = strip_tags($text);
+							echo substr($html,1,80);
+						?>
+					</div>
+				</div>
+			</div>
+		<?php if (($count % $nb_rows == 0 || $count == $count_item)) { ?>
+		</div>
+		<?php } ?>
+		<?php $i++;?>
+		
+		<?php if($i==6) break;?>
+		<?php endforeach; ?>
+		</div>
+		<a class="view-all" href="<?php echo $this->getUrl('blog')?>" title="<?php echo $this->__('View All')?>"><?php echo $this->__('View All')?></a>
+		
+			<script>
+				jQuery(document).ready(function($) {
+					var owl_blog = $(".slider-blog");
+					owl_blog.owlCarousel({
+						itemsCustom : [
+						[0, 1],
+						[480, 1],
+						[768, 1],
+						[992, 1],
+						[1200, 1]
+						], 
+
+						slideSpeed : 300,
+						stopOnHover: true,
+						paginationSpeed : 400,
+						autoPlay:false,
+						pagination: true,
+					});	  
+				});	
+			</script>
+	</div>
+</div>

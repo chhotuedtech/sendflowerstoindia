@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <dynamicslideshow_adminhtml_dynamicslideshow_index>
+        <reference name="head" />
+    </dynamicslideshow_adminhtml_dynamicslideshow_index>
+    <dynamicslideshow_adminhtml_dynamicslideshow_edit>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addJs">
+                <file>jscolor/jscolor.js</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/font_awesome/css/font_awesome.css</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/renderhelper.js</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/css/smdnsl.css</file>
+            </action>
+        </reference>
+    </dynamicslideshow_adminhtml_dynamicslideshow_edit>
+    <dynamicslideshow_adminhtml_dynamicslideshow_slides>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="dynamicslideshow/adminhtml_sliders_edit_tab_slides" name="dynamicslideshow_sliders_edit_tab_slides" />
+        </block>
+        <action method="addItem">
+            <type>skin_css</type>
+            <file>sm/dynamicslideshow/css/smdnsl.css</file>
+        </action>
+    </dynamicslideshow_adminhtml_dynamicslideshow_slides>
+    <dynamicslideshow_adminhtml_dynamicslideshow_addslides>
+        <reference name="head">
+            <action method="addJs">
+                <file>jscolor/jscolor.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/jquery-1.11.1.min.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/jquery-noconflict.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/jquery-ui.min.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/rs-plugin/js/jquery.themepunch.plugins.min.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/SplitText.min.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/renderslide.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/renderhelper.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/codemirror/codemirror.js</file>
+            </action>
+            <action method="addJs">
+                <file>sm/dynamicslideshow/js/codemirror/mode/css.js</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/css/jquery-ui-1.10.3.min.css</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/font_awesome/css/font_awesome.css</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/css/codemirror.css</file>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <file>sm/dynamicslideshow/css/smdnsl.css</file>
+            </action>
+        </reference>
+        <update handle="editor" />
+    </dynamicslideshow_adminhtml_dynamicslideshow_addslides>
+    <dynamicslideshow_adminhtml_dynamicslideshow_video>
+        <remove name="footer" />
+        <remove name="head" />
+        <reference name="content">
+            <block type="dynamicslideshow/adminhtml_slides_video" name="adminhtml_slides_video" />
+        </reference>
+    </dynamicslideshow_adminhtml_dynamicslideshow_video>
+    <dynamicslideshow_adminhtml_dynamicslideshow_animation>
+        <remove name="footer" />
+        <remove name="head" />
+        <reference name="content">
+            <block type="dynamicslideshow/adminhtml_slides_animation" name="adminhtml_slides_animation" />
+        </reference>
+    </dynamicslideshow_adminhtml_dynamicslideshow_animation>
+    <dynamicslideshow_adminhtml_dynamicslideshow_css>
+        <remove name="footer" />
+        <remove name="head" />
+        <reference name="content">
+            <block type="dynamicslideshow/adminhtml_slides_css" name="adminhtml_slides_css" />
+        </reference>
+    </dynamicslideshow_adminhtml_dynamicslideshow_css>
+</layout>

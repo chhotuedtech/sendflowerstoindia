@@ -1,0 +1,42 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+<tr>
+    <td class="label">
+        <?php echo $this->getElement()->getLabel() ?>
+    </td>
+    <td class="value">
+        <input
+            id="
+            <?php echo $this->getElement()->getHtmlId()?>"
+            name="
+            <?php echo $this->getElement()->getName()?>"
+            value="
+            <?php echo $this->getElement()->getValue()?>"
+            title="
+            <?php echo $this->getElement()->getTitle()?>"
+            onclick="
+            <?php echo $this->getElement()->getData('onclick')?>"
+            onchange="
+            <?php echo $this->getElement()->getData('onchange')?>"
+            <?php if ($this->getElement()->getData('readonly') == true):?>readonly
+            <?php endif ?>
+            type="text"
+            class="input-text"
+            style="width:243px;vertical-align:top;"/>
+        <?php echo  $this->getChildHtml('getBtn') ?>
+        <?php if ($note = $this->getElement()->getData('note')):?>
+        <p class="note" id="note_delay">
+            <span>
+            <?php echo $note?>
+            </span>
+        </p>
+        <?php endif?>
+    </td>
+</tr>

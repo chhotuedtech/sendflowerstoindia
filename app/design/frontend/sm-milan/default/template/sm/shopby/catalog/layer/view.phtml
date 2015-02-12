@@ -1,0 +1,96 @@
+<?php
+/*------------------------------------------------------------------------
+ # SM Shop By - Version 1.0
+ # Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ # @license - Copyrighted Commercial Software
+ # Author: YouTech Company
+ # Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/?>
+
+<?php if ($this->canShowBlock()): ?>
+    <?php if (!$this->getRequest()->isAjax()): ?>
+    <div id="layered-navigation">
+    <?php endif; ?>
+        <div class="block block-layered-nav">
+            <div class="block-title">
+                <strong><span><?php echo $this->__('Refine by') ?></span></strong>
+            </div>
+            <?php echo $this->getStateHtml() ?>
+            <div class="block-content">
+				
+                <?php if ($this->getLayer()->getState()->getFilters()): ?>
+                    <div class="actions"><a class="clear-fillter" href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+                <?php endif; ?>
+				
+                <?php if ($this->canShowOptions()): ?>
+                    <!--<p class="block-subtitle"><?php echo $this->__('Shopping Options') ?></p>-->
+                    <dl id="narrow-by-list">
+                        <?php $_filters = $this->getFilters() ?>
+						<?php $i=0;?>
+                        <?php foreach ($_filters as $_filter): ?>
+                            <?php if ($_filter->getItemsCount()): $i++;?>
+								<div class="filter-wrapp <?php echo $this->__($_filter->getName()) ?>">
+									<dt class="<?php echo $this->__($_filter->getName()) ?>"><span><?php echo $this->__($_filter->getName()) ?></span></dt>
+									<dd class="scroll-<?php echo $i;?>"><?php echo $_filter->getHtml() ?></dd>
+								</div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+							
+						
+                    </dl>
+					
+                    <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+                <?php endif; ?>
+				<!--
+                <?php if ($this->getLayer()->getState()->getFilters()): ?>
+                    <div class="actions"><a href="<?php echo $this->getClearUrl() ?>"><?php echo $this->__('Clear All') ?></a></div>
+                <?php endif; ?>
+				-->
+            </div>
+        </div>
+		<?php
+			$dr = Mage::getStoreConfig('milan_cfg/general/direction');
+			//var_dump($dr);
+		?>
+		<script>
+			jQuery.noConflict();
+			jQuery(".filter-wrapp dd").niceScroll({
+				touchbehavior:true,
+				cursorwidth:"14px",
+				cursorborderradius:"7px",
+				background:"#cecece",
+				cursorborder:"0",
+				grabcursorenabled:false,
+				<?php if( $dr == 2 ){ ?>
+					railalign:"left",
+				<?php } ?>
+				autohidemode:false
+			});
+		</script>
+    <?php if (!$this->getRequest()->isAjax()): ?>
+    </div>
+	
+    <?php endif; ?>
+	
+	<?php if($this->getRequest()->isAjax()==true) {?>
+		<script>
+			//alert('aaaaa');
+			jQuery.noConflict();
+			
+			jQuery(".filter-wrapp dd").getNiceScroll().remove();
+			jQuery("div[id^='ascrail']").remove();
+			jQuery(".filter-wrapp dd").niceScroll({
+                touchbehavior:true,
+				cursorwidth:"14px",
+				cursorborderradius:"7px",
+				background:"#cecece",
+				cursorborder:"0",
+				grabcursorenabled:false,
+				<?php if( $dr == 2 ){ ?>
+					railalign:"left",
+				<?php } ?>
+				autohidemode:false
+            });
+		</script>
+	<?php } ?>
+<?php endif; ?>

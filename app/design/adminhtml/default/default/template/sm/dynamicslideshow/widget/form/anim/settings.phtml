@@ -1,0 +1,79 @@
+<?php
+/**
+ * @package SM Dynamic Slideshow 
+ * @version 2.0.0
+ * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @copyright Copyright (c) 2014 YouTech Company. All Rights Reserved.
+ * @author YouTech Company http://www.magentech.com
+ */
+?>
+
+<tr>
+    <td colspan="2">
+        <div style="height: 220px" class="anim-slider-wrapper">
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-movex"><input name="anim-movex" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-movey"><input name="anim-movey" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-movez"><input name="anim-movez" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-rotationx"><input name="anim-rotationx" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-rotationy"><input name="anim-rotationy" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-rotationz"><input name="anim-rotationz" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-scalex"><input name="anim-scalex" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-scaley"><input name="anim-scaley" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-skewx"><input name="anim-skewx" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-skewy"><input name="anim-skewy" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-opacity"><input name="anim-opacity" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-perspective"><input name="anim-perspective" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-originx"><input name="anim-originx" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+            <div class="anim-wrapper">
+                <div class="anim-slider" id="anim-originy"><input name="anim-originy" type="text" class="anim-value input-text validate-number"/></div>
+            </div>
+        </div>
+    </td>
+</tr>
+<script type="text/javascript">
+    if (typeof DnmSl != 'undefined'){
+        DnmSl.initCustomAnimSlider([
+            {id: 'anim-movex', range: [-2000, 2000], label: 'Transition X', color: '#0099CC', value: '<?php echo $this->getValue('movex') ? $this->getValue('movex') : 0 ?>'},
+            {id: 'anim-movey', range: [-2000, 2000], label: 'Transition Y', color: '#0099CC', value: '<?php echo $this->getValue('movey') ? $this->getValue('movey') : 0 ?>'},
+            {id: 'anim-movez', range: [-2000, 2000], label: 'Transition Z', color: '#0099CC', value: '<?php echo $this->getValue('movez') ? $this->getValue('movez') : 0 ?>'},
+            {id: 'anim-rotationx', range: [-980, 980], label: 'Rotation X', color: '#9933CC', value: '<?php echo $this->getValue('rotationx') ? $this->getValue('rotationx') : 0 ?>'},
+            {id: 'anim-rotationy', range: [-980, 980], label: 'Rotation Y', color: '#9933CC', value: '<?php echo $this->getValue('rotationy') ? $this->getValue('rotationy') : 0 ?>'},
+            {id: 'anim-rotationz', range: [-980, 980], label: 'Rotation Z', color: '#9933CC', value: '<?php echo $this->getValue('rotationz') ? $this->getValue('rotationz') : 0 ?>'},
+            {id: 'anim-scalex', range: [0, 800], label: 'Scale X', color: '#669900', value: '<?php echo $this->getValue('scalex') ? $this->getValue('scalex') : 100 ?>'},
+            {id: 'anim-scaley', range: [0, 800], label: 'Scale Y', color: '#669900', value: '<?php echo $this->getValue('scaley') ? $this->getValue('scaley') : 100 ?>'},
+            {id: 'anim-skewx', range: [-180, 180], label: 'Skew X', color: '#FF8800', value: '<?php echo $this->getValue('skewx') ? $this->getValue('skewx') : 0 ?>'},
+            {id: 'anim-skewy', range: [-180, 180], label: 'Skew X', color: '#FF8800', value: '<?php echo $this->getValue('skewy') ? $this->getValue('skewy') : 0 ?>'},
+            {id: 'anim-opacity', range: [0, 100], label: 'Opacity', color: '#008972', value: '<?php echo $this->getValue('opacity') ? $this->getValue('opacity') : 0 ?>'},
+            {id: 'anim-perspective', range: [-3000, 3000], label: 'Perspective', color: '#594C47', value: '<?php echo $this->getValue('perspective') ? $this->getValue('perspective') : 600 ?>'},
+            {id: 'anim-originx', range: [-200, 200], label: 'Origin X', color: '#CC0000', value: '<?php echo $this->getValue('originx') ? $this->getValue('originx') : 50 ?>'},
+            {id: 'anim-originy', range: [-200, 200], label: 'Origin Y', color: '#CC0000', value: '<?php echo $this->getValue('originy') ? $this->getValue('originy') : 50 ?>'}
+        ]);
+        DnmSl.runCustomAnimation('<?php echo $this->getAnimType() ?>');
+    }
+</script>
