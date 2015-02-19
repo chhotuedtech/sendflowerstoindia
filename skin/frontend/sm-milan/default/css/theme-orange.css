@@ -142,7 +142,7 @@ hr.soften {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/img/bs-docs-masthead-pattern.png) repeat center center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/img/bs-docs-masthead-pattern.png) repeat center center;
   opacity: .4;
 }
 /* Masthead (docs home)
@@ -705,7 +705,7 @@ form.bs-docs-example {
 }
 .bs-docs-sidenav .active .icon-chevron-right,
 .bs-docs-sidenav .active a:hover .icon-chevron-right {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/img/glyphicons-halflings-white.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/img/glyphicons-halflings-white.png);
   opacity: 1;
 }
 .bs-docs-sidenav.affix {
@@ -1238,7 +1238,7 @@ th .nobr {
   position: absolute;
   top: 0px;
   right: -10px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/parent-icon-menu.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/parent-icon-menu.png) no-repeat left center;
 }
 #nav > li:hover > ul {
   display: block;
@@ -1335,38 +1335,38 @@ th .nobr {
 #cboxTopLeft {
   width: 14px;
   height: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) 0 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) 0 0 no-repeat;
 }
 #cboxTopCenter {
   height: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/border.gif) top left repeat-x;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/border.gif) top left repeat-x;
 }
 #cboxTopRight {
   width: 14px;
   height: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) -36px 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) -36px 0 no-repeat;
 }
 #cboxBottomLeft {
   width: 14px;
   height: 43px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) 0 -32px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) 0 -32px no-repeat;
 }
 #cboxBottomCenter {
   height: 43px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/border.gif) bottom left repeat-x;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/border.gif) bottom left repeat-x;
 }
 #cboxBottomRight {
   width: 14px;
   height: 43px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) -36px -32px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) -36px -32px no-repeat;
 }
 #cboxMiddleLeft {
   width: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) -175px 0 repeat-y;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) -175px 0 repeat-y;
 }
 #cboxMiddleRight {
   width: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) -211px 0 repeat-y;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) -211px 0 repeat-y;
 }
 #cboxContent {
   background: #fff;
@@ -1378,7 +1378,7 @@ th .nobr {
   /*background:url(../images/loading_background.png) center center no-repeat;*/
 }
 #cboxLoadingGraphic {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/loading.gif) center center no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/loading.gif) center center no-repeat;
 }
 #cboxTitle {
   position: absolute;
@@ -1402,7 +1402,7 @@ th .nobr {
 #cboxSlideshow {
   position: absolute;
   bottom: -29px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/controls.gif) 0px 0px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/controls.gif) 0px 0px no-repeat;
   width: 23px;
   height: 23px;
   text-indent: -9999px;
@@ -1509,7 +1509,7 @@ th .nobr {
   line-height: 1.25;
 }
 .sidebar .widget-new-products .block-title strong {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-new.gif) 0 1px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-new.gif) 0 1px no-repeat;
   padding-left: 21px;
   color: #CE4515;
 }
@@ -1533,7 +1533,7 @@ th .nobr {
   line-height: 1.25;
 }
 .sidebar .widget-viewed .block-title strong {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_block-list.gif) 0 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_block-list.gif) 0 0 no-repeat;
   padding-left: 21px;
 }
 /* Widget: Recently Compared Proructs */
@@ -1556,7 +1556,7 @@ th .nobr {
   line-height: 1.25;
 }
 .sidebar .widget-compared .block-title strong {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_block-list.gif) 0 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_block-list.gif) 0 0 no-repeat;
   padding-left: 21px;
 }
 /* Widget: CMS Static Block */
@@ -1584,7 +1584,7 @@ th .nobr {
   margin: 7px 0;
 }
 .col-main .widget-product-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding-right: 15px;
 }
 .sidebar .widget-product-link {
@@ -1593,7 +1593,7 @@ th .nobr {
   padding: 0 10px;
 }
 .sidebar .widget-product-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding: 0 15px 0 0;
 }
 /* Widget: Catalog Category Link */
@@ -1606,7 +1606,7 @@ th .nobr {
   margin: 7px 0;
 }
 .col-main .widget-category-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding-right: 15px;
 }
 .sidebar .widget-category-link {
@@ -1615,7 +1615,7 @@ th .nobr {
   padding: 0 10px;
 }
 .sidebar .widget-category-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding: 0 15px 0 0;
 }
 /* Widget: CMS Page Link */
@@ -1628,7 +1628,7 @@ th .nobr {
   margin: 7px 0;
 }
 .col-main .widget-cms-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding-right: 15px;
 }
 .sidebar .widget-cms-link {
@@ -1637,7 +1637,7 @@ th .nobr {
   padding: 0 10px;
 }
 .sidebar .widget-cms-link a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/images/widgets/i_widget-link.gif) 100% 4px no-repeat;
   padding: 0 15px 0 0;
 }
 /* ======================================================================================= */
@@ -1676,7 +1676,7 @@ th .nobr {
   left: 0;
   width: 40px;
   height: 480px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
 }
 #fancybox-overlay {
   position: absolute;
@@ -1798,11 +1798,11 @@ th .nobr {
   display: block;
 }
 #fancybox-left-ico {
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -30px;
 }
 #fancybox-right-ico {
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -60px;
 }
 #fancybox-left:hover,
@@ -1831,50 +1831,50 @@ th .nobr {
   top: -20px;
   left: 0;
   width: 100%;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png');
 }
 #fancybox-bg-ne {
   top: -20px;
   right: -20px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -162px;
 }
 #fancybox-bg-e {
   top: 0;
   right: -20px;
   height: 100%;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox-y.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox-y.png');
   background-position: -20px 0px;
 }
 #fancybox-bg-se {
   bottom: -20px;
   right: -20px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -182px;
 }
 #fancybox-bg-s {
   bottom: -20px;
   left: 0;
   width: 100%;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png');
   background-position: 0px -20px;
 }
 #fancybox-bg-sw {
   bottom: -20px;
   left: -20px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -142px;
 }
 #fancybox-bg-w {
   top: 0;
   left: -20px;
   height: 100%;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox-y.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox-y.png');
 }
 #fancybox-bg-nw {
   top: -20px;
   left: -20px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png');
   background-position: -40px -122px;
 }
 #fancybox-title {
@@ -1902,7 +1902,7 @@ th .nobr {
 }
 #fancybox-title-over {
   padding: 10px;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/path/fancy_title_over.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/path/fancy_title_over.png');
   display: block;
 }
 .fancybox-title-float {
@@ -1923,18 +1923,18 @@ th .nobr {
 }
 #fancybox-title-float-left {
   padding: 0 0 0 15px;
-  background: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png') -40px -90px no-repeat;
+  background: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png') -40px -90px no-repeat;
 }
 #fancybox-title-float-main {
   color: #FFF;
   line-height: 29px;
   font-weight: bold;
   padding: 0 0 3px 0;
-  background: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png') 0px -40px;
+  background: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox-x.png') 0px -40px;
 }
 #fancybox-title-float-right {
   padding: 0 0 0 15px;
-  background: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox/fancybox.png') -55px -90px no-repeat;
+  background: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox/fancybox.png') -55px -90px no-repeat;
 }
 /*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
 .fancybox-wrap,
@@ -2021,7 +2021,7 @@ th .nobr {
   cursor: pointer;
   z-index: 8060;
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox_loading.gif) no-repeat center center #000000 !important;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox_loading.gif) no-repeat center center #000000 !important;
   border-radius: 3px;
 }
 #fancybox-loading div {
@@ -2106,7 +2106,7 @@ th .nobr {
   overflow: hidden;
   display: none;
   z-index: 8010;
-  background: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox_overlay.png') repeat;
+  background: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox_overlay.png') repeat;
 }
 .fancybox-overlay-fixed {
   position: fixed;
@@ -2116,7 +2116,7 @@ th .nobr {
 .fancybox-lock .fancybox-overlay {
   overflow: auto;
   /*overflow-y: scroll;*/
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox_overlay.png) repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox_overlay.png) repeat;
 }
 /* Title helper */
 .fancybox-title {
@@ -2176,12 +2176,12 @@ th .nobr {
   .fancybox-close,
   .fancybox-prev span,
   .fancybox-next span {
-    background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/path/fancybox_sprite@2x.png');
+    background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/path/fancybox_sprite@2x.png');
     background-size: 44px 152px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
   #fancybox-loading div {
-    background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/path/fancybox_loading@2x.gif');
+    background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/path/fancybox_loading@2x.gif');
     background-size: 24px 24px;
     /*The size of the normal image, half the size of the hi-res image*/
   }
@@ -2227,7 +2227,7 @@ th .nobr {
   height: 28px;
   text-indent: -9999px;
   background-color: transparent;
-  background-image: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fancybox_buttons.png');
+  background-image: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fancybox_buttons.png');
   background-repeat: no-repeat;
   outline: none;
   opacity: 0.8;
@@ -2348,7 +2348,7 @@ th .nobr {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
 #cpanel_btn {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cpanel/bg-cpanel-head.png) repeat left center #666666;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cpanel/bg-cpanel-head.png) repeat left center #666666;
   width: 40px;
   border-right: none;
   position: absolute;
@@ -2361,7 +2361,7 @@ th .nobr {
   border-radius: 3px 0 0 3px;
 }
 #cpanel_wrapper .cpanel-head {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cpanel/bg-cpanel-head.png) repeat left center #666666;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cpanel/bg-cpanel-head.png) repeat left center #666666;
   font-size: 14px;
   font-weight: bold;
   width: 100%;
@@ -2648,7 +2648,7 @@ input.miniColors {
   left: 5px;
   width: 150px;
   height: 150px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/colors.png) -40px 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/colors.png) -40px 0 no-repeat;
   cursor: crosshair;
 }
 .miniColors.opacity .miniColors-colors {
@@ -2660,7 +2660,7 @@ input.miniColors {
   left: 160px;
   width: 20px;
   height: 150px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/colors.png) 0 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/colors.png) 0 0 no-repeat;
   cursor: crosshair;
 }
 .miniColors.opacity .miniColors-hues {
@@ -2672,7 +2672,7 @@ input.miniColors {
   left: 5px;
   width: 20px;
   height: 150px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/colors.png) -20px 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/colors.png) -20px 0 no-repeat;
   cursor: crosshair;
 }
 .miniColors-colorPicker {
@@ -2714,7 +2714,7 @@ input.miniColors {
   margin-right: 3px;
 }
 .miniColors-triggerWrap {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/trigger.png) -22px 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/trigger.png) -22px 0 no-repeat;
 }
 .miniColors-triggerWrap.disabled {
   filter: alpha(opacity=50);
@@ -2723,7 +2723,7 @@ input.miniColors {
 .miniColors-trigger {
   vertical-align: middle;
   outline: none;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/trigger.png) 0 0 no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/trigger.png) 0 0 no-repeat;
 }
 .miniColors-triggerWrap.disabled .miniColors-trigger {
   cursor: default;
@@ -2782,7 +2782,7 @@ input.miniColors {
 }
 /* mouse grab icon */
 .grabbing {
-  cursor: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/path/grabbing.png) 8 8, move;
+  cursor: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/path/grabbing.png) 8 8, move;
 }
 /* fix */
 .owl-carousel .owl-wrapper,
@@ -3287,7 +3287,7 @@ h2.resp-tab-active span.resp-arrow {
   position: absolute;
   left: 9px;
   top: 14px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-setting.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-setting.png) no-repeat top left;
 }
 .yt-header-top .setting-page:hover .btn-setting {
   background-color: #121212;
@@ -3326,7 +3326,7 @@ h2.resp-tab-active span.resp-arrow {
   height: 15px;
   display: inline-block;
   content: "";
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/my-account.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/my-account.png) no-repeat top left;
   position: absolute;
   left: 9px;
   top: 15px;
@@ -3451,7 +3451,7 @@ h2.resp-tab-active span.resp-arrow {
   color: #c2c2c2;
 }
 .yt-header-top .customer-action .cus-link li.login-li {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/center-link.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/center-link.png) no-repeat left center;
   padding-left: 10px;
 }
 .yt-header-top .toplinks-setting {
@@ -3532,10 +3532,10 @@ h2.resp-tab-active span.resp-arrow {
   font-weight: bold;
 }
 .block-popup-login #mini-login {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-username.png) no-repeat top left #f7f7f7;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-username.png) no-repeat top left #f7f7f7;
 }
 .block-popup-login #mini-password {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-pass.png) no-repeat top left #f7f7f7;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-pass.png) no-repeat top left #f7f7f7;
 }
 .block-popup-login .btn-submit-login {
   background-repeat: no-repeat;
@@ -3582,7 +3582,7 @@ h2.resp-tab-active span.resp-arrow {
   width: 16px;
   height: 16px;
   overflow: hidden;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/checkbox-login.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/checkbox-login.png) no-repeat top left;
 }
 .block-popup-login .chk-remember > label {
   font-family: inherit;
@@ -3598,7 +3598,7 @@ h2.resp-tab-active span.resp-arrow {
 }
 .block-popup-login .close-login {
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-close-login.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-close-login.png) no-repeat top left;
   width: 26px;
   height: 26px;
   overflow: hidden;
@@ -3693,7 +3693,7 @@ h2.resp-tab-active span.resp-arrow {
 .service-top .tooltip-sv .list-tooltip > li {
   font-weight: bold;
   padding: 4px 0px 4px 40px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bullet-tooltip.png) no-repeat 10px center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bullet-tooltip.png) no-repeat 10px center;
 }
 .service-top .tooltip-sv .list-payment li {
   display: inline-block;
@@ -3845,7 +3845,7 @@ h2.resp-tab-active span.resp-arrow {
 .search-header .form-search .btn-search {
   width: 30px;
   height: 30px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-search.png) no-repeat center center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-search.png) no-repeat center center;
   position: absolute;
   right: 2px;
   top: 0px;
@@ -3872,10 +3872,10 @@ h2.resp-tab-active span.resp-arrow {
   color: #f66830;
 }
 .header-default .info-header li.email-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email-header.png);
 }
 .header-default .info-header li.phone-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone-header.png);
 }
 .header-default .dropdown-block {
   background-color: #222222;
@@ -3891,13 +3891,13 @@ h2.resp-tab-active span.resp-arrow {
   background-position: left top;
 }
 .header-default .icon-sv.free_shipping a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shipping-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shipping-icon.png);
 }
 .header-default .icon-sv.return-day a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/return-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/return-icon.png);
 }
 .header-default .icon-sv.secure_payment a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/payment.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/payment.png);
 }
 .header-default .yt-header-content {
   padding: 20px 0px 17px;
@@ -3905,7 +3905,7 @@ h2.resp-tab-active span.resp-arrow {
 .header-default .mini-cartpro .btn-toggle .cart-icon {
   width: 44px;
   height: 44px;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cart-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cart-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
@@ -3978,10 +3978,10 @@ h2.resp-tab-active span.resp-arrow {
   color: #f66830;
 }
 .header-style-1 .info-header li.email-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email-header.png);
 }
 .header-style-1 .info-header li.phone-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone-header.png);
 }
 .header-style-1 .dropdown-block {
   background-color: #222222;
@@ -3996,16 +3996,16 @@ h2.resp-tab-active span.resp-arrow {
   background-position: left top;
 }
 .header-style-1 .icon-sv.free_shipping a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shipping-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shipping-icon.png);
 }
 .header-style-1 .icon-sv.return-day a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/return-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/return-icon.png);
 }
 .header-style-1 .icon-sv.secure_payment a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/payment.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/payment.png);
 }
 .header-style-1 .icon-sv.accepting-order a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/accepting-order.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/accepting-order.png);
 }
 .header-style-1 .service-top:hover .tooltip-sv,
 .header-style-1 .mini-cartpro .block-content {
@@ -4023,7 +4023,7 @@ h2.resp-tab-active span.resp-arrow {
 .header-style-1 .mini-cartpro .btn-toggle .cart-icon {
   width: 44px;
   height: 44px;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cart-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cart-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
@@ -4101,13 +4101,13 @@ h2.resp-tab-active span.resp-arrow {
   font-weight: bold;
 }
 .header-style-2 .info-header li.email-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email-header-2.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email-header-2.png);
 }
 .header-style-2 .info-header li.phone-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone-header-2.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone-header-2.png);
 }
 .header-style-2 .icon-sv.accepting-order a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/accepting-order.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/accepting-order.png);
 }
 .header-style-2 .info-header li:hover {
   background-position: left 15px;
@@ -4130,13 +4130,13 @@ h2.resp-tab-active span.resp-arrow {
   background-position: left top;
 }
 .header-style-2 .icon-sv.free_shipping a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shipping-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shipping-icon.png);
 }
 .header-style-2 .icon-sv.return-day a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/return-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/return-icon.png);
 }
 .header-style-2 .icon-sv.secure_payment a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/payment.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/payment.png);
 }
 .header-style-2 .yt-header-content {
   padding: 20px 0px 19px;
@@ -4163,7 +4163,7 @@ h2.resp-tab-active span.resp-arrow {
 .header-style-2 .mini-cartpro .btn-toggle .cart-icon {
   width: 44px;
   height: 44px;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cart-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cart-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
@@ -4206,13 +4206,13 @@ h2.resp-tab-active span.resp-arrow {
   z-index: 9;
 }
 .header-style-2 .btn-setting a:before {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-setting-2.png) no-repeat top left !important;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-setting-2.png) no-repeat top left !important;
 }
 .header-style-2 .account-link a:before {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/my-account-2.png) no-repeat top left !important;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/my-account-2.png) no-repeat top left !important;
 }
 .header-style-2 .customer-action .cus-link li.login-li {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/center-link-2.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/center-link-2.png) no-repeat left center;
 }
 .header-style-2 .search-default .form-search {
   margin-top: 5px;
@@ -4244,10 +4244,10 @@ h2.resp-tab-active span.resp-arrow {
   color: #f66830;
 }
 .header-style-4 .info-header li.email-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email-header.png);
 }
 .header-style-4 .info-header li.phone-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone-header.png);
 }
 .header-style-4 .dropdown-block {
   background-color: #222222;
@@ -4262,7 +4262,7 @@ h2.resp-tab-active span.resp-arrow {
   color: #fff !important;
 }
 .header-style-4 .service-top .icon-sv:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/dropdown-sv-style-4.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/dropdown-sv-style-4.png);
 }
 .header-style-4 .service-top:hover .icon-sv,
 .header-style-4 .service-top:hover .info-sv {
@@ -4275,16 +4275,16 @@ h2.resp-tab-active span.resp-arrow {
   background-position: left bottom;
 }
 .header-style-4 .icon-sv.free_shipping a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shipping-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shipping-icon.png);
 }
 .header-style-4 .icon-sv.return-day a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/return-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/return-icon.png);
 }
 .header-style-4 .icon-sv.secure_payment a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/payment.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/payment.png);
 }
 .header-style-4 .icon-sv.accepting-order a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/accepting-order.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/accepting-order.png);
 }
 .header-style-4 .yt-header-content {
   padding: 20px 0px 17px;
@@ -4299,7 +4299,7 @@ h2.resp-tab-active span.resp-arrow {
 .header-style-4 .mini-cartpro .btn-toggle .cart-icon {
   width: 44px;
   height: 44px;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cart-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cart-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
@@ -4402,10 +4402,10 @@ h2.resp-tab-active span.resp-arrow {
   color: #f66830;
 }
 .header-style-3 .info-header li.email-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email-header-style-3.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email-header-style-3.png);
 }
 .header-style-3 .info-header li.phone-info {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone-header-style-3.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone-header-style-3.png);
   font-weight: bold;
 }
 .header-style-3 .dropdown-block {
@@ -4421,13 +4421,13 @@ h2.resp-tab-active span.resp-arrow {
   background-position: left top;
 }
 .header-style-3 .icon-sv.free_shipping a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shipping-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shipping-icon.png);
 }
 .header-style-3 .icon-sv.return-day a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/return-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/return-icon.png);
 }
 .header-style-3 .icon-sv.secure_payment a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/payment.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/payment.png);
 }
 .header-style-3 .yt-header-content {
   padding: 17px 0 10px;
@@ -4442,7 +4442,7 @@ h2.resp-tab-active span.resp-arrow {
 .header-style-3 .mini-cartpro .btn-toggle .cart-icon {
   width: 44px;
   height: 44px;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cart-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cart-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 50%;
@@ -4514,23 +4514,23 @@ h2.resp-tab-active span.resp-arrow {
   opacity: 0.7;
 }
 .header-style-3 .socials-wrap ul li .show_facebook {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-fb-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-fb-header.png);
 }
 .header-style-3 .socials-wrap ul li .show_twitter {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-tw-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-tw-header.png);
 }
 .header-style-3 .socials-wrap ul li .show_google {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-gg-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-gg-header.png);
 }
 .header-style-3 .socials-wrap ul li .show_pinterest {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-pt-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-pt-header.png);
 }
 .header-style-3 .socials-wrap ul li .show_linkedin {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-likein-header.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-likein-header.png);
 }
 .header-style-3 .offer-header {
   padding-left: 85px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/offer_label.png) no-repeat 5px center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/offer_label.png) no-repeat 5px center;
 }
 .header-style-3 .offer-header .owl-item .item {
   line-height: 54px;
@@ -5125,7 +5125,7 @@ TABLE OF CONTENTS
 }
 .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .levels a.parent,
 .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .levels a.parent:hover {
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/css/path/megamenu/vertical/img/drop2_dark.png") right center no-repeat;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/css/path/megamenu/vertical/img/drop2_dark.png") right center no-repeat;
 }
 .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu .levels li {
   float: left;
@@ -5267,7 +5267,7 @@ TABLE OF CONTENTS
   font-size: 116.67%;
   padding: 9px 10px 7px 50px;
   text-transform: uppercase;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-v-item.png) no-repeat 22px 15px;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-v-item.png) no-repeat 22px 15px;
   transition: 0.3s;
   -moz-transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -5441,7 +5441,7 @@ TABLE OF CONTENTS
   border-bottom: 1px solid #383838;
   font-size: 116.67%;
   color: #a8a8a8;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-v-item.png) no-repeat 22px 14px;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-v-item.png) no-repeat 22px 14px;
   transition: 0.3s;
   -moz-transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -5493,7 +5493,7 @@ TABLE OF CONTENTS
   height: 16px;
   content: "";
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/before-btn-menu.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/before-btn-menu.png) no-repeat top left;
   position: absolute;
   left: 20px;
   top: 19px;
@@ -5503,7 +5503,7 @@ TABLE OF CONTENTS
   height: 19px;
   content: "";
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/after-btn-menu.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/after-btn-menu.png) no-repeat top left;
   position: absolute;
   right: 26px;
   top: 24px;
@@ -5667,13 +5667,13 @@ TABLE OF CONTENTS
   width: 50%;
 }
 #narrow-by-list ol li a {
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat left 2px;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat left 2px;
 }
 #narrow-by-list .check-shopby {
   display: none;
 }
 .block-layered-nav #narrow-by-list ol li:before {
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat left 0px;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat left 0px;
   width: 16px;
   height: 16px;
   position: absolute;
@@ -5733,7 +5733,7 @@ TABLE OF CONTENTS
   position: relative;
   margin-bottom: 15px;
   margin-right: -18px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-title-shopby.png) repeat-x 5px center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-title-shopby.png) repeat-x 5px center;
 }
 .block-layered-nav .filter-wrapp dt span {
   display: inline-block;
@@ -5766,7 +5766,7 @@ TABLE OF CONTENTS
   cursor: e-resize;
   display: block;
   margin-top: 0px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/price-button.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/price-button.png) no-repeat top left;
   position: relative;
   z-index: 2;
 }
@@ -5837,7 +5837,7 @@ TABLE OF CONTENTS
   display: inline-block;
   width: 13px;
   height: 13px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/remove_btn.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/remove_btn.png) no-repeat top left;
   position: relative;
   top: 2px;
   left: 2px;
@@ -5984,7 +5984,7 @@ TABLE OF CONTENTS
   width: 16px;
   height: 16px;
   display: inline-block;
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat 0 -84px;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/check-shopby.png") no-repeat 0 -84px;
   position: absolute;
   left: 0px;
   top: 1px;
@@ -6058,7 +6058,7 @@ TABLE OF CONTENTS
   height: 35px;
   margin-top: -35px;
   position: relative;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-timer.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-timer.png);
   background-repeat: no-repeat;
   background-position: 9px center;
   padding-left: 35px;
@@ -6070,7 +6070,7 @@ TABLE OF CONTENTS
   display: inline-block;
   color: #fff;
   padding: 0 5px 0 2px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/border-deal.png) no-repeat right center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/border-deal.png) no-repeat right center;
   height: 35px;
   line-height: 35px;
 }
@@ -6615,7 +6615,7 @@ TABLE OF CONTENTS
   max-width: 100%;
   padding: 0;
   position: relative;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/477.gif) no-repeat scroll center center transparent;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/477.gif) no-repeat scroll center center transparent;
   min-height: 300px;
   display: block;
   z-index: 0;
@@ -6669,7 +6669,7 @@ TABLE OF CONTENTS
   background-position: left bottom;
 }
 .sj-listing-tabs .ltabs-items .ltabs-loadmore .ltabs-loadmore-btn .ltabs-image-loading {
-  background: url('http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/301.gif') no-repeat scroll center center transparent;
+  background: url('http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/301.gif') no-repeat scroll center center transparent;
   width: 22px;
   height: 22px;
   display: none;
@@ -7601,7 +7601,7 @@ a:hover {
   text-align: right;
 }
 .service-header .wrapper-sv-header {
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-list-sv-top.png") repeat-x left top;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-list-sv-top.png") repeat-x left top;
   margin-top: 10px;
 }
 .service-header .list-service > li {
@@ -7655,7 +7655,7 @@ label .required {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/remove_btn.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/remove_btn.png) no-repeat top left;
 }
 .block-compare .block-content ol#compare-items li a.btn-remove:hover {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
@@ -7680,7 +7680,7 @@ label .required {
 .fancybox-item.fancybox-close {
   width: 30px;
   height: 30px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-close-fancy.png) no-repeat center center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-close-fancy.png) no-repeat center center;
   top: -15px;
   right: -15px;
 }
@@ -7699,7 +7699,7 @@ label .required {
 .yt-slideshow {
   display: inline-block;
   padding-bottom: 11px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/shadow-slider.png) no-repeat center bottom / 100% 11px;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/shadow-slider.png) no-repeat center bottom / 100% 11px;
 }
 /*----------------------------------------------------------------------
 |                        END STYLE DINAMICSLIDESHOW                    |
@@ -7711,7 +7711,7 @@ label .required {
 .pop-block-subscribe {
   width: 729px;
   min-height: 300px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-popup-newletter.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-popup-newletter.png) no-repeat top left;
 }
 .pop-block-subscribe .form-subscribe-header h2 {
   font-size: 200%;
@@ -7760,7 +7760,7 @@ label .required {
   display: inline-block;
   width: 16px;
   height: 17px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/check-box.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/check-box.png) no-repeat top left;
 }
 .pop-block-subscribe .subscribe-bottom .checker > span.checked {
   background-position: left bottom;
@@ -8011,7 +8011,7 @@ label.required em {
   float: right;
 }
 .cms-index-index .bottom-block-home .with-bg {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-title-shopby.png) repeat-x left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-title-shopby.png) repeat-x left center;
   display: inline-block;
   width: 100%;
 }
@@ -8100,7 +8100,7 @@ label.required em {
   position: absolute;
   left: -6px;
   top: 25px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/mc-client-say.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/mc-client-say.png) no-repeat top left;
 }
 .slider-testimonials .item .item-client .description .des-ct-client {
   font-style: italic;
@@ -8194,7 +8194,7 @@ label.required em {
   height: 32px;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-add-cart.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-add-cart.png);
   position: absolute;
   right: 0px;
   top: 6px;
@@ -8213,7 +8213,7 @@ label.required em {
 |                              CSS FOR FOOTER                          |
 -----------------------------------------------------------------------*/
 .footer-brand {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-brand-footer.png) no-repeat left top #ebecf1;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-brand-footer.png) no-repeat left top #ebecf1;
   padding: 35px 0 20px;
 }
 .footer-brand .title-block {
@@ -8354,29 +8354,29 @@ label.required em {
   opacity: 0.7;
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_facebook {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/fb-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/fb-icon.png);
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_twitter {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/tw-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/tw-icon.png);
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_google {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/google-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/google-icon.png);
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_linkedin {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/link-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/link-icon.png);
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_flickr {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/flickr-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/flickr-icon.png);
 }
 .bottom-wrapper-footer .socials-wrap ul li a.show_pinterest {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/prin-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/prin-icon.png);
 }
 /*----------------------------------------------------------------------
 |                            END CSS FOR FOOTER                        |
 -----------------------------------------------------------------------*/
 /*------------------------back to top---------------------------------*/
 #yt-totop {
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/up-arrow.png") no-repeat scroll center center #333333;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/up-arrow.png") no-repeat scroll center center #333333;
   bottom: 85px;
   height: 45px;
   overflow: hidden;
@@ -8436,7 +8436,7 @@ label.required em {
 }
 .block-product .bs-content {
   margin-left: 99px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/border-bottom-bs.png) repeat-x left bottom;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/border-bottom-bs.png) repeat-x left bottom;
   position: relative;
   min-height: 89px;
   padding-right: 45px;
@@ -8471,7 +8471,7 @@ label.required em {
 .block-product .bs-content .bs-btn-addtocart .btn-cart {
   width: 30px !important;
   height: 30px !important;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-cart-bs.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-cart-bs.png);
   overflow: hidden;
   text-indent: -9999px;
   background-repeat: no-repeat;
@@ -8485,7 +8485,7 @@ label.required em {
   padding-right: 35px;
 }
 #confirmbox .btn-cart {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-cart-bs.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-cart-bs.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -8561,10 +8561,10 @@ label.required em {
   -moz-transition: background-color 0.2s ease 0s, border-color 0.2s ease 0s;
 }
 .owl-buttons .owl-next {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-next-owl.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-next-owl.png);
 }
 .owl-buttons .owl-prev {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-prev-owl.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-prev-owl.png);
 }
 .resp-tab-content .btn-nav {
   position: absolute;
@@ -8794,7 +8794,7 @@ label.required em {
 .yt-breadcrumbs .breadcrumbs ul li {
   display: inline-block;
   font-style: italic;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-breacrum.png) no-repeat right center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-breacrum.png) no-repeat right center;
   padding: 14px 15px 14px 8px;
 }
 .yt-breadcrumbs .breadcrumbs ul li:first-child {
@@ -8852,7 +8852,7 @@ label.required em {
   display: inline-block;
 }
 .rating-box {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bkg_rating.png) 0px -25px repeat-x;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bkg_rating.png) 0px -25px repeat-x;
   height: 11px;
   position: relative;
   display: inline-block;
@@ -8862,7 +8862,7 @@ label.required em {
   margin-top: 5px;
 }
 .rating-box .rating {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bkg_rating.png) 0 0 repeat-x;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bkg_rating.png) 0 0 repeat-x;
   height: 11px;
   left: 0;
   position: absolute;
@@ -8933,7 +8933,7 @@ label.required em {
   height: 28px;
 }
 .toolbar .select-inner {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-selectbox.png) no-repeat right top;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-selectbox.png) no-repeat right top;
   height: 28px;
   line-height: 28px;
   border: 1px solid #dbdbdb;
@@ -9062,10 +9062,10 @@ label.required em {
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 .toolbar .set-desc {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/down-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/down-icon.png);
 }
 .toolbar .set-asc {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/up-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/up-icon.png);
 }
 /*----------------------------------------------------------------------
 |                               END TOOLBAR                            |
@@ -9119,7 +9119,7 @@ label.required em {
   background-color: #747473;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/quick-view-list.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/quick-view-list.png);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -9158,7 +9158,7 @@ label.required em {
   width: 15px;
   height: 38px;
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/left-sale.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/left-sale.png) no-repeat top left;
   position: absolute;
   left: -15px;
 }
@@ -9178,7 +9178,7 @@ label.required em {
   width: 15px;
   height: 38px;
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/right-new.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/right-new.png) no-repeat top left;
   position: absolute;
   right: -15px;
 }
@@ -9232,7 +9232,7 @@ label.required em {
 }
 .respl-item .item-inner .item-info .action-button .btn-top .item-addcart span span {
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-add-cart.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-add-cart.png) no-repeat left center;
   padding-left: 33px;
   font-weight: bold;
 }
@@ -9330,11 +9330,11 @@ label.required em {
   -moz-transition: background-color 0.2s ease 0s;
 }
 .customNavigation .btn-nav.btn-next {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-next-owl.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-next-owl.png);
   right: -23px;
 }
 .customNavigation .btn-nav.btn-prev {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-prev-owl.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-prev-owl.png);
   left: -23px;
 }
 /*----------------------------------------------------------------------
@@ -9395,7 +9395,7 @@ label.required em {
   height: 62px;
   border: 3px solid #fff;
   border-radius: 50%;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/quick-view-list.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/quick-view-list.png);
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
@@ -9473,16 +9473,16 @@ label.required em {
   padding-left: 32px;
 }
 .products-list .respl-item .product-shop .list-action .item-wishlist span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/wishlist-list.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/wishlist-list.png);
 }
 .products-list .respl-item .product-shop .list-action .item-compare span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/compare-list.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/compare-list.png);
 }
 .products-list .respl-item .product-shop .list-action .btn-cart {
   padding: 0 28px;
 }
 .products-list .respl-item .product-shop .list-action .btn-cart span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-add-cart.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-add-cart.png);
   display: block;
   padding-left: 21px;
   background-position: left center;
@@ -9640,7 +9640,7 @@ label.required em {
   position: absolute;
   left: -20px;
   top: 30px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/mc-detail-page.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/mc-detail-page.png) no-repeat top left;
 }
 .yt-product-detail .yt-detail-right .short-description li {
   display: inline-block;
@@ -9657,7 +9657,7 @@ label.required em {
 }
 .yt-product-detail .yt-detail-right .in-stock span {
   display: inline-block;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/instock-icon.png) no-repeat right center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/instock-icon.png) no-repeat right center;
   padding: 5px 20px 5px 0px;
 }
 .yt-product-detail .yt-detail-right .like-social {
@@ -9733,7 +9733,7 @@ label.required em {
   padding: 0 43px 0 10px;
   width: 100% !important;
   line-height: 33px;
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/select-btn-detail.png") no-repeat right top #ffffff;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/select-btn-detail.png") no-repeat right top #ffffff;
   border: 1px solid #ccc;
 }
 .yt-product-detail .yt-detail-right .product-options .selector select {
@@ -9770,7 +9770,7 @@ label.required em {
   float: left;
 }
 .yt-product-detail .yt-detail-right .add-to-cart span span {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-add-cart.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-add-cart.png) no-repeat left center;
   display: inline-block;
   padding-left: 20px;
   color: #fff;
@@ -9796,10 +9796,10 @@ label.required em {
   -webkit-transition: 0.2s;
 }
 .yt-product-detail .yt-detail-right .product-add-box .add-to-links li .link-wishlist {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/wishlist-detail.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/wishlist-detail.png);
 }
 .yt-product-detail .yt-detail-right .product-add-box .add-to-links li .link-compare {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/compare-detail.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/compare-detail.png);
 }
 .yt-product-detail .jCarouselLite li {
   margin-bottom: 11px;
@@ -9812,7 +9812,7 @@ label.required em {
   z-index: 9999;
 }
 .yt-product-detail .popup-btn.hidden-phone a {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-zoom.png) no-repeat center center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-zoom.png) no-repeat center center;
   line-height: 100%;
   text-align: center;
   display: inline-block;
@@ -9859,11 +9859,11 @@ label.required em {
   -webkit-transition: 0.2s;
 }
 .yt-product-detail .product-img-box .more-views .next {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/next-thumb.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/next-thumb.png);
   bottom: -3px;
 }
 .yt-product-detail .product-img-box .more-views .prev {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/prev-thumb.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/prev-thumb.png);
   top: -19px;
 }
 .yt-product-detail .product-image-zoom {
@@ -10149,13 +10149,13 @@ label.required em {
   padding-top: 5px;
 }
 .store-info .list-info .item-info.main-info > div:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/add_contact.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/add_contact.png);
 }
 .store-info .list-info .item-info.email-info > div:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/email_contact.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/email_contact.png);
 }
 .store-info .list-info .item-info.phone-info > div:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/phone_contact.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/phone_contact.png);
 }
 .contact-form .buttons-set {
   border: none;
@@ -10208,7 +10208,7 @@ label.required em {
   width: 100%;
 }
 .our-member .title-about-us {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bg-title-about.png) repeat-x left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bg-title-about.png) repeat-x left center;
   margin-bottom: 17px;
   text-align: center;
 }
@@ -10244,20 +10244,20 @@ label.required em {
   border-radius: 50%;
 }
 .our-member .respl-item .w-image-box .cl-nw.cl-facebook {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cl_facebook.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cl_facebook.png);
   margin-left: -42px;
   transition: all 0.3s ease 0s;
   -web-kit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
 }
 .our-member .respl-item .w-image-box .cl-nw.cl-flickr {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cl_flickr.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cl_flickr.png);
   transition: all 0.5s ease 0s;
   -web-kit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
 }
 .our-member .respl-item .w-image-box .cl-nw.cl-twitter {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/cl_twitter.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/cl_twitter.png);
   margin-left: 18px;
   transition: all 0.7s ease 0s;
   -web-kit-transition: all 0.7s ease 0s;
@@ -10295,12 +10295,12 @@ label.required em {
   top: 10px;
   background-repeat: no-repeat;
   background-position: top left;
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/icon-whylist.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/icon-whylist.png);
 }
 .why-list li a {
   display: block;
   padding: 5px 0 7px;
-  background: url("http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/border-bottom-bs.png") repeat-x left bottom;
+  background: url("http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/border-bottom-bs.png") repeat-x left bottom;
   font-size: 116.67%;
   font-weight: bold;
   color: #666;
@@ -10368,7 +10368,7 @@ label.required em {
   position: relative;
 }
 .happy-about-us .owl-controls .owl-prev {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-prev-hp.png) !important;
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-prev-hp.png) !important;
   margin-right: 3px;
   right: 0px !important;
   left: inherit !important;
@@ -10380,7 +10380,7 @@ label.required em {
   background: #fff;
 }
 .happy-about-us .owl-controls .owl-next {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-next-hp.png) !important;
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-next-hp.png) !important;
   right: 0px !important;
 }
 .happy-about-us .item > div:before {
@@ -10389,7 +10389,7 @@ label.required em {
   position: absolute;
   width: 16px;
   height: 12px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/note-client.png) no-repeat top left;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/note-client.png) no-repeat top left;
   left: 0px;
   top: 6px;
 }
@@ -11019,35 +11019,35 @@ input.input-text.qty {
 }
 /*css background image*/
 .pattern1 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern1.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern1.png);
   background-attachment: fixed;
 }
 .pattern2 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern2.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern2.png);
   background-attachment: fixed;
 }
 .pattern3 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern3.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern3.png);
   background-attachment: fixed;
 }
 .pattern4 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern4.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern4.png);
   background-attachment: fixed;
 }
 .pattern5 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern5.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern5.png);
   background-attachment: fixed;
 }
 .pattern6 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern6.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern6.png);
   background-attachment: fixed;
 }
 .pattern7 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern7.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern7.png);
   background-attachment: fixed;
 }
 .pattern8 {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/pattern/pattern8.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/pattern/pattern8.png);
   background-attachment: fixed;
 }
 #product-options-wrapper .input-box .input-text {
@@ -11088,7 +11088,7 @@ input.input-text.qty {
   padding-top: 20px !important;
 }
 .list-log li {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/bl-reg-pop.png) no-repeat left center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/bl-reg-pop.png) no-repeat left center;
   padding: 2px 0px 2px 18px;
 }
 .mini-cartpro .block-title .c-item {
@@ -11348,7 +11348,7 @@ body > span {
   position: absolute;
   width: 45px;
   height: 55px;
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-menu-mobile.png) no-repeat center center;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-menu-mobile.png) no-repeat center center;
   border-radius: 0;
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
@@ -11850,7 +11850,7 @@ ul.nav-menu li.parent > .res-wrapnav ul li {
     display: none;
   }
   .header-style-2 #yt-responsivemenu .btn.btn-navbar {
-    background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
+    background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
   }
   /*=====HEADER STYLE 3=====*/
   .header-style-3 .btn-vertical-menu,
@@ -11913,7 +11913,7 @@ ul.nav-menu li.parent > .res-wrapnav ul li {
     top: 0px;
   }
   .header-style-4 #yt-responsivemenu .btn.btn-navbar {
-    background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
+    background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
   }
   .header-style-4 .dropdown-block {
     text-align: left;
@@ -12105,7 +12105,7 @@ ul.nav-menu li.parent > .res-wrapnav ul li {
     display: none;
   }
   .header-style-2 #yt-responsivemenu .btn.btn-navbar {
-    background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
+    background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
   }
   /*=====HEADER STYLE 3=====*/
   .header-style-3 .dropdown-block {
@@ -12213,7 +12213,7 @@ ul.nav-menu li.parent > .res-wrapnav ul li {
     top: 0px;
   }
   .header-style-4 #yt-responsivemenu .btn.btn-navbar {
-    background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
+    background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/btn-menu-mobile-hd2.png);
   }
   .header-style-4 .dropdown-block {
     text-align: left;
@@ -12481,88 +12481,88 @@ ul.nav-menu li.parent > .res-wrapnav ul li {
   color: #ee8041;
 }
 .tt_popup_login {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/icon-popup-login.png) no-repeat 10px center #242424;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/icon-popup-login.png) no-repeat 10px center #242424;
 }
 .block-popup-login .btn-submit-login {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/icon-btn-login.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/icon-btn-login.png);
 }
 .service-top .icon-sv:before {
-  background: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/dropdown-sv.png) no-repeat;
+  background: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/dropdown-sv.png) no-repeat;
 }
 .header-default .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li a.sm_megamenu_actived:before,
 .cms-index-index .header-default .sm_megamenu_wrapper_horizontal_menu .sm_megamenu_menu > li.home-item-parent > a:before,
 .header-default #nav > li.active:before,
 .cms-index-index .header-default li.nav-home:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/active_item.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/active_item.png);
 }
 .respl-item .item-inner .item-info .action-button .btn-bottom .btn-button.item-wishlist span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/add-wishlist.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/add-wishlist.png);
 }
 .respl-item .item-inner .item-info .action-button .btn-bottom .btn-button.item-compare span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/add-compare.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/add-compare.png);
 }
 .respl-item .item-inner .item-info .action-button .btn-bottom .btn-button.sm_quickview_handler span {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/quickview-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/quickview-icon.png);
 }
 .toolbar .view-mode-wrap .view-mode .grid {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/grid.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/grid.png);
 }
 .toolbar .view-mode-wrap .view-mode .list {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/list.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/list.png);
 }
 #yt_left .block .block-title strong:after,
 #yt_right .block .block-title strong:after {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/right-title.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/right-title.png);
 }
 .price_filter {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/bg-filter-price.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/bg-filter-price.png);
 }
 #yt_left .block .block-title strong:before,
 #yt_right .block .block-title strong:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/mc-title-block.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/mc-title-block.png);
 }
 .block-tags .view-all-tag a:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/view-tags-icon.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/view-tags-icon.png);
 }
 .block-layered-nav.shopby-home #narrow-by-list ol li:before,
 .recent-posts ul li a,
 .categories-blog ul li a {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/bl-shopby-home.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/bl-shopby-home.png);
   background-repeat: no-repeat;
 }
 .tw-slider .ts-btn .reply-tweet {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/icon-reply.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/icon-reply.png);
 }
 .tw-slider .ts-btn .retweet {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/retweet.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/retweet.png);
 }
 .tw-slider .ts-btn .favorite-tweet {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/favorite-tweet.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/favorite-tweet.png);
 }
 .sj-listing-tabs .ltabs-items .ltabs-loadmore .ltabs-loadmore-btn .left_right:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/right_load_more.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/right_load_more.png);
 }
 .sj-listing-tabs .ltabs-items .ltabs-loadmore .ltabs-loadmore-btn .left_right:after {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/left_load_more.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/left_load_more.png);
 }
 .sm-deal-wrap .item-time {
   background-color: rgba(238, 128, 65, 0.9);
 }
 .title-home h2:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/right-title.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/right-title.png);
 }
 .title-home h2:after {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/left-title.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/left-title.png);
 }
 .header-style-4 .yt-header-top .customer-action .cus-link li.login-li {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/center-link.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/center-link.png);
 }
 .header-style-3 .yt-header-top .customer-action {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/bg-action-header-3.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/bg-action-header-3.png);
 }
 #yt_left .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > a:before,
 #yt_right .sm_megamenu_wrapper_vertical_menu .sm_megamenu_menu > li > a:before {
-  background-image: url(http://www.florapassionindia.com/dev/skin/frontend/sm-milan/default/images/orange/item-ver-menu.png);
+  background-image: url(http://www.sendflowerstoindia.in/skin/frontend/sm-milan/default/images/orange/item-ver-menu.png);
 }
 /***---Device---***/
 @media (min-width: 1200px) {

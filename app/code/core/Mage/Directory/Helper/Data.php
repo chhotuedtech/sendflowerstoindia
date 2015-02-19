@@ -225,6 +225,7 @@ class Mage_Directory_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function currencyConvert($amount, $from, $to = null)
     {
+
         if (empty($this->_currencyCache[$from])) {
             $this->_currencyCache[$from] = Mage::getModel('directory/currency')->load($from);
         }

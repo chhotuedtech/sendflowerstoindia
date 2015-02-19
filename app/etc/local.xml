@@ -40,10 +40,10 @@
             </db>
             <default_setup>
                 <connection>
-                    <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[root]]></username>
-                    <password><![CDATA[flora@258]]></password>
-                    <dbname><![CDATA[florapassionindia]]></dbname>
+                   <host><![CDATA[mydbinstance.ckxtjycnrgnr.ap-southeast-1.rds.amazonaws.com]]></host>
+                    <username><![CDATA[admin]]></username>
+                    <password><![CDATA[giftboxguru#1]]></password>
+                    <dbname><![CDATA[sendflowers]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
