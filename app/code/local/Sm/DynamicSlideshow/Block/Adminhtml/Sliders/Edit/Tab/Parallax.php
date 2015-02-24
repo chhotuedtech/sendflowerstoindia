@@ -38,7 +38,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Parallax extends Mage
              'name' => 'parallaxBgFreeze',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Bg Freeze' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Bg Freeze' ),
-            'value' => $model->getData( 'parallaxBgFreeze' ) ? $model->getData( 'parallaxBgFreeze' ) : $model->OPTION_ON,
+            'value' => $model->getData( 'parallaxBgFreeze' ) ? $model->getData( 'parallaxBgFreeze' ) : $model::OPTION_ON,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Possible Values: "on", "off"  - if it is off, the Main slide images will also move with Parallax Level 1 on Scroll.' ) 
         ) );
@@ -47,7 +47,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Parallax extends Mage
              'name' => 'parallaxDisableOnMobile',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Disable On Mobile' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Disable On Mobile' ),
-            'value' => $model->getData( 'parallaxDisableOnMobile' ) ? $model->getData( 'parallaxDisableOnMobile' ) : $model->OPTION_OFF,
+            'value' => $model->getData( 'parallaxDisableOnMobile' ) ? $model->getData( 'parallaxDisableOnMobile' ) : $model::OPTION_OFF,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Possible Values: "on", "off"  - Turn on/ off Parallax Effect on Mobile Devices' ) 
         ) );

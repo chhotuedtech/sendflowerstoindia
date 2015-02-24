@@ -71,7 +71,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Appearance extends Ma
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Show Background Image' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Show Background Image' ),
             'values' => $model->getOptYesNo(),
-            'value' => $model->OPTION_NO,
+            'value' => $model::OPTION_NO,
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Yes / No to put background image to the main slider wrapper' ) 
         ) );
         

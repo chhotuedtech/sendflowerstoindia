@@ -1,0 +1,6 @@
+*+html .image-item,
+*+html .image-item-upload{display:inline;zoom:1}.banners-wrap{height:100%}.image-item .image-placeholder,
+.image-item-upload .image-placeholder{filter:progid:DXImageTransform.Microsoft.Shadow(color='#d3d3d3', Direction=45, Strength=3)
+progid:DXImageTransform.Microsoft.Shadow(color='#d3d3d3', Direction=135, Strength=3)
+progid:DXImageTransform.Microsoft.Shadow(color='#d3d3d3', Direction=225, Strength=3)
+progid:DXImageTransform.Microsoft.Shadow(color='#d3d3d3', Direction=315, Strength=3);position:relative;top:-6px;left:-6px;zoom:1}

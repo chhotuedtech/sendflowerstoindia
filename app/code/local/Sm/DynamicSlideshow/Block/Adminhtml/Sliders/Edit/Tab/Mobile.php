@@ -52,7 +52,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Mobile extends Mage_A
              'name' => 'hide_arrows_on_mobile',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Arrows on Mobile' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Arrows on Mobile' ),
-            'value' => $model->OPTION_OFF,
+            'value' => $model::OPTION_OFF,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Possible Values: "on", "off"  - if set to "on", Arrows are not shown on Mobile Devices
  ' ) 
@@ -63,7 +63,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Mobile extends Mage_A
              'name' => 'hide_bullets_on_mobile',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Bullets on Mobile' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Bullets on Mobile' ),
-            'value' => $model->OPTION_OFF,
+            'value' => $model::OPTION_OFF,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Possible Values: "on", "off"  - if set to "on", Bullets are not shown on Mobile Devices' ) 
         ) );
@@ -73,7 +73,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Mobile extends Mage_A
              'name' => 'hide_thumbs_on_mobile',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Thumbnails on Mobile' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Hide Thumbnails on Mobile' ),
-            'value' => $model->OPTION_OFF,
+            'value' => $model::OPTION_OFF,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Possible Values: "on", "off"  - if set to "on", Thumbs are not shown on Mobile Devices' ) 
         ) );

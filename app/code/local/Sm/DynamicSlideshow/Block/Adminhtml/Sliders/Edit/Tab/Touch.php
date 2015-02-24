@@ -21,7 +21,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Touch extends Mage_Ad
              'name' => 'touch',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Touch Enable' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Touch Enable' ),
-            'value' => $model->getData( 'touch' ) ? $model->getData( 'touch' ) : $model->OPTION_ON,
+            'value' => $model->getData( 'touch' ) ? $model->getData( 'touch' ) : $model::OPTION_ON,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Enable Swipe function on touch devices' ) 
         ) );

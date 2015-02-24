@@ -120,13 +120,7 @@
 ## you can put here your magento root folder
 ## path relative to web root
 
-#    RewriteBase /
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+    #RewriteBase /magento/
 
 ############################################
 ## uncomment next line to enable light API calls processing

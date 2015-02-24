@@ -21,7 +21,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_Navigation extends Ma
              'name' => 'pause',
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Stop on Hover' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Stop on Hover' ),
-            'value' => $model->getData( 'pause' ) ? $model->getData( 'pause' ) : $model->OPTION_ON,
+            'value' => $model->getData( 'pause' ) ? $model->getData( 'pause' ) : $model::OPTION_ON,
             'values' => $model->getOptOnOff(),
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'Stop the Timer when hovering the slider.' ) 
         ) );

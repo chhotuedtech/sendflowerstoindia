@@ -33,7 +33,7 @@ class Sm_DynamicSlideshow_Block_Adminhtml_Sliders_Edit_Tab_First extends Mage_Ad
             'label' => Mage::helper( 'dynamicslideshow' )->__( 'Transition Active' ),
             'title' => Mage::helper( 'dynamicslideshow' )->__( 'Transition Active' ),
             'values' => $model->getOptYesNo(),
-            'value' => $model->OPTION_NO,
+            'value' => $model::OPTION_NO,
             'note' => Mage::helper( 'dynamicslideshow' )->__( 'If active, it will overwrite the first slide transition. Use it when you want a special transition for the first slide only' ) 
         ) );
         
