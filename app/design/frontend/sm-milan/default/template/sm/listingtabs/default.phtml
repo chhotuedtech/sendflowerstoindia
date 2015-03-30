@@ -9,6 +9,8 @@
 $helper = Mage::helper('listingtabs/data');
 $list = $this->_getList();
 
+
+
 if (!empty($list)) {
 
 	$import_str = "";
@@ -27,6 +29,8 @@ if (!empty($list)) {
 	$tag_id = 'sm_listing_tabs_' . rand() . time();
 	$class_ltabs = 'ltabs00-' . $this->_getConfig('nbi_column1', 4) . ' ltabs01-' . $this->_getConfig('nbi_column1', 3) . ' ltabs02-' . $this->_getConfig('nbi_column2', 3) . ' ltabs03-' . $this->_getConfig('nbi-column3', 2) . ' ltabs04-' . $this->_getConfig('nbi-column4', 1)
 	?>
+	
+
 	<!--[if lt IE 9]>
 	<div id="<?php echo $tag_id; ?>" class="sj-listing-tabs msie lt-ie9 first-load"><![endif]-->
 	<!--[if IE 9]>

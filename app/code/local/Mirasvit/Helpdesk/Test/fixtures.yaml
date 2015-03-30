@@ -1,0 +1,92 @@
+tables:
+  customer/entity:
+    - entity_id: 1
+      entity_type_id: 1
+      email: bob@example.com
+      created_at: 2013-10-01 00:00:00
+      store_id: 2
+    - entity_id: 2
+      entity_type_id: 1
+      email: john@example.com
+      created_at: 2013-09-30 00:00:00
+      store_id: 2
+    - entity_id: 3
+      entity_type_id: 1
+      email: will@example.com
+      created_at: 2013-08-30 00:00:00
+      store_id: 2
+  admin/user:
+    - user_id: 2
+      firstname: Mike
+      lastname: Peterson
+      email: mike@company.com
+      username: mike
+      is_active: 1	  
+  helpdesk/email:
+    -
+      email_id: 2
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 2
+      body: Ticket Body 2
+      sender_name: John Doe
+    -
+      email_id: 3
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 3
+      body: Ticket Body 3
+      sender_name: John Doe
+    -
+      email_id: 4
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: '[#AAA-123-45678]Ticket Subject 4'
+      body: Ticket Body 4
+      sender_name: John Doe
+  helpdesk/attachment:
+    -
+      attachement_id: 2
+      email_id: 2
+      message_id: 0
+      type: text
+      size: 100
+      body: body 2
+    -
+      attachement_id: 3
+      email_id: 2
+      message_id: 0
+      type: text
+      size: 100
+      body: body 3
+  helpdesk/ticket:
+    -
+      ticket_id: 2
+      name: Test Ticket
+      priority_id: 1
+      status_id: 1
+      department_id: 1
+      user_id: 1
+      customer_id: 2
+      customer_name: 'John Doe'
+      customer_email: 'john@example.com'
+      user_id: 2
+  helpdesk/message:
+    -
+      message_id: 2
+      ticket_id: 2
+      body: |
+        Test message body
+        body, body, body
+      user_id: 0
+      customer_id: 2
+  helpdesk/department:
+    -
+      department_id: 2
+      name: Customer Care Department
+      sender_email: sales
+      is_active: 1
+      signature: "Customer Care Team"
+      sort_order: 10
+      is_notification_enabled: 1
+      notification_email: test@mirasvit.com

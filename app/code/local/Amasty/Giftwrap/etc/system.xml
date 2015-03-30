@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <amgiftwrap translate="label" module="amgiftwrap">
+            <label>Gift Wrap</label>
+            <tab>amasty</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General settings</label>
+                    <sort_order>10</sort_order>
+                    <expanded>0</expanded>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <allow_separate_wrap translate="label">
+                            <label>Allow to Wrap Products Separately</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allow_separate_wrap>
+                        <allow_message_card translate="label">
+                            <label>Allow Message Cards For Items Not Available For Gift Wrap</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </allow_message_card>
+                        <image_width translate="label">
+                            <label>PopUp Form Image Width</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </image_width>
+                        <image_height translate="label">
+                            <label>PopUp Form Image Height</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </image_height>
+                        <short_description_length>
+                            <label>Short Description Text Length</label>
+                            <frontend_type>select</frontend_type>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Will be shown on the bottom of each slide</comment>
+                        </short_description_length>
+                    </fields>
+                </general>
+            </groups>
+        </amgiftwrap>
+    </sections>
+</config>

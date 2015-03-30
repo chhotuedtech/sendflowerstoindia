@@ -14,8 +14,12 @@
                             <ul class="cus-link">
                                 <li class="li-link"><a title="<?php echo $this->__('Register')?>" href="<?php echo $this->getUrl('customer/account/create')?>"><?php echo $this->__('Register')?></a></li>
                                 <li class="li-link login-li">
-                                    <a data-toggle="modal" data-target="#modal-login" title="<?php echo $this->__('Login')?>"><?php echo $this->__('Login')?></a>
-                                    <?php echo $this->getChildHtml('customer_form_mini_login'); ?>
+                                    <!--<a data-toggle="modal" data-target="#modal-login" title="<?php echo $this->__('Login')?>"><?php echo $this->__('Login')?></a>
+                                    <?php //echo $this->getChildHtml('customer_form_mini_login'); ?>
+									-->
+									<a title="<?php echo $this->__('Login')?>" href="javascript:socialLogin.open();" data-toggle="modal" class="login-btn"><?php echo $this->__('Login')?></a>
+									
+									<?php //echo $this->getChildHtml('customer_form_mini_login'); ?>
                                 </li>
                             </ul>
                         <?php endif;?>

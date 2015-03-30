@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <menu>
+        <helpdesk module="helpdesk">
+            <title>Help Desk</title>
+            <sort_order>70</sort_order>
+            <children>
+            <ticket module="helpdesk">
+                <title>Tickets</title>
+                <sort_order>10</sort_order>
+                <action>helpdeskadmin/adminhtml_ticket</action>
+            </ticket>
+            <archive module="helpdesk">
+                <title>Archive</title>
+                <sort_order>20</sort_order>
+                <action>helpdeskadmin/adminhtml_archive</action>
+            </archive>
+            <spam module="helpdesk">
+                <title>Spam</title>
+                <sort_order>30</sort_order>
+                <action>helpdeskadmin/adminhtml_spam</action>
+            </spam>
+            <satisfaction module="helpdesk">
+                <title>Customer Satisfaction</title>
+                <sort_order>40</sort_order>
+                <action>helpdeskadmin/adminhtml_satisfaction</action>
+            </satisfaction>
+            <reports module="helpdesk">
+                <title>Reports</title>
+                <sort_order>50</sort_order>
+                <children>
+                <report_ticket module="helpdesk">
+                    <title>Tickets Report</title>
+                    <sort_order>10</sort_order>
+                    <action>helpdeskadmin/adminhtml_report_ticket</action>
+                </report_ticket>
+                <report_satisfaction module="helpdesk">
+                    <title>Customer Satisfaction</title>
+                    <sort_order>20</sort_order>
+                    <action>helpdeskadmin/adminhtml_report_satisfaction</action>
+                </report_satisfaction>
+                </children>
+            </reports>
+            <dictionary module="helpdesk">
+                <title>Dictionaries</title>
+                <sort_order>60</sort_order>
+                <children>
+                <department module="helpdesk">
+                    <title>Departments</title>
+                    <sort_order>10</sort_order>
+                    <action>helpdeskadmin/adminhtml_department</action>
+                </department>
+                <gateway module="helpdesk">
+                    <title>Gateways</title>
+                    <sort_order>20</sort_order>
+                    <action>helpdeskadmin/adminhtml_gateway</action>
+                </gateway>
+                <status module="helpdesk">
+                    <title>Statuses</title>
+                    <sort_order>30</sort_order>
+                    <action>helpdeskadmin/adminhtml_status</action>
+                </status>
+                <priority module="helpdesk">
+                    <title>Priorities</title>
+                    <sort_order>40</sort_order>
+                    <action>helpdeskadmin/adminhtml_priority</action>
+                </priority>
+                <template module="helpdesk">
+                    <title>Quick Responses</title>
+                    <sort_order>50</sort_order>
+                    <action>helpdeskadmin/adminhtml_template</action>
+                </template>
+                <field module="helpdesk">
+                    <title>Custom Fields</title>
+                    <sort_order>60</sort_order>
+                    <action>helpdeskadmin/adminhtml_field</action>
+                </field>
+                <pattern module="helpdesk">
+                    <title>Spam Patterns</title>
+                    <sort_order>70</sort_order>
+                    <action>helpdeskadmin/adminhtml_pattern</action>
+                </pattern>
+                <permission module="helpdesk">
+                    <title>Permissions</title>
+                    <sort_order>80</sort_order>
+                    <action>helpdeskadmin/adminhtml_permission</action>
+                </permission>
+                </children>
+            </dictionary>
+            <rule module="helpdesk">
+                <title>Workflow Rules</title>
+                <sort_order>70</sort_order>
+                <action>helpdeskadmin/adminhtml_rule</action>
+            </rule>
+            <settings module="helpdesk">
+                <title>Settings</title>
+                <sort_order>80</sort_order>
+                <action>adminhtml/system_config/edit/section/helpdesk</action>
+            </settings>
+            </children>
+        </helpdesk>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                <helpdesk module="helpdesk">
+                    <title>Help Desk</title>
+                    <sort_order>70</sort_order>
+                    <children>
+                    <ticket module="helpdesk">
+                        <title>Tickets</title>
+                        <sort_order>10</sort_order>
+                        <action>helpdeskadmin/adminhtml_ticket</action>
+                    </ticket>
+                    <archive module="helpdesk">
+                        <title>Archive</title>
+                        <sort_order>20</sort_order>
+                        <action>helpdeskadmin/adminhtml_archive</action>
+                    </archive>
+                    <spam module="helpdesk">
+                        <title>Spam</title>
+                        <sort_order>30</sort_order>
+                        <action>helpdeskadmin/adminhtml_spam</action>
+                    </spam>
+                    <satisfaction module="helpdesk">
+                        <title>Customer Satisfaction</title>
+                        <sort_order>40</sort_order>
+                        <action>helpdeskadmin/adminhtml_satisfaction</action>
+                    </satisfaction>
+                    <reports module="helpdesk">
+                        <title>Reports</title>
+                        <sort_order>50</sort_order>
+                        <children>
+                        <report_ticket module="helpdesk">
+                            <title>Tickets Report</title>
+                            <sort_order>10</sort_order>
+                            <action>helpdeskadmin/adminhtml_report_ticket</action>
+                        </report_ticket>
+                        <report_satisfaction module="helpdesk">
+                            <title>Customer Satisfaction</title>
+                            <sort_order>20</sort_order>
+                            <action>helpdeskadmin/adminhtml_report_satisfaction</action>
+                        </report_satisfaction>
+                        </children>
+                    </reports>
+                    <dictionary module="helpdesk">
+                        <title>Dictionaries</title>
+                        <sort_order>60</sort_order>
+                        <children>
+                        <department module="helpdesk">
+                            <title>Departments</title>
+                            <sort_order>10</sort_order>
+                            <action>helpdeskadmin/adminhtml_department</action>
+                        </department>
+                        <gateway module="helpdesk">
+                            <title>Gateways</title>
+                            <sort_order>20</sort_order>
+                            <action>helpdeskadmin/adminhtml_gateway</action>
+                        </gateway>
+                        <status module="helpdesk">
+                            <title>Statuses</title>
+                            <sort_order>30</sort_order>
+                            <action>helpdeskadmin/adminhtml_status</action>
+                        </status>
+                        <priority module="helpdesk">
+                            <title>Priorities</title>
+                            <sort_order>40</sort_order>
+                            <action>helpdeskadmin/adminhtml_priority</action>
+                        </priority>
+                        <template module="helpdesk">
+                            <title>Quick Responses</title>
+                            <sort_order>50</sort_order>
+                            <action>helpdeskadmin/adminhtml_template</action>
+                        </template>
+                        <field module="helpdesk">
+                            <title>Custom Fields</title>
+                            <sort_order>60</sort_order>
+                            <action>helpdeskadmin/adminhtml_field</action>
+                        </field>
+                        <pattern module="helpdesk">
+                            <title>Spam Patterns</title>
+                            <sort_order>70</sort_order>
+                            <action>helpdeskadmin/adminhtml_pattern</action>
+                        </pattern>
+                        <permission module="helpdesk">
+                            <title>Permissions</title>
+                            <sort_order>80</sort_order>
+                            <action>helpdeskadmin/adminhtml_permission</action>
+                        </permission>
+                        </children>
+                    </dictionary>
+                    <rule module="helpdesk">
+                        <title>Workflow Rules</title>
+                        <sort_order>70</sort_order>
+                        <action>helpdeskadmin/adminhtml_rule</action>
+                    </rule>
+                    <settings module="helpdesk">
+                        <title>Settings</title>
+                        <sort_order>80</sort_order>
+                        <action>adminhtml/system_config/edit/section/helpdesk</action>
+                    </settings>
+                    </children>
+                </helpdesk>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <helpdesk translate="title" module="helpdesk">
+                                        <title>Mirasvit Helpdesk</title>
+                                    </helpdesk>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

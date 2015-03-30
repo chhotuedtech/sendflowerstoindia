@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+        <modules>
+                <Mann_Adminhtml>
+                        <version>1.0</version>
+                </Mann_Adminhtml>
+        </modules>
+        <global>
+                <blocks>
+                        <adminhtml>
+                                <rewrite>
+                                        <sales_order_view>Mann_Adminhtml_Block_Sales_Order_View</sales_order_view>
+                                </rewrite>
+                        </adminhtml>
+                </blocks>
+        </global>
+        <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Mann_Adminhtml before="Mage_Adminhtml">Mann_Adminhtml</Mann_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+        </admin>
+</config>

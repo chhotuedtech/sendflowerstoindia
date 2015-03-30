@@ -1,0 +1,6 @@
+keyword,url,url_target,is_nofollow,max_replacements,occurence,is_active
+keyword,http://site.com,_self,0,0,0,1
+keyword2,http://site.com,_self,0,0,0,1
+keyword3,http://site.com,_blank,1,0,0,1
+keyword4,http://site.com,_blank,1,0,0,1
+keyword5,http://site.com,_blank,1,0,0,1

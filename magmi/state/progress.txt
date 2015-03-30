@@ -8,21 +8,16 @@ plugin;ImageAttributeItemProcessor;pluginhello:Image attributes processor-1.0.33
 plugin;Magmi_ConfigurableItemProcessor;pluginhello:Configurable Item processor-1.3.7a-Dweeves-http://wiki.magmi.org/index.php?title=Configurable_Item_processor 
 plugin;Magmi_DefaultAttributeItemProcessor;pluginhello:Standard Attribute Import-1.1-Dweeves- 
 startup:Performing Datasouce Lookup...
-lookup:4:0.00021600723266602
-startup:Found 4 records, took 0.00021600723266602 sec
-columns:22
-plugin;Magmi_DefaultAttributeItemProcessor;startup:Standard Attribute Import v1.1 - Newly created items will have default values for columns:store,page_layout,tax_class_id
-startup:Ajusted processed columns:25
-itime:1 - 6.8902969360352E-5 - 6.8902969360352E-5
+lookup:2:0.010303020477295
+startup:Found 2 records, took 0.010303020477295 sec
+columns:19
+plugin;Magmi_DefaultAttributeItemProcessor;startup:Standard Attribute Import v1.1 - Newly created items will have default values for columns:store,page_layout
+startup:Ajusted processed columns:21
+itime:1 - 7.0095062255859E-5 - 7.0095062255859E-5
 dbtime:0 - 0 - 0 - 0
-plugin;ImageAttributeItemProcessor;warning:SKU FPDIWALI10_1 - Image attributes processor v1.0.33 - /fpdiwali10.jpg cannot be found in images path
-itime:2 - 0.033040046691895 - 0.032912015914917
-dbtime:21 - 0.025964260101318 - 0.025964260101318 - 21
-itime:3 - 0.058012962341309 - 0.024878978729248
-dbtime:37 - 0.040270328521729 - 0.01430606842041 - 16
-itime:4 - 0.079085111618042 - 0.020975112915039
-dbtime:53 - 0.054979801177979 - 0.01470947265625 - 16
-itime:4 - 0.12288403511047 - 0.043707132339478
-dbtime:76 - 0.092663526535034 - 0.037683725357056 - 23
-info:Skus imported OK:4/4
+itime:2 - 0.21530890464783 - 0.21517992019653
+dbtime:36 - 0.20556020736694 - 0.20556020736694 - 36
+itime:2 - 0.27383089065552 - 0.058454990386963
+dbtime:68 - 0.25359702110291 - 0.048036813735962 - 32
+info:Skus imported OK:2/2
 end:Import Ended

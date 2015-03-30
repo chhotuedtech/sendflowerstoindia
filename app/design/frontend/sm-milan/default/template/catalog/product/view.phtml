@@ -82,7 +82,11 @@ $rich_snippet = Mage::getStoreConfig('milan_cfg/rich_snippets_setting/use_rich_s
 
 </script>
 
-
+<style>
+.tan_pane div{
+	margin-left: 5px !important;
+}
+</style>
 
 
 
@@ -279,156 +283,56 @@ $rich_snippet = Mage::getStoreConfig('milan_cfg/rich_snippets_setting/use_rich_s
 				
 
 					<div id="yt_tab_products" class="col-md-12 tab-product-detail">
-
+						
+							
+						
+						
 						<div class="tab-wrapper">
-
-							<ul class="resp-tabs-list">
-
-								<?php if ($_description = $this->getChildHtml('description')):?>
-
-								<li class="active">
-
-									<a title="<?php echo $this->__('Description') ?>" href="javascript:void(0);"><?php echo $this->__('Description') ?></a>
-
+							<?php 	
+									$_description = $this->getChildHtml('description');
+									$_additional = $this->getChildHtml('additional');
+									$review_form = $this->getChildHtml('review_form');
+							?>
+							<div class="container">
+								<ul class="nav nav-tabs">
+								  <li class="active">
+									<a title="<?php echo $this->__('Description') ?>" href="#tab_a" data-toggle="tab"><?php echo $this->__('DESCRIPTION') ?></a>
+								  </li>
+								  <li>
+									<a title="<?php echo $this->__('Delivery Information') ?>" href="#tab_b" data-toggle="tab"><?php echo $this->__('DELIVERY INFORMATION') ?></a>
 								</li>
-
-								<?php endif; ?>
-
-								<?php /*if($product_additional_data = $this->getChildHtml('product_additional_data')): ?>
-
-								<li>
-
-									<a title="<?php echo $this->__('Tags') ?>" href="javascript:void(0);"><?php echo $this->__('Tags') ?></a>
-
+								  <li>
+									<a title="<?php echo $this->__('Reviews') ?>" href="#tab_c" data-toggle="tab"><?php echo $this->__('REVIEWS') ?></a>
 								</li>
+								  <li>
+									<a title="<?php echo $this->__('Disclaimer') ?>" href="#tab_d" data-toggle="tab"><?php echo $this->__('DISCLAIMER') ?></a>
+								  </li>
+								</ul>
+								<div class="tab-content">
+										<div class="tab-pane active" id="tab_a" style="padding: 14px 25px 10px 0;">
+											<?php echo $_description ?>
+											</br></br>
+											<?php echo $_additional ?>
+										</div>
+										<div class="tab-pane" id="tab_b" style="padding: 14px 25px 10px 0;">
+											 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('delivery-information')->toHtml();  ?>
+										</div>
+										<div class="tab-pane" id="tab_c" style="padding: 15px 35px 15px 0;">
+											<?php echo $this->getChildHtml('product_reviews');?>
 
-								<?php endif;*/ ?>							
-
-								<li>
-
-									<a title="<?php echo $this->__('Delivery Information') ?>" href="javascript:void(0);"><?php echo $this->__('Delivery Information') ?></a>
-
-								</li>
-
-								
-
-
-								<?php if($review_form = $this->getChildHtml('review_form')): ?>
-
-								<li>
-
-									<a title="<?php echo $this->__('Reviews') ?>" href="javascript:void(0);"><?php echo $this->__('Reviews') ?></a>
-
-								</li>
-
-								<?php endif; ?>
-
-								<?php /*if ($_additional = $this->getChildHtml('additional')):?>
-
-									<li>
-
-										<a title="<?php echo $this->__('Information') ?>" href="javascript:void(0);"><?php echo $this->__('Information') ?></a>
-
-									</li>
-
-								<?php endif;*/ ?>	
-								<li>
-
-										<a title="<?php echo $this->__('Disclaimer') ?>" href="javascript:void(0);"><?php echo $this->__('Disclaimer') ?></a>
-
-								
-								</li>
-
-
-								<?php if ($var_yttheme != null && $var_yttheme->getParam('show_customtab') == 1 ) : ?>
-
-									<li>
-
-										<a title="<?php echo $var_yttheme->getParam('customtab_name'); ?>" href="javascript:void(0);"><?php echo $var_yttheme->getParam('customtab_name'); ?></a>
-
-									</li>
-
-								<?php endif;?>
-
-							</ul>
-
-							<div class="resp-tabs-container">  					
-
-								<?php if ( $_description ):?>
-
-								<div id="yt_tab_decription" class="tab-pane in active">
-
-									<?php echo $_description ?>
-
-								</div>
-
-								<?php endif;?>
-
-								<?php /*if( $product_additional_data ): ?>
-
-								<div id="yt_tab_tags" class="tab-pane">
-
-									<?php echo $product_additional_data; ?>
-
-								</div>
-
-								<?php endif;*/?>							
-								<div id="yt_tab_tags" class="tab-pane">
-										<?php echo $_product->getResource()->getAttribute('delivery_information')->getFrontend()->getValue($_product); ?>
-								</div>
-								<?php if( $review_form ): ?>
-
-								<div id="yt_tab_reviewform" class="tab-pane">
-
-									<?php echo $this->getChildHtml('product_reviews');?>
-
-									<?php echo $review_form; ?>
-
-								</div>
-
-								<?php endif;?>														
-
-								<?php /*if ( $_additional ) : ?>
-
-								<div id="yt_tab_additional" class="tab-pane">
-
-									<?php echo $_additional ?>
-
-								</div>
-
-								<?php endif;*/?>
-
-								<div id="yt_tab_additional" class="tab-pane">
-										<?php echo $_product->getDisclaimer(); ?>
-								</div>
-
-
-
-								<?php if ($var_yttheme != null && $var_yttheme->getParam('show_customtab') == 1 ) : ?>
-
-								<div id="yt_tab_custom" class="tab-pane">
-
-									<?php $contenttab = $var_yttheme->getParam('customtab_content');             
-
-										$_myHelper = Mage::helper('cms');
-
-										$_processor = $_myHelper->getBlockTemplateProcessor();
-
-										echo $_processor->filter($contenttab); 
-
-									?>
-
-									
-
-								</div>
-
-								<?php endif;?>						
-
+											<?php echo $review_form; ?>
+										</div>
+										<div class="tab-pane" id="tab_d" style="padding: 14px 25px 10px 0;">
+											<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('disclaimer')->toHtml();  ?>
+										</div>
+								</div><!-- tab content -->
 							</div>
+							
+							
 
-						</div>
+							
 
-					</div>	
+						</div>	
 
 							<script>
 

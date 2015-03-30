@@ -87,27 +87,43 @@
             <tr>
                 <?php $_i=0 ?>
                 <?php foreach($this->getItems() as $_item): ?>
-                <?php if($_i++%10==0): ?>
-                <th><span class="nobr"><?php echo $_attribute->getStoreLabel() ?></span></th>
-                <?php endif; ?>
-                <td>
-                    <?php switch ($_attribute->getAttributeCode()) {
-                        case "price": ?>
-                            <?php echo $this->getPriceHtml($_item, true, '-compare-list-' . $_attribute->getCode()) ?>
-                            <?php break;
-                        case "small_image": ?>
-                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(125, 125); ?>" width="125" height="125" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" />
-                            <?php break;
-                        case "date":
-                              echo substr($this->getProductAttributeValue($_item, $_attribute),0,10);
-                              break;
-                        default: ?>
-                            <div class="std">
-                                <?php echo $this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()) ?>
-                            </div>
-                            <?php break;
-                    } ?>
-                </td>
+				 <?php if ($this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()) != 'No' && $this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()) != 'N/A'){ ?>
+				 
+					<?php if($_i++%10==0): ?>
+						<?php if (strpos($this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()),':') > 0 && strpos($this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()),'/') != true){ ?>
+					
+						<?php $val = split(':',$this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode())); 
+						
+						?>
+						
+						<th><span class="nobr"><?php echo $val[0] ?></span></th>
+						
+						<?php }else{ ?>
+						
+						<th><span class="nobr"><?php echo $_attribute->getStoreLabel() ?></span></th>
+						
+						<?php }  endif; ?>
+					<td>
+						<?php switch ($_attribute->getAttributeCode()) {
+							case "price": ?>
+								<?php echo $this->getPriceHtml($_item, true, '-compare-list-' . $_attribute->getCode()) ?>
+								<?php break;
+							case "small_image": ?>
+								<img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(125, 125); ?>" width="125" height="125" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>" />
+								<?php break;
+							case "date":
+								  echo substr($this->getProductAttributeValue($_item, $_attribute),0,10);
+								  break;
+							default: ?>
+								<div class="std">
+										
+										<?php echo $this->helper('catalog/output')->productAttribute($_item, $this->getProductAttributeValue($_item, $_attribute), $_attribute->getAttributeCode()) ?>
+										
+									</div>
+								<?php break;
+						} ?>
+					</td>
+				 <?php } ?>
                 <?php endforeach; ?>
             </tr>
         <?php endforeach; ?>

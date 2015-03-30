@@ -1,0 +1,307 @@
+tables:
+  helpdesk/status:
+    - status_id: 2
+      name: John Doe
+      code: string
+      sort_order: 2
+  helpdesk/priority:
+    - priority_id: 2
+      name: John Doe
+      sort_order: 2
+  helpdesk/department:
+    - department_id: 2
+      name: John Doe
+      sender_email: john_test@example.com
+      is_active: 2
+      signature:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      sort_order: 2
+      is_notification_enabled: 2
+      notification_email: john_test@example.com
+  helpdesk/department_user:
+    - department_user_id: 2
+      department_id: 2
+      user_id: 2
+  helpdesk/email:
+    - email_id: 2
+      from_email: john_test@example.com
+      to_email: john_test@example.com
+      subject:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      body:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      format: string
+      sender_name: John Doe
+      message_id: string
+      pattern_id: 2
+      gateway_id: 2
+      headers:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      created_at: 2014-01-21 08:58:57
+      is_processed: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      code: string
+      external_id: string
+      user_id: 2
+      name: John Doe
+      description:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      priority_id: 2
+      status_id: 2
+      department_id: 2
+      customer_id: 2
+      customer_email: john_test@example.com
+      customer_name: John Doe
+      order_id: 2
+      last_reply_name: John Doe
+      last_reply_at: 2014-01-21 08:58:57
+      reply_cnt: 2
+      store_id: 2
+      created_at: 2014-01-21 08:58:57
+      updated_at: 2014-01-21 08:58:57
+  helpdesk/message:
+    - message_id: 2
+      ticket_id: 2
+      email_id: john_test@example.com
+      user_id: 2
+      customer_id: 2
+      customer_email: john_test@example.com
+      customer_name: John Doe
+      body:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      is_internal: 2
+      created_at: 2014-01-21 08:58:57
+      updated_at: 2014-01-21 08:58:57
+  helpdesk/attachment:
+    - attachment_id: 2
+      email_id: john_test@example.com
+      message_id: 2
+      name: John Doe
+      type: string
+      size: 2
+      body: string
+  helpdesk/gateway:
+    - gateway_id: 2
+      name: John Doe
+      email: john_test@example.com
+      login: string
+      password: string
+      is_active: 2
+      host: string
+      port: 2
+      protocol: string
+      encryption: string
+      fetch_frequency: 2
+      fetch_max: 2
+      department_id: 2
+      store_id: 2
+      notes:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      fetched_at: 2014-01-21 08:58:57
+  helpdesk/pattern:
+    - pattern_id: 2
+      name: John Doe
+      pattern:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      scope: string
+      is_active: 2
+  helpdesk/template:
+    - template_id: 2
+      name: John Doe
+      template:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      is_active: 2
+  helpdesk/field:
+    - field_id: 2
+      name: John Doe
+      code: string
+      type: string
+      values:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      description:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      is_active: 2
+      sort_order: 2
+      is_required_staff: 2
+      is_required_customer: 2
+      is_visible_customer: 2
+      is_editable_customer: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      is_spam: 2
+      email_id: john_test@example.com
+  helpdesk/satisfaction:
+    - satisfaction_id: 2
+      ticket_id: 2
+      message_id: 2
+      user_id: 2
+      customer_id: 2
+      store_id: 2
+      rate: 2
+      comment:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      created_at: 2014-01-21 08:58:57
+      updated_at: 2014-01-21 08:58:57
+  helpdesk/message:
+    - message_id: 2
+      uid: string
+  helpdesk/ticket:
+    - ticket_id: 2
+      first_reply_at: 2014-01-21 08:58:57
+      first_solved_at: 2014-01-21 08:58:57
+  helpdesk/gateway:
+    - gateway_id: 2
+      last_fetch_result:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+  helpdesk/ticket_aggregated:
+    - ticket_aggregated_id: 2
+      period: string
+      store_id: 2
+      user_id: 2
+      new_ticket_cnt: 2
+      solved_ticket_cnt: 2
+      total_ticket_cnt: 2
+      first_reply_time: 2
+      first_resolution_time: 2
+      full_resolution_time: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      is_archived: 2
+      fp_period_unit: string
+      fp_period_value: 2
+      fp_execute_at: 2014-01-21 08:58:57
+      fp_is_remind: 2
+      fp_remind_email: john_test@example.com
+      fp_priority_id: 2
+      fp_status_id: 2
+      fp_department_id: 2
+      fp_user_id: 2
+  helpdesk/rule:
+    - rule_id: 2
+      name: John Doe
+      event: string
+      email_subject: john_test@example.com
+      email_body: john_test@example.com
+      is_active: 2
+      conditions_serialized:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+      is_send_owner: 2
+      is_send_department: 2
+      is_send_user: 2
+      other_email: john_test@example.com
+      sort_order: 2
+      is_stop_processing: 2
+      priority_id: 2
+      status_id: 2
+      department_id: 2
+      user_id: 2
+      add_tags: string
+      remove_tags: string
+      is_archive: 2
+  helpdesk/tag:
+    - tag_id: 2
+      name: John Doe
+  helpdesk/ticket_tag:
+    - ticket_tag_id: 2
+      ticket_id: 2
+      tag_id: 2
+  helpdesk/rule:
+    - rule_id: 2
+      is_send_attachment: 2
+  helpdesk/status:
+    - status_id: 2
+      color: string
+  helpdesk/priority:
+    - priority_id: 2
+      color: string
+  helpdesk/department:
+    - department_id: 2
+      is_members_notification_enabled: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      quote_address_id: 2
+  helpdesk/field:
+    - field_id: 2
+      is_visible_contact_form: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      channel: string
+      channel_data:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+  helpdesk/permission:
+    - permission_id: 2
+      role_id: 2
+      is_ticket_remove_allowed: 2
+  helpdesk/permission_department:
+    - permission_department_id: 2
+      permission_id: 2
+      department_id: 2
+  helpdesk/ticket:
+    - ticket_id: 2
+      third_party_email: john_test@example.com
+  helpdesk/message:
+    - message_id: 2
+      type: string
+      third_party_email: john_test@example.com
+      third_party_name: John Doe
+      triggered_by: string
+      is_read: 2
+  helpdesk/template_store:
+    - template_store_id: 2
+      template_id: 2
+      store_id: 2
+  helpdesk/field_store:
+    - field_store_id: 2
+      field_id: 2
+      store_id: 2
+  helpdesk/history:
+    - history_id: 2
+      ticket_id: 2
+      triggered_by: string
+      name: John Doe
+      message: string
+      created_at: 2014-01-21 08:58:57
+  helpdesk/ticket:
+    - ticket_id: 2
+      search_index:  |
+        text, text, text
+        text, text, text
+        text, text, text.
+  helpdesk/gateway:
+    - gateway_id: 2
+      fetch_limit: 2
+      is_delete_emails: john_test@example.com
+  helpdesk/attachment:
+    - attachment_id: 2
+      external_id: string

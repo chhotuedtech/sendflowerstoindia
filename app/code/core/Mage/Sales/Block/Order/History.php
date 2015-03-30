@@ -43,7 +43,7 @@ class Mage_Sales_Block_Order_History extends Mage_Core_Block_Template
         $orders = Mage::getResourceModel('sales/order_collection')
             ->addFieldToSelect('*')
             ->addFieldToFilter('customer_id', Mage::getSingleton('customer/session')->getCustomer()->getId())
-            ->addFieldToFilter('state', array('in' => Mage::getSingleton('sales/order_config')->getVisibleOnFrontStates()))
+            ->addFieldToFilter('state', array('nin' => array('onhold','payment_failed')))
             ->setOrder('created_at', 'desc')
         ;
 

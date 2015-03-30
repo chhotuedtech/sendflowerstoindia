@@ -1,0 +1,38 @@
+tables:
+  helpdesk/pattern:
+    -
+      pattern_id: 2
+      name: Some Pattern
+      is_active: 1
+      pattern: "/x-spam-flag: yes/mi"
+      scope: headers
+  helpdesk/email:
+    -
+      email_id: 2
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 2
+      body: Ticket Body 2
+      sender_name: John Doe
+      headers: |
+        body, body, body
+        x-spam-flag: yes 
+        body, body, body
+    -
+      email_id: 3
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: Ticket Subject 3
+      body: Ticket Body 3
+      sender_name: John Doe
+      headers: |
+        body, body, body
+        body, body, body
+        body, body, body
+    -
+      email_id: 4
+      from_email: john@example.com
+      to_email: support@company.com
+      subject: '[#AAA-123-45678]Ticket Subject 4'
+      body: Ticket Body 4
+      sender_name: John Doe

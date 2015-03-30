@@ -14,7 +14,7 @@
 	</default>
 	<listingtabs_index_index>
 		<reference name="content">
-			<block type="listingtabs/list" name="listingtabs.list.default" template="sm/listingtabs/default.phtml">
+			<block type="listingtabs/list_random" name="listingtabs.list.default" template="sm/listingtabs/default.phtml">
 			</block>
 		</reference>
 	</listingtabs_index_index>

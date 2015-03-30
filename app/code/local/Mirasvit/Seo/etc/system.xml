@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <seo translate="label" module="seo">
+            <label>SEO</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>400</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="seo">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_add_canonical_url translate="label">
+                            <label>Add Canonical URL Meta Header</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <backend_model>seo/system_config_backend_canonical</backend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_add_canonical_url>
+                        <crossdomain translate="label">
+                            <label>Cross Domain Canonical URL</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>seo/system_config_source_crossdomain</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </crossdomain>
+                        <canonical_url_ignore_pages translate="label">
+                            <label>Don't use canonical urls on pages</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+Can be a full action name or a request path. Wildcard allowed.
+Examples:<br>
+customer_account_*<br>
+/customer/account/*
+]]></comment>
+                        </canonical_url_ignore_pages>
+                        <noindex_pages2 translate="label">
+                            <label>Robots Meta Header</label>
+                            <frontend_model>seo/adminhtml_system_noindexPages</frontend_model>
+                            <backend_model>adminhtml/system_config_backend_serialized_array</backend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+ <comment><![CDATA[
+Can be a full action name or a request path. Wildcard allowed.
+Examples:<br>
+customer_account_*<br>
+/customer/account/*<br>
+Examples for layered navigation:<br>
+filterattribute_(manufacturer)<br>
+filterattribute_(1level)<br><br>
+]]></comment>
+                        </noindex_pages2>
+                        <is_paging_prevnext translate="label">
+                            <label>Enable Link Rel="next/prev"</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_paging_prevnext>
+                        <is_rich_snippets translate="label">
+                            <label>Enable Product Rich Snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_rich_snippets>
+                        <is_category_rich_snippets translate="label">
+                            <label>Enable Category Rich Snippets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>111</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+Show average products rating and minimal price at the bottom of category page]]>
+</comment>
+                        </is_category_rich_snippets>
+                        <breadcrumbs_separator translate="label">
+                            <label>Rich Snippets Breadcrumbs separator</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>112</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+Examples: <xmp>/&nbsp;, &nbsp;-&nbsp;, &rarr;</xmp> Leave field empty to disable rich snippets breadcrumbs.]]>
+</comment>
+                        </breadcrumbs_separator>
+                        <is_opengraph translate="label">
+                            <label>Enable Opengraph</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_opengraph>
+                        <robots_editor translate="label">
+                            <label>Robots.txt Editor</label>
+                            <frontend_type>textarea</frontend_type>
+                            <backend_model>seo/system_config_backend_robot</backend_model>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>File robots.txt should have 777 permissions</comment>
+                        </robots_editor>
+                        <is_category_meta_tags_used translate="label">
+                            <label>Use meta tags from categories if they are not empty</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>180</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_category_meta_tags_used>
+                        <is_product_meta_tags_used translate="label">
+                            <label>Use meta tags from products if they are not empty</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>190</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_product_meta_tags_used>
+                        <is_seo_of_nested_categories_for_current_category_used translate="label">
+                            <label>Use SEO of Nested (Child) Categories for current category</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_seo_of_nested_categories_for_current_category_used>
+                    </fields>
+                </general>
+                <url translate="label" module="seo">
+                    <label>SEO-friendly URLs Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>700</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <layered_navigation_friendly_urls translate="label">
+                            <label>Enable Layered Navigation SEO-friendly URLs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <frontend_model>seo/adminhtml_system_config_warning</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </layered_navigation_friendly_urls>
+
+
+                        <trailing_slash translate="label">
+                            <label>Trailing Slash</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>seo/system_config_source_trailingslash</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </trailing_slash>
+                        <product_url_format translate="label">
+                            <label>Product URL</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>seo/system_config_source_producturlformat</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </product_url_format>
+                        <product_url_key translate="label">
+                            <label>Product URL Key Template</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+You can use variables in this template<br>
+Example:[product_name] [product_sku] [by {product_manufacturer}] [color {product_color}]
+]]></comment>
+                        </product_url_key>
+                        <apply_template>
+                            <label></label>
+                            <button_label>Apply Template For Product URLs</button_label>
+                            <button_action>applyUrlTemplate</button_action>
+                            <frontend_model>seo/adminhtml_system_btnAction</frontend_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </apply_template>
+                        <tag_friendly_urls translate="label">
+                            <label>Enable SEO-friendly URLs for tags</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tag_friendly_urls>
+                        <review_friendly_urls translate="label">
+                            <label>Enable SEO-friendly URLs for reviews</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </review_friendly_urls>
+                    </fields>
+                </url>
+                <image translate="label" module="seo">
+                    <label>Product Images Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>800</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_enable_image_friendly_urls translate="label">
+                            <label>Enable SEO-friendly URLs for Product Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_enable_image_friendly_urls>
+                        <image_url_template translate="label">
+                            <label>Template for URL key of Product Images</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+You can use variables in this template<br>
+Example:[product_name] [product_sku] [by {product_manufacturer}] [color {product_color}]
+]]></comment>
+                        </image_url_template>
+                        <is_enable_image_alt translate="label">
+                            <label>Enable generation of Product Images Alt and Title</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_enable_image_alt>
+                        <image_alt_template translate="label">
+                            <label>Template for Product Images Alt and Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>170</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+You can use variables in this template<br>
+Example:[product_name] [product_sku] [by {product_manufacturer}] [color {product_color}]
+]]></comment>
+                        </image_alt_template>
+                    </fields>
+                </image>
+            </groups>
+       </seo>
+    </sections>
+</config>

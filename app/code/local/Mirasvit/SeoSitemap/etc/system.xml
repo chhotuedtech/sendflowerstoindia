@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <seositemap translate="label" module="seositemap">
+            <label>Extended Site Map</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>410</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <frontend>
+                    <label>Frontend Sitemap Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <sitemap_base_url translate="label">
+                            <label>Base URL Path To Frontend Sitemap</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap_base_url>
+                        <sitemap_meta_title translate="label">
+                            <label>Meta Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap_meta_title>
+                        <sitemap_meta_keywords translate="label">
+                            <label>Meta Keywords</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap_meta_keywords>
+                        <sitemap_meta_description translate="label">
+                            <label>Meta Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap_meta_description>
+                        <sitemap_h1 translate="label">
+                            <label>H1 Header</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sitemap_h1>
+                        <is_show_products translate="label">
+                            <label>Show Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show_products>
+                        <is_show_cms_pages translate="label">
+                            <label>Show CMS Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show_cms_pages>
+                        <ignore_cms_pages translate="label">
+                            <label>Ignore CMS Pages</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>seositemap/config_source_ignore_cms_pages</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ignore_cms_pages>
+                        <is_show_stores translate="label">
+                            <label>Show Stores</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show_stores>
+                        <additional_links translate="label">
+                            <label>Additional links</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                            <![CDATA[Comma-separeted list of links.
+Example:<br>
+/promotions/, Our Promotions<br>
+/customer/account/, Customer Account<br>
+]]>
+                            </comment>
+                        </additional_links>
+                        <exclude_links translate="label">
+                            <label>Exclude by pattern</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                            <![CDATA[List of links.
+Example:<br>
+/furniture.html <br>
+/22-syncmaster-lcd-monitor.html <br>
+/universal-camera* <br>
+*memory* <br>
+*laptops.html <br>
+/electronics/computers/mon* <br>
+]]>
+                            </comment>
+                        </exclude_links>
+                        <links_limit translate="label">
+                            <label>Limit the number of links on one page</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[If is not empty, sitemap will be splitted by pages without tree structure]]>
+                            </comment>
+                        </links_limit>
+                    </fields>
+                </frontend>
+                <google>
+                    <label>Google Sitemap Extended Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <fields>
+                        <is_add_product_images translate="label">
+                            <label>Include Product Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </is_add_product_images>
+                        <is_enable_image_friendly_urls translate="label">
+                            <label>Enable SEO-friendly URLs and custom sizes for Product Images</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </is_enable_image_friendly_urls>
+                        <image_url_template translate="label">
+                            <label>Template for URL key of Product Images</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[You can use variables in this template<br>
+Example:[product_name] [product_sku] [by {product_manufacturer}] [color {product_color}]
+]]>
+                            </comment>
+                        </image_url_template>
+                        <image_size_width translate="label">
+                            <label>Image Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[in pixels]]>
+                            </comment>
+                        </image_size_width>
+                        <image_size_height translate="label">
+                            <label>Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[in pixels]]>
+                            </comment>
+                        </image_size_height>
+                        <is_add_product_tags translate="label">
+                            <label>Include Product Tags</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </is_add_product_tags>
+                        <product_tags_changefreq translate="label">
+                            <label>Product Tags Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_frequency</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </product_tags_changefreq>
+                        <product_tags_priority translate="label">
+                            <label>Product Tags Priority</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[From 0.0 to 1.0]]>
+                            </comment>
+                        </product_tags_priority>
+                        <link_changefreq translate="label">
+                            <label>Additional Links Frequency</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_frequency</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </link_changefreq>
+                        <link_priority translate="label">
+                            <label>Additional Links Priority</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[From 0.0 to 1.0]]>
+                            </comment>
+                        </link_priority>
+                        <split_size translate="label">
+                            <label>Sitemap Split Size, KB</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[Max 51200. Leave it empty to disable this option.]]>
+                            </comment>
+                        </split_size>
+                        <max_links translate="label">
+                            <label>Max URLs quantity per file</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>120</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment>
+                            <![CDATA[Max 50000. Leave it empty to disable this option.]]>
+                            </comment>
+                        </max_links>
+                    </fields>
+                </google>
+            </groups>
+        </seositemap>
+    </sections>
+</config>

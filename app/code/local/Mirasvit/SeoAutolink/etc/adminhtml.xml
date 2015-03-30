@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<config>
+	 <menu>
+        <seo module="seoautolink">
+            <title>SEO</title>
+            <sort_order>71</sort_order>
+            <action>seoautolink/adminhtml_link/index</action>
+            <children>
+               <autolinks module="seoautolink">
+                    <title>Auto Links</title>
+                    <children>
+                       <seoautolinkmanage module="seoautolink">
+                            <title>Management</title>
+                            <sort_order>10</sort_order>
+                            <action>seoautolink/adminhtml_link/index</action>
+                        </seoautolinkmanage>
+                        <seoautolinkimport module="seoautolink">
+                            <title>Import</title>
+                            <sort_order>20</sort_order>
+                            <action>seoautolink/adminhtml_import/index</action>
+                        </seoautolinkimport>
+                       <seoautolinksettings module="seoautolink">
+                            <title>Settings</title>
+                            <sort_order>30</sort_order>
+                            <action>adminhtml/system_config/edit/section/seoautolink</action>
+                        </seoautolinksettings>
+                    </children>
+               </autolinks>
+            </children>
+        </seo>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <seo translate="title" module="seoautolink">
+                        <title>SEO </title>
+                        <sort_order>20</sort_order>
+                        <children>
+                            <autolinks translate="title">
+                                <title>Auto Links</title>
+                                <sort_order>30</sort_order>
+                                <children>
+                                    <seoautolinkmanage translate="title">
+                                        <title>Management</title>
+                                        <sort_order>10</sort_order>
+                                    </seoautolinkmanage>
+                                    <seoautolinkimport translate="title">
+                                        <title>Import</title>
+                                        <sort_order>20</sort_order>
+                                    </seoautolinkimport>
+                                    <seoautolinksettings translate="title">
+                                        <title>Settings</title>
+                                        <sort_order>30</sort_order>
+                                    </seoautolinksettings>
+                                </children>
+                            </autolinks>
+                        </children>
+                    </seo>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <seoautolink translate="title" module="seoautolink">
+                                        <title>Mirasvit Seo Autolink</title>
+                                    </seoautolink>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+               </children>
+           </admin>
+       </resources>
+    </acl>
+</config>

@@ -30,6 +30,7 @@ if ($this->_isAjax()) {
 
 if (!empty($child_items)) {
 	$k = $this->getRequest()->getPost('ajax_listingtags_start', 0);
+	shuffle($child_items);
 	foreach ($child_items as $_product) {
 		$k++; 
 		
@@ -212,7 +213,7 @@ if (!empty($child_items)) {
 	$cmsPage = $this->getRequest()->getPost('cms_page');
 	if( $cmsPage == 'home-v2' ){
 		$column = 4;
-	} else $column = 3;
+	} else $column = 4;
 	//var_dump($column);
 ?>
 

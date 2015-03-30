@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <helpdesk translate="label" module="helpdesk">
+            <label>Help Desk</label>
+            <tab>mstcore</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general>
+                    <label>General Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <default_priority translate="label">
+                            <label>Priority for new tickets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/priority</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_priority>
+                        <default_status translate="label">
+                            <label>Status for new tickets</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/status</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_status>
+                        <default_store translate="label">
+                            <label>Default store for tickets created via backend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_core_store</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </default_store>
+                        <ticket_grid_columns translate="label">
+                            <label>Show Columns in Ticket Grid</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>helpdesk/config_source_ticket_grid_columns</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </ticket_grid_columns>
+                        <sign_ticket_by translate="label">
+                            <label>Sign staff replies</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/config_source_sign_ticket_by</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sign_ticket_by>
+                        <archived_status_list translate="label">
+                            <label>Move Ticket to Archive if it has one of following statuses</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>helpdesk/status</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </archived_status_list>
+                        <contact_us_is_active translate="label">
+                            <label>Create Tickets from Contact Us form</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </contact_us_is_active>
+                        <bcc_email translate="label">
+                            <label>Send blind carbon copy (BCC) of all emails to</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                            <![CDATA[leave empty to disable]]>
+                            </comment>
+                        </bcc_email>
+                        <is_wysiwyg translate="label">
+                            <label>Use WYSIWYG Editor in backend</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </is_wysiwyg>
+                    </fields>
+                </general>
+                <contact_form>
+                    <label>Feedback Tab</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <is_active translate="label">
+                            <label>Enable Feedback Tab</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <default_department translate="label">
+                            <label>Assign to Department</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/department</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_department>
+                        <color translate="label">
+                            <label>Tab Color</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color>
+                        <title translate="label">
+                            <label>Tab Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                        <position translate="label">
+                            <label>Tab Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/config_source_position</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </position>
+                        <form_title translate="label">
+                            <label>Form Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </form_title>
+                        <subject_title translate="label">
+                            <label>Subject Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subject_title>
+                        <subject_placeholder translate="label">
+                            <label>Subject Placeholder</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subject_placeholder>
+                        <description_title translate="label">
+                            <label>Description Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </description_title>
+                        <description_placeholder translate="label">
+                            <label>Description Placeholder</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </description_placeholder>
+                        <is_active_kb translate="label">
+                            <label>Search Knowledge Base Topics first</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                            <![CDATA[works if mirasvit knowledge base extension is installed]]>
+                            </comment>
+                        </is_active_kb>
+                    </fields>
+                </contact_form>
+                <notification>
+                    <label>Email Notification Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>30</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <is_show_code translate="label">
+                            <label>Show Ticket ID in the email title</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_show_code>
+                        <history_records_number translate="label">
+                            <label>Number of last replies to show in the ticket history</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </history_records_number>
+                        <new_ticket_template translate="label">
+                            <label>Template of New Ticket Email for Customer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </new_ticket_template>
+                        <staff_new_ticket_template translate="label">
+                            <label>Template of New Ticket Email for Staff</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </staff_new_ticket_template>
+                        <new_message_template translate="label">
+                            <label>Template of New Message Email for Customer</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </new_message_template>
+                        <staff_new_message_template translate="label">
+                            <label>Template of New Message Email for Staff</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </staff_new_message_template>
+                        <third_new_message_template translate="label">
+                            <label>Template of New Message Email for Third Party</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </third_new_message_template>
+                        <reminder_template translate="label">
+                            <label>Template of Ticket Reminder</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </reminder_template>
+                        <rule_template translate="label">
+                            <label>Template of Rule Notification</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </rule_template>
+                        <staff_new_satisfaction_template translate="label">
+                            <label>Template of Survey Satisfaction Result</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>helpdesk/system_config_source_email_template</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </staff_new_satisfaction_template>
+                    </fields>
+                </notification>
+                <satisfaction>
+                    <label>Customer Satisfaction Survey</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>40</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <is_active translate="label">
+                            <label>Send satisfaction survey with staff reply</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <is_send_results_owner translate="label">
+                            <label>Send survey result to ticket owner</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_send_results_owner>
+                        <results_email translate="label">
+                            <label>Send survey result to emails</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                            <![CDATA[you can enter few emails separated by comma]]>
+                            </comment>
+                        </results_email>
+                    </fields>
+                </satisfaction>
+                <frontend>
+                    <label>Customer Account</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>50</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <is_active translate="label">
+                            <label>Show Help Desk section in Customer Account</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_active>
+                        <is_allow_priority translate="label">
+                            <label>Allow customer to select Priority</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_allow_priority>
+                        <is_allow_department translate="label">
+                            <label>Allow customer to select Department</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_allow_department>
+                        <is_allow_order translate="label">
+                            <label>Allow customer to select Order</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_allow_order>
+                    </fields>
+                </frontend>
+                <developer>
+                    <label>Developer Settings</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>60</sort_order>
+                    <!-- <frontend_model>mstcore/system_config_form_fieldset</frontend_model> -->
+                    <fields>
+                        <is_active translate="label">
+                            <label>Activate Sandbox</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </is_active>
+                        <sandbox_email translate="label">
+                            <label>Send All Outgoing emails to Email</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sandbox_email>
+                    </fields>
+                </developer>
+            </groups>
+        </helpdesk>
+    </sections>
+</config>

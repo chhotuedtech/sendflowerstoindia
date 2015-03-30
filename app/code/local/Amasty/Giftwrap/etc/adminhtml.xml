@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <amgiftwrap translate="title" module="amgiftwrap">
+                    <title>Gift Wrap</title>
+                    <sort_order>900</sort_order>
+                    <children>
+                        <design>
+                            <title>Gift Wrap Design</title>
+                            <sort_order>10</sort_order>
+                            <action>amgiftwrap/adminhtml_design</action>
+                        </design>
+                        <cards>
+                            <title>Message Cards</title>
+                            <sort_order>20</sort_order>
+                            <action>amgiftwrap/adminhtml_cards</action>
+                        </cards>
+                    </children>
+                </amgiftwrap>
+            </children>
+        </sales>
+    </menu>
+
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <amgiftwrap translate="title" module="amgiftwrap">
+                                <title>Gift Wrap</title>
+                                <sort_order>900</sort_order>
+                                <children>
+                                    <design>
+                                        <title>Gift Wrap Design</title>
+                                        <sort_order>10</sort_order>
+                                        <action>amgiftwrap/adminhtml_design</action>
+                                    </design>
+                                    <cards>
+                                        <title>Message Cards</title>
+                                        <sort_order>20</sort_order>
+                                        <action>amgiftwrap/adminhtml_cards</action>
+                                    </cards>
+                                </children>
+                            </amgiftwrap>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <amgiftwrap translate="title" module="amgiftwrap">
+                                        <title>Gift Wrap</title>
+                                    </amgiftwrap>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+    <translate>
+        <modules>
+            <Amasty_Giftwrap>
+                <files>
+                    <default>Amasty_Giftwrap.csv</default>
+                </files>
+            </Amasty_Giftwrap>
+        </modules>
+    </translate>
+</config>

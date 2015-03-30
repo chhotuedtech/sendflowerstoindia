@@ -38,10 +38,13 @@
 <div class="attribute-specs">
     <table cellspacing="0" class="data-table" id="product-attribute-specs-table">
     <?php foreach ($_additional as $_data): ?>
-    <tr>
-        <td><?php echo $this->htmlEscape($this->__($_data['label'])) ?></td>
-        <td class="data"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
-    </tr>
+		  <?php if ($_data['value'] != 'N/A'){ ?>
+         		 <?php if ($_data['value'] != 'No'){ ?>
+		<tr>
+			<td><?php echo $this->htmlEscape($this->__($_data['label'])) ?></td>
+			<td class="data"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></td>
+		</tr>
+		  <?php } } ?>
     <?php endforeach; ?>
     </table>
     <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>

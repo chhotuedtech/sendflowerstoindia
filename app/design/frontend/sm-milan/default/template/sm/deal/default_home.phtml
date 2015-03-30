@@ -38,7 +38,15 @@ function CountDown(date,id){
 }
 //]]>
 </script>
+<style>
 
+.item-addcart span span{
+	
+	background:none !important;
+	padding-left:0px !important;
+}
+
+</style>
 <?php 
 $list = $this->_getProducts();
 $helper = Mage::helper('deal/data');
@@ -159,14 +167,14 @@ if (!empty($list)) {
 										
 									</div>
 									
-									<div class="item-time">	
+									<!--<div class="item-time">	
 										<div class="item-timer" id="product_time_<?php echo $j;?>"></div>	
 										<script type="text/javascript">
 										//<![CDATA[
 											listdeal.push('product_time_<?php echo $j."&&||&&".date("Y/m/d", strtotime($specialPriceToDate));?>') ;
 										//]]>
 										</script>											
-									</div>
+									</div>-->
 								</div>
 							<?php } ?>
 							
@@ -254,10 +262,10 @@ if (!empty($list)) {
 			$('.slider-deal').owlCarousel({
 				itemsCustom : [
 				[0, 1],
-				[480, <?php echo $nb_column4;?>],
-				[768, <?php echo $nb_column3;?>],
-				[992, <?php echo $nb_column2;?>],
-				[1200, <?php echo $nb_column1;?>]
+				[480, 3],
+				[768, 3],
+				[992, 4],
+				[1200, 4]
 				], 
 				navigation : true, // Show next and prev buttons
 				afterInit : function(elem){

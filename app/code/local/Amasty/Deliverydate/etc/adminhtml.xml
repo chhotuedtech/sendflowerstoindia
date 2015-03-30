@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) Amasty (http://www.amasty.com)
+* @package Amasty_Deliverydate
+*/
+-->
+<config>
+    <events>
+        <core_collection_abstract_load_before>
+            <observers>
+                <amdeliverydate>
+                    <type>singleton</type>
+                    <class>amdeliverydate/observer</class>
+                    <method>onCoreCollectionAbstractLoadBefore</method>
+                </amdeliverydate>
+            </observers>
+        </core_collection_abstract_load_before>
+        
+        <core_layout_block_create_after>
+            <observers>
+                <amdeliverydate>
+                    <type>singleton</type>
+                    <class>amdeliverydate/observer</class>
+                    <method>onCoreLayoutBlockCreateAfter</method>
+                </amdeliverydate>
+            </observers>
+        </core_layout_block_create_after>
+    </events>
+    
+    <menu>
+        <sales>
+            <children>
+                <deliverydate translate="title">
+                    <title>Delivery Date</title>
+                    <sort_order>1000</sort_order>
+                    <children>
+                        <holidays translate="title" module="amdeliverydate"> 
+                            <title>Exceptions: Dates and Holidays</title>
+                            <action>amdeliverydate/adminhtml_holidays</action>
+                            <sort_order>10</sort_order>
+                        </holidays>
+                        <dinterval translate="title" module="amdeliverydate"> 
+                            <title>Exceptions: Date Intervals</title>
+                            <action>amdeliverydate/adminhtml_dinterval</action>
+                            <sort_order>20</sort_order>
+                        </dinterval>
+                        <tinterval translate="title" module="amdeliverydate"> 
+                            <title>Time Intervals</title>
+                            <action>amdeliverydate/adminhtml_tinterval</action>
+                            <sort_order>30</sort_order>
+                        </tinterval>
+                        <configuration translate="title" module="amdeliverydate"> 
+                            <title>Configuration</title>
+                            <action>adminhtml/system_config/edit/section/amdeliverydate</action>
+                            <sort_order>40</sort_order>
+                        </configuration>
+                    </children>
+                </deliverydate>
+            </children>
+        </sales>
+    </menu>
+    
+    <translate>
+        <modules>
+            <Amasty_Deliverydate>
+                <files>
+                    <default>Amasty_Deliverydate.csv</default>
+                </files>
+            </Amasty_Deliverydate>
+        </modules>
+    </translate>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <order>
+                                <children>
+                                    <actions translate="title">
+                                        <title>Actions</title>
+                                        <children>
+                                            <edit_deliverydate translate="title">
+                                                <title>Edit Delivery Date</title>
+                                            </edit_deliverydate>
+                                        </children>
+                                    </actions>
+                                </children>
+                            </order>
+                            <deliverydate translate="title">
+                                <title>Delivery Date</title>
+                                <sort_order>1000</sort_order>
+                                <children>
+                                    <holidays translate="title" module="amdeliverydate"> 
+                                        <title>Exceptions: Dates and Holidays</title>
+                                        <sort_order>10</sort_order>
+                                    </holidays>
+                                    <dinterval translate="title" module="amdeliverydate"> 
+                                        <title>Exceptions: Date Intervals</title>
+                                        <sort_order>20</sort_order>
+                                    </dinterval>
+                                    <tinterval translate="title" module="amdeliverydate"> 
+                                        <title>Time Intervals</title>
+                                        <sort_order>30</sort_order>
+                                    </tinterval>
+                                    <configuration translate="title" module="amdeliverydate"> 
+                                        <title>Configuration</title>
+                                        <sort_order>40</sort_order>
+                                    </configuration>
+                                </children>
+                            </deliverydate>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <amdeliverydate translate="title" module="amdeliverydate">
+                                        <title>Delivery Date</title>
+                                    </amdeliverydate>
+                                </children>
+                            </config>
+                        </children>
+                    </system> 
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

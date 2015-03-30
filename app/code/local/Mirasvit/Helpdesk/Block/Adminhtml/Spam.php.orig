@@ -1,0 +1,25 @@
+<?php
+class Mirasvit_Helpdesk_Block_Adminhtml_Spam extends Mage_Adminhtml_Block_Widget_Grid_Container
+{
+
+    public function __construct ()
+    {
+        parent::__construct();
+        $this->_controller = 'adminhtml_spam';
+        $this->_blockGroup = 'helpdesk';
+        $this->_headerText = Mage::helper('helpdesk')->__('Spam Folder');
+<<<<<<< HEAD
+        $this->_removeButton('add');
+=======
+        $this->_addButtonLabel = Mage::helper('helpdesk')->__('Add New Spam');
+>>>>>>> mgen
+    }
+
+    public function getCreateUrl ()
+    {
+        return $this->getUrl('*/*/add');
+    }
+
+    /************************/
+
+}

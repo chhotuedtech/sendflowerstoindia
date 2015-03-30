@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) Amasty (http://www.amasty.com)
+* @package Amasty_Deliverydate
+*/
+-->
+<config>
+   <sections>
+        <amdeliverydate translate="label" module="amdeliverydate">
+            <label>Delivery Date</label>
+            <tab>amasty</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>40504</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <disabled_days translate="label">
+                            <label>Disable Delivery On</label>
+                            <frontend_type>multiselect</frontend_type> 
+                            <source_model>amdeliverydate/source_days</source_model> 
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </disabled_days>
+                        <min_days translate="label comment">
+                            <label>Minimal Delivery Interval</label>
+                            <comment>In days. Set to 0 to allow same day delivery.</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </min_days>
+                        <max_days translate="label comment">
+                            <label>Maximal Delivery Interval</label>
+                            <comment>In days</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </max_days>
+                        <enabled_same_day translate="label">
+                            <label>Enabled `Disable Same Day Delivery After`</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_same_day>
+                        <same_day translate="label">
+                            <label>Disable Same Day Delivery After</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_same_day>1</enabled_same_day>
+                            </depends>
+                        </same_day>
+                        <enabled_next_day translate="label">
+                            <label>Enabled `Disable Next Day Delivery After`</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_next_day>
+                        <next_day translate="label">
+                            <label>Disable Next Day Delivery After</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_next_day>1</enabled_next_day>
+                            </depends>
+                        </next_day>
+                        <shipping_quota translate="label comment">
+                            <label>Quota Per Day</label>
+                            <comment>Maximum number of deliveries per day. Set 0 to unlimited.</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>53</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </shipping_quota>
+                        <offset translate="label comment">
+                            <label>Time Offset</label>
+                            <comment>Modify this only if you're getting incorrect time values.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>amdeliverydate/source_offset</source_model>
+                            <sort_order>55</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </offset>
+                        <comment translate="label comment">
+                            <label>Delivery Comment</label>
+                            <comment>Visible for customers on checkout. HTML tags allowed.</comment>
+                            <frontend_type>textarea</frontend_type> 
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </comment>
+                        <comment_style translate="label">
+                            <label>Style of the Delivery Comment</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>amdeliverydate/source_style</source_model>
+                            <sort_order>65</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </comment_style>
+                        <format translate="label comment">
+                            <label>Date Format</label>
+                            <comment>Order of columns on admin grids and edit pages of the extension in the backend.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>amdeliverydate/source_format</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </format>
+                    </fields>
+                </general>
+                <date_field translate="label">
+                    <label>Delivery Date</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <format translate="label comment">
+                            <label>Date Format</label>
+                            <comment>Format of date for outputting values</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>amdeliverydate/source_dateformat</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </format>
+                        <required translate="label">
+                            <label>Is Required</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </required>
+                        <enabled_default translate="label comment">
+                            <label>Set Default Value</label>
+                            <comment>Will preselect value on the frontend (if date is not disabled).</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_default>
+                        <default translate="label comment">
+                            <label>Default Value</label>
+                            <comment>0 - same day, 1 - next day etc.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_default>1</enabled_default>
+                            </depends>
+                        </default>
+                        <include translate="label">
+                            <label>Include Into</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_include</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </include>
+                        <show translate="label">
+                            <label>Display On</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_show</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show>
+                        <note translate="label comment">
+                            <label>Field Note</label>
+                            <comment>Visible on checkout below the date field.</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <enabled_customer_groups translate="label">
+                            <label>Show For Selected Customer Groups Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_customer_groups>
+                        <customer_groups translate="label">
+                            <label>Customer Groups</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_group</source_model>
+                            <sort_order>34</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_customer_groups>1</enabled_customer_groups>
+                            </depends>
+                        </customer_groups>
+                        <enabled_carriers translate="label">
+                            <label>Show For Selected Shipping Methods Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>35</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_carriers>
+                        <carriers translate="label">
+                            <label>Shipping Methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_carriers</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_carriers>1</enabled_carriers>
+                            </depends>
+                        </carriers>
+                    </fields>
+                </date_field>
+                <time_field translate="label">
+                    <label>Delivery Time</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled_time translate="label">
+                            <label>Enable Delivery Time</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_time>
+                        <required translate="label">
+                            <label>Is Required</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </required>
+                        <include translate="label">
+                            <label>Include Into</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_include</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </include>
+                        <show translate="label">
+                            <label>Display On</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_show</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show>
+                        <note translate="label comment">
+                            <label>Field Note</label>
+                            <comment>Visible on checkout below the date field.</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <enabled_customer_groups translate="label">
+                            <label>Show For Selected Customer Groups Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_customer_groups>
+                        <customer_groups translate="label">
+                            <label>Customer Groups</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_group</source_model>
+                            <sort_order>44</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_customer_groups>1</enabled_customer_groups>
+                            </depends>
+                        </customer_groups>
+                        <enabled_carriers translate="label">
+                            <label>Show For Selected Shipping Methods Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_carriers>
+                        <carriers translate="label">
+                            <label>Shipping Methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_carriers</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_carriers>1</enabled_carriers>
+                            </depends>
+                        </carriers>
+                    </fields>
+                </time_field>
+                <comment_field translate="label">
+                    <label>Comments Field</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled_comment translate="label">
+                            <label>Enable Comments Field</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_comment>
+                        <required translate="label">
+                            <label>Is Required</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </required>
+                        <include translate="label">
+                            <label>Include Into</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_include</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </include>
+                        <show translate="label">
+                            <label>Display On</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_show</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </show>
+                        <note translate="label comment">
+                            <label>Field Note</label>
+                            <comment>Visible on checkout below the date field.</comment>
+                            <frontend_type>text</frontend_type> 
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </note>
+                        <enabled_customer_groups translate="label">
+                            <label>Show For Selected Customer Groups Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>42</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_customer_groups>
+                        <customer_groups translate="label">
+                            <label>Customer Groups</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_group</source_model>
+                            <sort_order>44</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_customer_groups>1</enabled_customer_groups>
+                            </depends>
+                        </customer_groups>
+                        <enabled_carriers translate="label">
+                            <label>Show For Selected Shipping Methods Only</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>45</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled_carriers>
+                        <carriers translate="label">
+                            <label>Shipping Methods</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>amdeliverydate/source_carriers</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled_carriers>1</enabled_carriers>
+                            </depends>
+                        </carriers>
+                    </fields>
+                </comment_field>
+            </groups>
+        </amdeliverydate>
+    </sections>
+</config>

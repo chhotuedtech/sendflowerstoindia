@@ -42,7 +42,8 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
             $session            = Mage::getSingleton('core/session');
             $customerSession    = Mage::getSingleton('customer/session');
             $email              = (string) $this->getRequest()->getPost('email');
-
+			
+			
             try {
                 if (!Zend_Validate::is($email, 'EmailAddress')) {
                     Mage::throwException($this->__('Please enter a valid email address.'));
@@ -64,9 +65,11 @@ class Mage_Newsletter_SubscriberController extends Mage_Core_Controller_Front_Ac
                 $status = Mage::getModel('newsletter/subscriber')->subscribe($email);
                 if ($status == Mage_Newsletter_Model_Subscriber::STATUS_NOT_ACTIVE) {
                     $session->addSuccess($this->__('Confirmation request has been sent.'));
+					
                 }
                 else {
                     $session->addSuccess($this->__('Thank you for your subscription.'));
+					
                 }
             }
             catch (Mage_Core_Exception $e) {

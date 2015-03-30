@@ -37,6 +37,7 @@ $_helper = $this->helper('catalog/output');
         <?php if ($this->getMode() != 'grid'): ?>
             <?php $_iterator = 0; ?>
             <ol class="products-list" id="products-list">
+			<?php $_productCollection->getSelect()->order('RAND()'); ?>
                 <?php foreach ($_productCollection as $_product):
                     $id_product = Mage::getModel('catalog/product')->load($_product->getId());
                     //$count_input_qty++;
@@ -138,8 +139,9 @@ $_helper = $this->helper('catalog/output');
         <?php // Grid Mode ?>
 
         <?php $_collectionSize = $_productCollection->count() ?>
-        <?php $_columnCount = $this->getColumnCount(); ?>
+        <?php $_columnCount = 4; //$this->getColumnCount(); ?>
             <div class="products-grid row">
+			<?php $_productCollection->getSelect()->order('RAND()'); ?>
                 <?php $i = 0;
                 foreach ($_productCollection as $_product):
                     $id_product = Mage::getModel('catalog/product')->load($_product->getId());

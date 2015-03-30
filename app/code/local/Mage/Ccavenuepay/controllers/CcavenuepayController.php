@@ -106,14 +106,22 @@ class Mage_Ccavenuepay_CcavenuepayController extends Mage_Core_Controller_Front_
             $order = Mage::getModel('sales/order')->loadByIncrementId($session->getLastRealOrderId());
             if ($order->getId()) {
 
-				 $order = Mage::getSingleton('sales/order')->loadByIncrementId($order->getId());
+				// $order = Mage::getSingleton('sales/order')->loadByIncrementId($order->getId());
 				$order_history_comments = $this->getCheckout()->getCcavenuepayErrorMessage();
 
 				foreach($order_history_comments as $order_history_comment)
 				{
 					if($order_history_comment !='') $order->addStatusHistoryComment($order_history_comment,true);
 				}	
-                $order->cancel()->save();
+                
+				$state = 'payment_failed';
+				$status = 'payment_failed';
+				$comment = "Customer cancelled order from Cccavenue payment getway";
+				$isCustomerNotified = false; //whether customer to be notified
+				$order->setState($state, $status, $comment, $isCustomerNotified);    
+				//$order->setStatus("payment_failure");
+				$order->save();
+				//$order->cancel()->save();
 
                 Mage::helper('Ccavenuepay/checkout')->restoreQuote();
                 echo "string";	

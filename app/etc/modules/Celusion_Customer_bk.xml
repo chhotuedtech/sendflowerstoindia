@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Celusion_Customer>
+			<codePool>local</codePool>
+			<active>true</active>
+		</Celusion_Customer>
+	</modules>
+</config>

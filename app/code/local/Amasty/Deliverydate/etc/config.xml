@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) Amasty (http://www.amasty.com)
+* @package Amasty_Deliverydate
+*/
+-->
+<config>
+    <modules>
+        <Amasty_Deliverydate>
+            <version>1.1.5</version>
+        </Amasty_Deliverydate>
+    </modules>
+    
+    <global>
+        <models>
+            <amdeliverydate>
+                <class>Amasty_Deliverydate_Model</class>
+                <resourceModel>amdeliverydate_mysql4</resourceModel>
+            </amdeliverydate>
+            <amdeliverydate_mysql4>
+                <class>Amasty_Deliverydate_Model_Mysql4</class>
+                <entities>
+                    <deliverydate>
+                        <table>amasty_amdeliverydate_deliverydate</table>
+                    </deliverydate>
+                    <holidays>
+                        <table>amasty_amdeliverydate_holidays</table>
+                    </holidays>
+                    <dinterval>
+                        <table>amasty_amdeliverydate_dinterval</table>
+                    </dinterval>
+                    <tinterval>
+                        <table>amasty_amdeliverydate_tinterval</table>
+                    </tinterval>
+                </entities>
+            </amdeliverydate_mysql4>
+            <sales>
+                <rewrite>
+                    <order>Amasty_Deliverydate_Model_Sales_Order</order>
+                    <order_api>Amasty_Deliverydate_Model_Sales_Order_Api</order_api>
+                </rewrite>
+            </sales>
+        </models>
+        
+        <resources>
+             <amdeliverydate_setup>
+                <setup>
+                    <module>Amasty_Deliverydate</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </amdeliverydate_setup>
+            <amdeliverydate_write>
+                <connection><use>core_write</use></connection>
+            </amdeliverydate_write>
+            <amdeliverydate_read>
+                <connection><use>core_read</use></connection>
+            </amdeliverydate_read>
+        </resources>
+          
+        <blocks>
+            <amdeliverydate>
+                <class>Amasty_Deliverydate_Block</class>
+            </amdeliverydate>
+        </blocks>
+        
+        <helpers>
+            <amdeliverydate>
+                <class>Amasty_Deliverydate_Helper</class>
+            </amdeliverydate>
+        </helpers>
+        
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <amdeliverydate>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onCoreBlockAbstractToHtmlAfter</method>
+                    </amdeliverydate>
+                </observers>
+            </core_block_abstract_to_html_after>
+            
+            <sales_quote_save_after>
+                <observers>
+                    <amdeliverydate>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onSalesQuoteSaveAfter</method>
+                    </amdeliverydate>
+                </observers>
+            </sales_quote_save_after>
+            
+            <checkout_type_onepage_save_order_after>
+                <observers>
+                    <amdeliverydate>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onCheckoutTypeOnepageSaveOrderAfter</method>
+                    </amdeliverydate>
+                </observers>
+            </checkout_type_onepage_save_order_after>
+        </events>
+    </global>
+    
+    <admin>
+        <routers>
+            <amdeliverydate>
+                <use>admin</use>
+                <args>
+                    <module>Amasty_Deliverydate</module>
+                    <frontName>amdeliverydate</frontName>
+                </args>
+            </amdeliverydate>
+        </routers>
+    </admin>
+    
+    <frontend>
+        <translate>
+            <modules>
+                <Amasty_Deliverydate>
+                    <files>
+                        <default>Amasty_Deliverydate.csv</default>
+                    </files>
+                </Amasty_Deliverydate>
+            </modules>
+        </translate>
+        
+        <layout>
+            <updates>
+                <amdeliverydate>
+                    <file>amasty/amdeliverydate/amdeliverydate.xml</file>
+                </amdeliverydate>
+            </updates>
+        </layout>
+    </frontend>
+    
+    <adminhtml>
+        <events>
+            <core_collection_abstract_load_before>
+                <observers>
+                    <amdeliverydate>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onCoreCollectionAbstractLoadBefore</method>
+                    </amdeliverydate>
+                </observers>
+            </core_collection_abstract_load_before>
+            
+            <core_layout_block_create_after>
+                <observers>
+                    <amdeliverydate>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onCoreLayoutBlockCreateAfter</method>
+                    </amdeliverydate>
+                </observers>
+            </core_layout_block_create_after>
+			
+			<sales_order_save_after>
+                <observers>
+                    <amorderattr>
+                        <type>singleton</type>
+                        <class>amdeliverydate/observer</class>
+                        <method>onSalesOrderSaveAfter</method>
+                    </amorderattr>
+                </observers>
+            </sales_order_save_after>
+        </events>
+        
+        <menu>
+            <sales>
+                <children>
+                    <deliverydate translate="title">
+                        <title>Delivery Date</title>
+                        <sort_order>1000</sort_order>
+                        <children>
+                            <holidays translate="title" module="amdeliverydate"> 
+                                <title>Exceptions: Dates and Holidays</title>
+                                <action>amdeliverydate/adminhtml_holidays</action>
+                                <sort_order>10</sort_order>
+                            </holidays>
+                            <dinterval translate="title" module="amdeliverydate"> 
+                                <title>Exceptions: Date Intervals</title>
+                                <action>amdeliverydate/adminhtml_dinterval</action>
+                                <sort_order>20</sort_order>
+                            </dinterval>
+                            <tinterval translate="title" module="amdeliverydate"> 
+                                <title>Time Intervals</title>
+                                <action>amdeliverydate/adminhtml_tinterval</action>
+                                <sort_order>30</sort_order>
+                            </tinterval>
+                            <configuration translate="title" module="amdeliverydate"> 
+                                <title>Configuration</title>
+                                <action>adminhtml/system_config/edit/section/amdeliverydate</action>
+                                <sort_order>40</sort_order>
+                            </configuration>
+                        </children>
+                    </deliverydate>
+                </children>
+            </sales>
+        </menu>
+        
+        <translate>
+            <modules>
+                <Amasty_Deliverydate>
+                    <files>
+                        <default>Amasty_Deliverydate.csv</default>
+                    </files>
+                </Amasty_Deliverydate>
+            </modules>
+        </translate>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <sales>
+                            <children>
+                                <order>
+                                    <children>
+                                        <actions translate="title">
+                                            <title>Actions</title>
+                                            <children>
+                                                <edit_deliverydate translate="title">
+                                                    <title>Edit Delivery Date</title>
+                                                </edit_deliverydate>
+                                            </children>
+                                        </actions>
+                                    </children>
+                                </order>
+                                <deliverydate translate="title">
+                                    <title>Delivery Date</title>
+                                    <sort_order>1000</sort_order>
+                                    <children>
+                                        <holidays translate="title" module="amdeliverydate"> 
+                                            <title>Exceptions: Dates and Holidays</title>
+                                            <sort_order>10</sort_order>
+                                        </holidays>
+                                        <dinterval translate="title" module="amdeliverydate"> 
+                                            <title>Exceptions: Date Intervals</title>
+                                            <sort_order>20</sort_order>
+                                        </dinterval>
+                                        <tinterval translate="title" module="amdeliverydate"> 
+                                            <title>Time Intervals</title>
+                                            <sort_order>30</sort_order>
+                                        </tinterval>
+                                        <configuration translate="title" module="amdeliverydate"> 
+                                            <title>Configuration</title>
+                                            <sort_order>40</sort_order>
+                                        </configuration>
+                                    </children>
+                                </deliverydate>
+                            </children>
+                        </sales>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <amdeliverydate translate="title" module="amdeliverydate">
+                                            <title>Delivery Date</title>
+                                        </amdeliverydate>
+                                    </children>
+                                </config>
+                            </children>
+                        </system> 
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        
+        <layout>
+            <updates>
+                <amdeliverydate>
+                    <file>amasty/amdeliverydate/amdeliverydate.xml</file>
+                </amdeliverydate>
+            </updates>
+        </layout>
+    </adminhtml>
+    
+    <default>
+        <amdeliverydate>
+            <general>
+                <enabled>1</enabled>
+                <disabled_days>0</disabled_days>
+                <min_days>0</min_days>
+                <max_days></max_days>
+                <enabled_same_day>0</enabled_same_day>
+                <same_day>00,00,00</same_day>
+                <enabled_next_day>0</enabled_next_day>
+                <next_day>00,00,00</next_day>
+                <shipping_quota>0</shipping_quota>
+                <offset>0</offset>
+                <comment></comment>
+                <comment_style>as_is</comment_style>
+                <format>Y/M/D</format>
+            </general>
+            <date_field>
+                <format>yyyy-MM-dd</format>
+                <required>0</required>
+                <enabled_default>0</enabled_default>
+                <default>0</default>
+                <include>order_email,invoice_email,shipment_email,invoice_pdf,shipment_pdf</include>
+                <show>order_grid,invoice_grid,shipment_grid,order_view,invoice_view,shipment_view,order_info</show>
+                <note></note>
+				<enabled_customer_groups>0</enabled_customer_groups>
+                <customer_groups></customer_groups>
+                <enabled_carriers>0</enabled_carriers>
+                <carriers></carriers>
+            </date_field>
+            <time_field>
+                <enabled_time>1</enabled_time>
+                <required>0</required>
+                <include>order_email,invoice_email,shipment_email,invoice_pdf,shipment_pdf</include>
+                <show>order_grid,invoice_grid,shipment_grid,order_view,invoice_view,shipment_view,order_info</show>
+                <note></note>
+				<enabled_customer_groups>0</enabled_customer_groups>
+                <customer_groups></customer_groups>
+                <enabled_carriers>0</enabled_carriers>
+                <carriers></carriers>
+            </time_field>
+            <comment_field>
+                <enabled_comment>1</enabled_comment>
+                <required>0</required>
+                <include>order_email,invoice_email,shipment_email,invoice_pdf,shipment_pdf</include>
+                <show>order_grid,invoice_grid,shipment_grid,order_view,invoice_view,shipment_view,order_info</show>
+                <note></note>
+				<enabled_customer_groups>0</enabled_customer_groups>
+                <customer_groups></customer_groups>
+                <enabled_carriers>0</enabled_carriers>
+                <carriers></carriers>
+            </comment_field>
+        </amdeliverydate>
+    </default>
+</config>

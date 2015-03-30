@@ -1,0 +1,14 @@
+tables:
+  seoautolink/link:
+    - link_id: 2
+      keyword: keyword 2
+      url: http://site2.com
+      is_active: 1
+    - link_id: 3
+      keyword: кейворд
+      url: http://site3.com
+      is_active: 1
+    - link_id: 4
+      keyword: keyword
+      url: http://site7.com
+      is_active: 1

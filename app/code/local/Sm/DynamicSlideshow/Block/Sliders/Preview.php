@@ -354,194 +354,398 @@ class Sm_DynamicSlideshow_Block_Sliders_Preview extends Mage_Core_Block_Abstract
             $output         = "<ul>";
             foreach ( $slides as $slide )
             {
-                $dateFrom = $slide->getData( 'date_from' );
-                $dateTo   = $slide->getData( 'date_to' );
-                $date     = Mage::getModel( 'core/date' );
-                if ( $dateFrom )
-                {
-                    if ( $date->timestamp( $date->date( 'm/d/Y' ) ) < $date->timestamp( $dateFrom ) )
-                        continue;
-                }
-                if ( $dateTo )
-                {
-                    if ( $date->timestamp( $date->date( 'm/d/Y' ) ) > $date->timestamp( $dateTo ) )
-                        continue;
-                }
-                $transition = $slide->getData( 'slide_transition' );
-                $slotAmount = $slide->getData( 'slot_amount' );
-                
-                $bgType = $slide->getData( 'background_type' );
-                if ( $bgType != 'external' )
-                {
-                    $urlSlideImage = strpos( $slide->getData( 'image_url' ), 'http' ) === 0 ? $slide->getData( 'image_url' ) : Mage::getBaseUrl( 'media' ) . $slide->getData( 'image_url' );
-                }
-                else
-                {
-                    $urlSlideImage = $slide->getData( 'bg_external' );
-                }
-                
-                $htmlThumb = '';
-                if ( $isThumbsActive )
-                {
-                    if ( $urlThumb = $slide->getData( 'slide_thumb' ) )
-                    {
-                        $urlThumb  = strpos( $urlThumb, 'http' ) === 0 ? $urlThumb : Mage::getBaseUrl( 'media' ) . $urlThumb;
-                        $htmlThumb = "data-thumb='{$urlThumb}'";
-                    }
-                    else
-                    {
-                        $htmlThumb = "data-thumb='{$urlSlideImage}'";
-                    }
-                }
-                
-                $htmlLink = '';
-                if ( $slide->getData( 'enable_link' ) == 'yes' )
-                {
-                    switch ( $slide->getData( 'link_type' ) )
-                    {
-                        case 'regular':
-                        default:
-                            if ( $slide->getData( 'link_open_in' ) == 'new' )
-                            {
-                                $htmlLink .= "data-target='_blank' ";
-                            }
-                            $htmlLink .= "data-link='{$slide->getData('link')}' ";
-                            break;
-                        case 'slide':
-                            $slideLink = $slide->getData( 'slide_link' );
-                            if ( $slideLink && $slideLink != 'nothing' )
-                            {
-                                $htmlLink = "data-link='slide' data-linktoslide='{$slideLink}' ";
-                            }
-                            break;
-                    }
-                    if ( $slide->getData( 'link_pos' ) == 'back' )
-                    {
-                        $htmlLink .= "data-slideindex='back' ";
-                    }
-                }
-                
-                $htmlDelay = '';
-                if ( is_numeric( $delay = $slide->getData( 'delay' ) ) )
-                {
-                    $htmlDelay .= "data-delay='{$delay}' ";
-                }
-                
-                $htmlDuration = '';
-                if ( is_numeric( $duration = $slide->getData( 'transition_duration' ) ) )
-                {
-                    $htmlDuration .= "data-masterspeed='{$duration}' ";
-                }
-                
-                $htmlRotation = '';
-                if ( $rotation = $slide->getData( 'transition_rotation' ) != 0 )
-                {
-                    $htmlRotation .= "data-rotate='" . ( $rotation < -720 ? -720 : ( $rotation > 720 && $rotation != 999 ? 720 : $rotation ) ) . "' ";
-                }
-                
-                $htmlFirstTrans = '';
-                $startWithSlide = (int) $slider->getData( 'start_with_slide' ) - 1;
-                $startWithSlide = $startWithSlide < 0 ? 0 : ( $startWithSlide >= $this->numSlides ? 0 : $startWithSlide );
-                if ( $index == $startWithSlide )
-                {
-                    if ( $slider->getData( 'first_transition_active' ) == 'on' )
-                    {
-                        $htmlFirstTrans .= " data-fstransition='{$slider->getData('first_transition_type')}' ";
-                        $htmlFirstTrans .= " data-fsmasterspeed='{$slider->getData('first_transition_duration')}' ";
-                        $htmlFirstTrans .= " data-fsslotamount='{$slider->getData('first_transition_slot_amount')}' ";
-                    }
-                }
+				$url = $_SERVER['REQUEST_URI'];
+				$_city = $_GET['city'];
+				if (strpos($slide->getData( 'image_url' ),'pune') && strpos($url,'=') > 0)  {
+					
+					$dateFrom = $slide->getData( 'date_from' );
+					$dateTo   = $slide->getData( 'date_to' );
+					$date     = Mage::getModel( 'core/date' );
+					if ( $dateFrom )
+					{
+						if ( $date->timestamp( $date->date( 'm/d/Y' ) ) < $date->timestamp( $dateFrom ) )
+							continue;
+					}
+					if ( $dateTo )
+					{
+						if ( $date->timestamp( $date->date( 'm/d/Y' ) ) > $date->timestamp( $dateTo ) )
+							continue;
+					}
+					$transition = $slide->getData( 'slide_transition' );
+					$slotAmount = $slide->getData( 'slot_amount' );
+					
+					$bgType = $slide->getData( 'background_type' );
+					if ( $bgType != 'external' )
+					{
+						$urlSlideImage = strpos( $slide->getData( 'image_url' ), 'http' ) === 0 ? $slide->getData( 'image_url' ) : Mage::getBaseUrl( 'media' ) . $slide->getData( 'image_url' );
+					}
+					else
+					{
+						$urlSlideImage = $slide->getData( 'bg_external' );
+					}
+					
+					$htmlThumb = '';
+					if ( $isThumbsActive )
+					{
+						if ( $urlThumb = $slide->getData( 'slide_thumb' ) )
+						{
+							$urlThumb  = strpos( $urlThumb, 'http' ) === 0 ? $urlThumb : Mage::getBaseUrl( 'media' ) . $urlThumb;
+							$htmlThumb = "data-thumb='{$urlThumb}'";
+						}
+						else
+						{
+							$htmlThumb = "data-thumb='{$urlSlideImage}'";
+						}
+					}
+					
+					$imageAddParams = '';
+					if ( $slider->getData( 'lazy_load' ) == 'on' )
+					{
+						$imageAddParams .= "data-lazyload='{$urlSlideImage}' ";
+						$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/dummy.png';
+					}
+					
+					$htmlLink = '';
+					if ( $slide->getData( 'enable_link' ) == 'yes' )
+					{
+						switch ( $slide->getData( 'link_type' ) )
+						{
+							case 'regular':
+							default:
+								if ( $slide->getData( 'link_open_in' ) == 'new' )
+								{
+									$htmlLink .= "data-target='_blank' ";
+								}
+								$htmlLink .= "data-link='{$slide->getData('link')}' ";
+								break;
+							case 'slide':
+								$slideLink = $slide->getData( 'slide_link' );
+								if ( $slideLink && $slideLink != 'nothing' )
+								{
+									$htmlLink = "data-link='slide' data-linktoslide='{$slideLink}' ";
+								}
+								break;
+						}
+						if ( $slide->getData( 'link_pos' ) == 'back' )
+						{
+							$htmlLink .= "data-slideindex='back' ";
+						}
+					}
+					
+					$htmlDelay = '';
+					if ( is_numeric( $delay = $slide->getData( 'delay' ) ) )
+					{
+						$htmlDelay .= "data-delay='{$delay}' ";
+					}
+					
+					$htmlDuration = '';
+					if ( is_numeric( $duration = $slide->getData( 'transition_duration' ) ) )
+					{
+						$htmlDuration .= "data-masterspeed='{$duration}' ";
+					}
+					
+					$htmlRotation = '';
+					if ( $rotation = $slide->getData( 'transition_rotation' ) != 0 )
+					{
+						$htmlRotation .= "data-rotate='" . ( $rotation < -720 ? -720 : ( $rotation > 720 && $rotation != 999 ? 720 : $rotation ) ) . "' ";
+					}
+					
+					$htmlFirstTrans = '';
+					$startWithSlide = (int) $slider->getData( 'start_with_slide' ) - 1;
+					$startWithSlide = $startWithSlide < 0 ? 0 : ( $startWithSlide >= $this->numSlides ? 0 : $startWithSlide );
+					if ( $index == $startWithSlide )
+					{
+						if ( $slider->getData( 'first_transition_active' ) == 'on' )
+						{
+							$htmlFirstTrans .= " data-fstransition='{$slider->getData('first_transition_type')}' ";
+							$htmlFirstTrans .= " data-fsmasterspeed='{$slider->getData('first_transition_duration')}' ";
+							$htmlFirstTrans .= " data-fsslotamount='{$slider->getData('first_transition_slot_amount')}' ";
+						}
+					}
+					
+					$htmlTitle = $slide->getData('title');
+					$htmlTitle = " data-title='{$htmlTitle}' ";
+					
+					$htmlParams = $htmlTitle.$htmlDuration . $htmlLink . $htmlThumb . $htmlDelay . $htmlRotation . $htmlFirstTrans;
+					$styleImage = '';
+					switch ( $slide->getData( 'background_type' ) )
+					{
+						case 'trans':
+							$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
+							break;
+						case 'solid':
+							$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
+							$styleImage .= "style='background-color:#{$slide->getData('slide_bg_color')}'";
+							break;
+					}
+					
+					
+					
+					$bgFit       = $slide->getData( 'bg_fit' );
+					$bgFitX      = intval( $slide->getData( 'bg_fit_x' ) );
+					$bgFitY      = intval( $slide->getData( 'bg_fit_y' ) );
+					$bgPosition  = $slide->getData( 'bg_position' );
+					$bgPositionX = intval( $slide->getData( 'bg_position_x' ) );
+					$bgPositionY = intval( $slide->getData( 'bg_position_y' ) );
+					$bgRepeat    = $slide->getData( 'bg_repeat' );
+					
+					if ( $bgPosition == 'percentage' )
+					{
+						$imageAddParams .= "data-bgposition='{$bgPositionX}% {$bgPositionY}%' ";
+					}
+					else
+					{
+						$imageAddParams .= "data-bgposition='{$bgPosition}' ";
+					}
+					
+					$kb_pz          = '';
+					$kenburn_effect = $slide->getData( 'kenburn_effect' );
+					if ( $kenburn_effect == 'on' )
+					{
+						$kb_duration  = $slide->getData( 'kb_duration' ) ? $slide->getData( 'kb_duration' ) : $sDuration;
+						$kb_ease      = $slide->getData( 'kb_easing' );
+						$kb_start_fit = $slide->getData( 'kb_start_fit' ) ? $slide->getData( 'kb_start_fit' ) : 100;
+						$kb_end_fit   = $slide->getData( 'kb_end_fit' ) ? $slide->getData( 'kb_end_fit' ) : 100;
+						if ( $bgType == 'image' || $bgType == 'external' )
+						{
+							$kb_pz .= " data-kenburns='on'";
+							$kb_pz .= " data-duration='{$kb_duration}'";
+							$kb_pz .= " data-ease='{$kb_ease}'";
+							$kb_pz .= " data-bgfit='{$kb_start_fit}'";
+							$kb_pz .= " data-bgfitend='{$kb_end_fit}'";
+							
+							$bgEndPosition = $slide->getData( 'bg_end_position' );
+							if ( $bgEndPosition == 'percentage' )
+							{
+								$bgEndPositionX = (int) $slide->getData( 'bg_end_position_x' );
+								$bgEndPositionY = (int) $slide->getData( 'bg_end_position_y' );
+								$kb_pz .= " data-bgpositionend='{$bgEndPositionX}% {$bgEndPositionY}%'";
+							}
+							else
+							{
+								$kb_pz .= " data-bgpositionend='{$bgEndPosition}'";
+							}
+						}
+					}
+					else
+					{
+						if ( $bgFit == 'percentage' )
+						{
+							$imageAddParams .= " data-bgfit='{$bgFitX}% {$bgFitY}%'";
+						}
+						else
+						{
+							$imageAddParams .= " data-bgfit='{$bgFit}'";
+						}
+					}
+					$alt = $slide->getData('title');
+					$alt = " alt='{$alt}' ";
+					$imageAddParams .= " data-bgrepeat='{$bgRepeat}' ";
+					$output .= "<li data-transition='{$transition}' data-slotamount='{$slotAmount}' {$htmlParams}>";
+					$output .= "<img src='{$urlSlideImage}' {$styleImage} {$imageAddParams} {$kb_pz} {$alt}/>";
+					$output .= $this->renderLayers( $slide );
+					$output .= "</li>";
+					$index++;
+
 				
-				$htmlTitle = $slide->getData('title');
-				$htmlTitle = " data-title='{$htmlTitle}' ";
+				
+				} if(strpos($slide->getData( 'image_url' ),'homepage') > 0 ){
+					
+						$dateFrom = $slide->getData( 'date_from' );
+					$dateTo   = $slide->getData( 'date_to' );
+					$date     = Mage::getModel( 'core/date' );
+					if ( $dateFrom )
+					{
+						if ( $date->timestamp( $date->date( 'm/d/Y' ) ) < $date->timestamp( $dateFrom ) )
+							continue;
+					}
+					if ( $dateTo )
+					{
+						if ( $date->timestamp( $date->date( 'm/d/Y' ) ) > $date->timestamp( $dateTo ) )
+							continue;
+					}
+					$transition = $slide->getData( 'slide_transition' );
+					$slotAmount = $slide->getData( 'slot_amount' );
+					
+					$bgType = $slide->getData( 'background_type' );
+					if ( $bgType != 'external' )
+					{
+						$urlSlideImage = strpos( $slide->getData( 'image_url' ), 'http' ) === 0 ? $slide->getData( 'image_url' ) : Mage::getBaseUrl( 'media' ) . $slide->getData( 'image_url' );
+					}
+					else
+					{
+						$urlSlideImage = $slide->getData( 'bg_external' );
+					}
+					
+					$htmlThumb = '';
+					if ( $isThumbsActive )
+					{
+						if ( $urlThumb = $slide->getData( 'slide_thumb' ) )
+						{
+							$urlThumb  = strpos( $urlThumb, 'http' ) === 0 ? $urlThumb : Mage::getBaseUrl( 'media' ) . $urlThumb;
+							$htmlThumb = "data-thumb='{$urlThumb}'";
+						}
+						else
+						{
+							$htmlThumb = "data-thumb='{$urlSlideImage}'";
+						}
+					}
+					
+					$imageAddParams = '';
+					if ( $slider->getData( 'lazy_load' ) == 'on' )
+					{
+						$imageAddParams .= "data-lazyload='{$urlSlideImage}' ";
+						$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/dummy.png';
+					}
+					
+					$htmlLink = '';
+					if ( $slide->getData( 'enable_link' ) == 'yes' )
+					{
+						switch ( $slide->getData( 'link_type' ) )
+						{
+							case 'regular':
+							default:
+								if ( $slide->getData( 'link_open_in' ) == 'new' )
+								{
+									$htmlLink .= "data-target='_blank' ";
+								}
+								$htmlLink .= "data-link='{$slide->getData('link')}' ";
+								break;
+							case 'slide':
+								$slideLink = $slide->getData( 'slide_link' );
+								if ( $slideLink && $slideLink != 'nothing' )
+								{
+									$htmlLink = "data-link='slide' data-linktoslide='{$slideLink}' ";
+								}
+								break;
+						}
+						if ( $slide->getData( 'link_pos' ) == 'back' )
+						{
+							$htmlLink .= "data-slideindex='back' ";
+						}
+					}
+					
+					$htmlDelay = '';
+					if ( is_numeric( $delay = $slide->getData( 'delay' ) ) )
+					{
+						$htmlDelay .= "data-delay='{$delay}' ";
+					}
+					
+					$htmlDuration = '';
+					if ( is_numeric( $duration = $slide->getData( 'transition_duration' ) ) )
+					{
+						$htmlDuration .= "data-masterspeed='{$duration}' ";
+					}
+					
+					$htmlRotation = '';
+					if ( $rotation = $slide->getData( 'transition_rotation' ) != 0 )
+					{
+						$htmlRotation .= "data-rotate='" . ( $rotation < -720 ? -720 : ( $rotation > 720 && $rotation != 999 ? 720 : $rotation ) ) . "' ";
+					}
+					
+					$htmlFirstTrans = '';
+					$startWithSlide = (int) $slider->getData( 'start_with_slide' ) - 1;
+					$startWithSlide = $startWithSlide < 0 ? 0 : ( $startWithSlide >= $this->numSlides ? 0 : $startWithSlide );
+					if ( $index == $startWithSlide )
+					{
+						if ( $slider->getData( 'first_transition_active' ) == 'on' )
+						{
+							$htmlFirstTrans .= " data-fstransition='{$slider->getData('first_transition_type')}' ";
+							$htmlFirstTrans .= " data-fsmasterspeed='{$slider->getData('first_transition_duration')}' ";
+							$htmlFirstTrans .= " data-fsslotamount='{$slider->getData('first_transition_slot_amount')}' ";
+						}
+					}
+					
+					$htmlTitle = $slide->getData('title');
+					$htmlTitle = " data-title='{$htmlTitle}' ";
+					
+					$htmlParams = $htmlTitle.$htmlDuration . $htmlLink . $htmlThumb . $htmlDelay . $htmlRotation . $htmlFirstTrans;
+					$styleImage = '';
+					switch ( $slide->getData( 'background_type' ) )
+					{
+						case 'trans':
+							$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
+							break;
+						case 'solid':
+							$urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
+							$styleImage .= "style='background-color:#{$slide->getData('slide_bg_color')}'";
+							break;
+					}
+					
+					
+					
+					$bgFit       = $slide->getData( 'bg_fit' );
+					$bgFitX      = intval( $slide->getData( 'bg_fit_x' ) );
+					$bgFitY      = intval( $slide->getData( 'bg_fit_y' ) );
+					$bgPosition  = $slide->getData( 'bg_position' );
+					$bgPositionX = intval( $slide->getData( 'bg_position_x' ) );
+					$bgPositionY = intval( $slide->getData( 'bg_position_y' ) );
+					$bgRepeat    = $slide->getData( 'bg_repeat' );
+					
+					if ( $bgPosition == 'percentage' )
+					{
+						$imageAddParams .= "data-bgposition='{$bgPositionX}% {$bgPositionY}%' ";
+					}
+					else
+					{
+						$imageAddParams .= "data-bgposition='{$bgPosition}' ";
+					}
+					
+					$kb_pz          = '';
+					$kenburn_effect = $slide->getData( 'kenburn_effect' );
+					if ( $kenburn_effect == 'on' )
+					{
+						$kb_duration  = $slide->getData( 'kb_duration' ) ? $slide->getData( 'kb_duration' ) : $sDuration;
+						$kb_ease      = $slide->getData( 'kb_easing' );
+						$kb_start_fit = $slide->getData( 'kb_start_fit' ) ? $slide->getData( 'kb_start_fit' ) : 100;
+						$kb_end_fit   = $slide->getData( 'kb_end_fit' ) ? $slide->getData( 'kb_end_fit' ) : 100;
+						if ( $bgType == 'image' || $bgType == 'external' )
+						{
+							$kb_pz .= " data-kenburns='on'";
+							$kb_pz .= " data-duration='{$kb_duration}'";
+							$kb_pz .= " data-ease='{$kb_ease}'";
+							$kb_pz .= " data-bgfit='{$kb_start_fit}'";
+							$kb_pz .= " data-bgfitend='{$kb_end_fit}'";
+							
+							$bgEndPosition = $slide->getData( 'bg_end_position' );
+							if ( $bgEndPosition == 'percentage' )
+							{
+								$bgEndPositionX = (int) $slide->getData( 'bg_end_position_x' );
+								$bgEndPositionY = (int) $slide->getData( 'bg_end_position_y' );
+								$kb_pz .= " data-bgpositionend='{$bgEndPositionX}% {$bgEndPositionY}%'";
+							}
+							else
+							{
+								$kb_pz .= " data-bgpositionend='{$bgEndPosition}'";
+							}
+						}
+					}
+					else
+					{
+						if ( $bgFit == 'percentage' )
+						{
+							$imageAddParams .= " data-bgfit='{$bgFitX}% {$bgFitY}%'";
+						}
+						else
+						{
+							$imageAddParams .= " data-bgfit='{$bgFit}'";
+						}
+					}
+					$alt = $slide->getData('title');
+					$alt = " alt='{$alt}' ";
+					$imageAddParams .= " data-bgrepeat='{$bgRepeat}' ";
+					$output .= "<li data-transition='{$transition}' data-slotamount='{$slotAmount}' {$htmlParams}>";
+					$output .= "<img src='{$urlSlideImage}' {$styleImage} {$imageAddParams} {$kb_pz} {$alt}/>";
+					$output .= $this->renderLayers( $slide );
+					$output .= "</li>";
+					$index++;
+					
+				}
+				
                 
-                $htmlParams = $htmlTitle.$htmlDuration . $htmlLink . $htmlThumb . $htmlDelay . $htmlRotation . $htmlFirstTrans;
-                $styleImage = '';
-                switch ( $slide->getData( 'background_type' ) )
-                {
-                    case 'trans':
-                        $urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
-                        break;
-                    case 'solid':
-                        $urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/transparent.png';
-                        $styleImage .= "style='background-color:#{$slide->getData('slide_bg_color')}'";
-                        break;
-                }
-                
-                $imageAddParams = '';
-                if ( $slider->getData( 'lazy_load' ) == 'on' )
-                {
-                    $imageAddParams .= "data-lazyload='{$urlSlideImage}' ";
-                    $urlSlideImage = Mage::getBaseUrl( 'js' ) . 'sm/dynamicslideshow/rs-plugin/images/dummy.png';
-                }
-                
-                $bgFit       = $slide->getData( 'bg_fit' );
-                $bgFitX      = intval( $slide->getData( 'bg_fit_x' ) );
-                $bgFitY      = intval( $slide->getData( 'bg_fit_y' ) );
-                $bgPosition  = $slide->getData( 'bg_position' );
-                $bgPositionX = intval( $slide->getData( 'bg_position_x' ) );
-                $bgPositionY = intval( $slide->getData( 'bg_position_y' ) );
-                $bgRepeat    = $slide->getData( 'bg_repeat' );
-                
-                if ( $bgPosition == 'percentage' )
-                {
-                    $imageAddParams .= "data-bgposition='{$bgPositionX}% {$bgPositionY}%' ";
-                }
-                else
-                {
-                    $imageAddParams .= "data-bgposition='{$bgPosition}' ";
-                }
-                
-                $kb_pz          = '';
-                $kenburn_effect = $slide->getData( 'kenburn_effect' );
-                if ( $kenburn_effect == 'on' )
-                {
-                    $kb_duration  = $slide->getData( 'kb_duration' ) ? $slide->getData( 'kb_duration' ) : $sDuration;
-                    $kb_ease      = $slide->getData( 'kb_easing' );
-                    $kb_start_fit = $slide->getData( 'kb_start_fit' ) ? $slide->getData( 'kb_start_fit' ) : 100;
-                    $kb_end_fit   = $slide->getData( 'kb_end_fit' ) ? $slide->getData( 'kb_end_fit' ) : 100;
-                    if ( $bgType == 'image' || $bgType == 'external' )
-                    {
-                        $kb_pz .= " data-kenburns='on'";
-                        $kb_pz .= " data-duration='{$kb_duration}'";
-                        $kb_pz .= " data-ease='{$kb_ease}'";
-                        $kb_pz .= " data-bgfit='{$kb_start_fit}'";
-                        $kb_pz .= " data-bgfitend='{$kb_end_fit}'";
-                        
-                        $bgEndPosition = $slide->getData( 'bg_end_position' );
-                        if ( $bgEndPosition == 'percentage' )
-                        {
-                            $bgEndPositionX = (int) $slide->getData( 'bg_end_position_x' );
-                            $bgEndPositionY = (int) $slide->getData( 'bg_end_position_y' );
-                            $kb_pz .= " data-bgpositionend='{$bgEndPositionX}% {$bgEndPositionY}%'";
-                        }
-                        else
-                        {
-                            $kb_pz .= " data-bgpositionend='{$bgEndPosition}'";
-                        }
-                    }
-                }
-                else
-                {
-                    if ( $bgFit == 'percentage' )
-                    {
-                        $imageAddParams .= " data-bgfit='{$bgFitX}% {$bgFitY}%'";
-                    }
-                    else
-                    {
-                        $imageAddParams .= " data-bgfit='{$bgFit}'";
-                    }
-                }
-                $alt = $slide->getData('title');
-				$alt = " alt='{$alt}' ";
-                $imageAddParams .= " data-bgrepeat='{$bgRepeat}' ";
-                $output .= "<li data-transition='{$transition}' data-slotamount='{$slotAmount}' {$htmlParams}>";
-                $output .= "<img src='{$urlSlideImage}' {$styleImage} {$imageAddParams} {$kb_pz} {$alt}/>";
-                $output .= $this->renderLayers( $slide );
-                $output .= "</li>";
-                $index++;
             }
             $output .= "</ul>";
+			
         }
         else
         {
